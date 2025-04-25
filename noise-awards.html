@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Annual Noise Victim Awards</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: radial-gradient(circle, #330033 0%, #000000 100%);
+      color: #ffccff;
+      margin: 0;
+      padding: 2rem;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: spotlightSweep 15s linear infinite alternate;
+    }
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc;
+    }
+    p {
+      font-size: 1.5rem;
+      margin: 1rem;
+      max-width: 700px;
+      text-shadow: 0 0 8px #ff99cc;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 2rem;
+    }
+    li {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      animation: floatAwards 3s ease-in-out infinite alternate;
+    }
+    @keyframes spotlightSweep {
+      0% { background: radial-gradient(circle at top left, #330033, #000); }
+      50% { background: radial-gradient(circle at top right, #660066, #000); }
+      100% { background: radial-gradient(circle at bottom center, #330033, #000); }
+    }
+    @keyframes floatAwards {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Annual Noise Victim Awards</h1>
+<p>Honoring those who bravely survived the chaos, the echoes, and the airborne chairs.</p>
+
+<ul>
+  <li>🏆 Best Late Night Chair Slam (3:12 AM Category)</li>
+  <li>🏆 Most Persistent Vacuum Cleaner (Weekend Edition)</li>
+  <li>🏆 Loudest Unidentifiable Machine Award</li>
+  <li>🏆 Lifetime Achievement in Random Door Slamming</li>
+  <li>🏆 The "I Thought It Was an Earthquake" Medal</li>
+</ul>
+
+<audio autoplay>
+  <source src="https://www.soundjay.com/human/sounds/applause-8.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
