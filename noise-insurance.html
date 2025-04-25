@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noise Insurance Application</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ff99cc, #6600ff);
+      color: #ffffff;
+      margin: 0;
+      padding: 2rem;
+      animation: colorBounce 6s infinite alternate;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px #330033;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ff66cc;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      background: #ffcc00;
+      color: #330033;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #ffcc00;
+    }
+    button:hover {
+      background: #ff0033;
+      color: #ffffff;
+      box-shadow: 0 0 18px #ff0033;
+    }
+    @keyframes colorBounce {
+      0% { background: linear-gradient(135deg, #ff99cc, #6600ff); }
+      50% { background: linear-gradient(135deg, #ffcc00, #00ffcc); }
+      100% { background: linear-gradient(135deg, #ff0033, #33ccff); }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Noise Insurance Application</h1>
+
+<form action="#" method="post">
+  <label for="name">Full Name (Real or Imagined):</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email (or carrier pigeon):</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="exposure">Average Daily Exposure to Clown Activities:</label>
+  <select id="exposure" name="exposure" required>
+    <option value="">-- Select One --</option>
+    <option value="low">Low (1–2 tantrums/day)</option>
+    <option value="medium">Medium (3–5 tantrums/day)</option>
+    <option value="high">High (6+ tantrums, plus furniture-dragging rituals)</option>
+  </select>
+
+  <label for="damage">Emotional Damage Level (1–10):</label>
+  <input type="number" id="damage" name="damage" min="1" max="10" required>
+
+  <label for="story">Describe Your Loudest Encounter:</label>
+  <textarea id="story" name="story" rows="4" placeholder="Bonus points for including vacuum cleaners, chair-slamming or random howling..."></textarea>
+
+  <button type="submit">Submit My Application (No Guarantees)</button>
+</form>
+
+</body>
+</html>
