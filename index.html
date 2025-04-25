@@ -193,5 +193,22 @@
   });
 </script>
 
+
+<!-- Flash Mode: Background color flashes randomly on click -->
+<script>
+  document.addEventListener('click', function() {
+    // Clown Horn
+    var audio = document.getElementById('clown-horn');
+    if (audio) {
+      audio.play();
+    }
+    alert('CLOWN ALERT: You have clicked within the jurisdiction of NeuralGlow.ai!');
+
+    // Random background flash
+    var colors = ['#ff66cc', '#6600ff', '#00ccff', '#33ff66', '#ffcc00', '#ff0033', '#cc00cc'];
+    document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
+  });
+</script>
+
 </body>
 </html>
