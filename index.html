@@ -111,9 +111,87 @@
   <p><em>[Insert satirical form here]</em></p>
 </section>
 
+
+<!-- This HTML adds a newsletter form near the footer of the page -->
+<section id="newsletter">
+  <h2>Join the Glowletter</h2>
+  <p>Subscribe for glowing insights, satirical updates, and AI-generated nonsense. You’ll probably regret it.</p>
+  <form action="https://example.com/subscribe" method="post" style="margin-top: 1rem;">
+    <input type="email" name="email" placeholder="Enter your email (real or imaginary)" required
+           style="padding: 0.5rem; width: 250px; max-width: 80%; border: none; border-radius: 4px;" />
+    <button type="submit" style="padding: 0.5rem 1rem; margin-left: 0.5rem; background-color: #ff66cc; color: white; border: none; border-radius: 4px;">
+      Subscribe
+    </button>
+  </form>
+</section>
+
+
 <footer>
   &copy; 2025 NeuralGlow.ai – Department of Misguided Brilliance. All errors preserved.
+
+  <div style="margin-top: 1.5rem; font-size: 0.8rem; color: #ff99cc;">
+    <span style="background: #ffcc00; color: #330033; padding: 0.3rem 0.6rem; border-radius: 999px; box-shadow: 0 0 8px #ffcc00;">
+      CLOWN VERIFIED
+    </span>
+    <span style="font-style: italic; margin-left: 0.5rem;">Certified by Upstairs Department of Noise Engineering</span>
+  </div>
+
+
+  <div style="margin-top: 1.5rem; font-size: 0.85rem; color: #ff99cc; text-align: center; animation: rotateWobble 3s infinite alternate;">
+    <span style="background: repeating-linear-gradient(45deg, #ffcc00, #ffcc00 10px, #ff66cc 10px, #ff66cc 20px);
+                 color: #330033; padding: 0.5rem 1rem; border: 3px dashed #ff33cc; border-radius: 50px; box-shadow: 0 0 12px #ff66cc, 0 0 6px #ffcc00;">
+      CLOWN VERIFIED
+    </span>
+    <div style="font-style: italic; margin-top: 0.5rem;">Issued by the Upstairs Syndicate of Chaotic Echoes</div>
+  </div>
+
+  <style>
+    @keyframes rotateWobble {
+      0% { transform: rotate(-2deg) scale(1); }
+      50% { transform: rotate(3deg) scale(1.03); }
+      100% { transform: rotate(-3deg) scale(1.01); }
+    }
+  </style>
+
+
+<div style="margin-top: 2rem; text-align: center; font-size: 0.8rem; color: #ccccff;">
+  <div style="display: inline-block; padding: 0.5rem 1rem; border: 2px solid #cc66ff; border-radius: 20px; cursor: pointer; transition: background-color 0.3s;"
+       onmouseover="this.style.backgroundColor='#330033';" onmouseout="this.style.backgroundColor='transparent';">
+    Made with Echoes
+  </div>
+</div>
+
+<div style="margin-top: 1rem; text-align: center; font-size: 0.75rem; color: #ffccff; font-style: italic;">
+  Certified Noise™ Producer<br/>License #404-Not-Found
+</div>
+
+
+<div style="margin-top: 2rem; text-align: center; font-size: 0.8rem; color: #ff99cc; animation: spinDrama 8s linear infinite;">
+  Powered by Upstairs Drama
+</div>
+
+<style>
+@keyframes spinDrama {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
 </footer>
+
+
+<!-- Hidden CLOWN ALERT Easter Egg -->
+<audio id="clown-horn" src="https://www.soundjay.com/button/sounds/button-10.mp3" preload="auto"></audio>
+
+<script>
+  document.addEventListener('click', function() {
+    var audio = document.getElementById('clown-horn');
+    if (audio) {
+      audio.play();
+    }
+    alert('CLOWN ALERT: You have clicked within the jurisdiction of NeuralGlow.ai!');
+  });
+</script>
 
 </body>
 </html>
