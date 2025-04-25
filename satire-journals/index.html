@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Satirical Research Archive – NeuralGlow.ai</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #f9f9f9;
+      color: #222;
+      margin: 0;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      color: #6610f2;
+      font-size: 2rem;
+    }
+    .paper-list {
+      max-width: 800px;
+      margin: auto;
+    }
+    .paper {
+      border-left: 5px solid #b30059;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+      background: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .paper h2 {
+      margin: 0;
+      color: #b30059;
+    }
+    .paper p {
+      margin: 0.5rem 0 0 0;
+    }
+    a.download {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #6610f2;
+      text-decoration: underline;
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
 
+<header>
+  <h1>NeuralGlow.ai – Satirical Research Archive</h1>
+  <p>Because science deserves a little chaos, too.</p>
+</header>
+
+<section class="paper-list" id="paper-list">
+  <!-- Articles will be injected here dynamically -->
+</section>
+
+<footer>
+  &copy; 2025 NeuralGlow.ai | Department of Misguided Brilliance
+</footer>
+
+<script>
+  async function loadArticles() {
+    const response = await fetch('articles.json');
+    const articles = await response.json();
+    const container = document.getElementById('paper-list');
+    
+    articles.forEach(article => {
+      const div = document.createElement('div');
+      div.className = 'paper';
+      div.innerHTML = `
+        <h2>${article.title}</h2>
+        <p>${article.description}</p>
+        <a class="download" href="${article.filename}">Read Full Article</a>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  loadArticles();
+</script>
+
+</body>
+</html>
