@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralGlow.ai - Portal Opening Soon</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at center, #330033, #000000);
+      overflow: hidden;
+      font-family: 'Courier New', Courier, monospace;
+      color: #00ffcc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .portal {
+      width: 200px;
+      height: 200px;
+      border: 10px solid #00ffcc;
+      border-radius: 50%;
+      animation: spinPortal 8s linear infinite, glowPulse 4s infinite alternate;
+      box-shadow: 0 0 30px #00ffcc;
+      margin-bottom: 40px;
+    }
+
+    @keyframes spinPortal {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 20px #00ffcc; }
+      100% { box-shadow: 0 0 60px #00ffcc; }
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.8rem;
+      color: #888888;
+    }
+  </style>
+</head>
+<body>
+
+<div class="portal"></div>
+
+<h1>Portal Opening Soon</h1>
+<p>Prepare yourself for the next dimension of satire and glowing chaos.</p>
+
+<footer>NeuralGlow.ai | Cosmic Gateway 2025</footer>
+
+</body>
+</html>
