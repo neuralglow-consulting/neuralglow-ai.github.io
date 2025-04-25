@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralGlow.ai - Glitch Wormhole</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: black;
+      width: 100%;
+      height: 100%;
+      font-family: 'Courier New', monospace;
+      color: #00ffcc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: filter 0.2s ease, transform 0.2s ease;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 10;
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<h1>NeuralGlow Cosmic Distortion</h1>
+
+<script>
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
+let stars = [];
+const numStars = 400;
+let glitching = false;
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+for (let i = 0; i < numStars; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    z: Math.random() * canvas.width
+  });
+}
+
+function randomGlitchEvent() {
+  const roll = Math.random();
+  if (roll < 0.03) {
+    triggerGlitch();
+  }
+}
+setInterval(randomGlitchEvent, 4000); // Every few seconds chance of glitch
+
+function triggerGlitch() {
+  if (!glitching) {
+    glitching = true;
+    canvas.style.filter = "invert(1) hue-rotate(90deg)";
+    canvas.style.transform = "rotate(5deg) scale(1.05)";
+    setTimeout(() => {
+      canvas.style.filter = "none";
+      canvas.style.transform = "none";
+      glitching = false;
+    }, 300);
+  }
+}
+
+function moveStars() {
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < numStars; i++) {
+    let star = stars[i];
+    star.z -= 4;
+    if (star.z <= 0) {
+      star.z = canvas.width;
+      star.x = Math.random() * canvas.width;
+      star.y = Math.random() * canvas.height;
+    }
+
+    let k = 128.0 / star.z;
+    let px = star.x * k + canvas.width / 2;
+    let py = star.y * k + canvas.height / 2;
+
+    if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
+      let size = (1 - star.z / canvas.width) * 5;
+      ctx.fillStyle = "#00ffcc";
+      ctx.fillRect(px, py, size, size);
+    }
+  }
+
+  requestAnimationFrame(moveStars);
+}
+
+moveStars();
+</script>
+
+</body>
+</html>
