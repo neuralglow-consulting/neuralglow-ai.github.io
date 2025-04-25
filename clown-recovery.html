@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clown Recovery Program</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: repeating-linear-gradient(135deg, #ff66cc, #6600ff 10%, #ff99cc 20%);
+      color: #fff;
+      margin: 0;
+      padding: 2rem;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: slowBounce 10s infinite alternate;
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px #330033;
+    }
+    p {
+      font-size: 1.5rem;
+      margin: 1rem;
+      max-width: 700px;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: #00ffcc;
+      color: #000;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #00ffcc;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #ff0033;
+      color: white;
+      box-shadow: 0 0 25px #ff0033;
+    }
+    @keyframes slowBounce {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Welcome to the Clown Recovery Program</h1>
+<p>Congratulations! You have been pre-approved for our patented 12-Step Clown Recovery Program.<br>Side effects include: excessive eye-rolling, spontaneous sarcastic remarks, and improved resistance to upstairs stupidity.</p>
+<button onclick="alert('Enrollment Successful! Please proceed to the rubber chicken decontamination chamber.')">Enroll Now</button>
+
+<!-- Silly trumpet blast -->
+<audio autoplay>
+  <source src="https://www.soundjay.com/button/sounds/button-16.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
