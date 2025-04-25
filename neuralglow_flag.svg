@@ -1,0 +1,21 @@
+
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: Deep Purple -->
+  <rect width="600" height="400" fill="#330033"/>
+
+  <!-- Glowing Circle (symbol of the glowing mind) -->
+  <circle cx="300" cy="200" r="80" fill="#FFCC00" stroke="#00FFCC" stroke-width="8">
+    <animate attributeName="r" values="80;85;80" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="stroke-width" values="8;12;8" dur="3s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Stars of Chaos -->
+  <polygon points="150,50 160,80 130,65 170,65 140,80" fill="#FFFFFF"/>
+  <polygon points="450,50 460,80 430,65 470,65 440,80" fill="#FFFFFF"/>
+  <polygon points="300,350 310,380 280,365 320,365 290,380" fill="#FFFFFF"/>
+
+  <!-- Slogan -->
+  <text x="300" y="390" font-family="Verdana" font-size="24" fill="#00FFCC" text-anchor="middle">
+    NeuralGlow.ai
+  </text>
+</svg>
