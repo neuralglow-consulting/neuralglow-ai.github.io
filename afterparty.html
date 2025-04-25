@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VIP Afterparty of Regret</title>
+  <style>
+    body {
+      font-family: 'Chiller', cursive;
+      background: repeating-linear-gradient(45deg, #ffcc00, #ff0033 10%, #cc00ff 20%);
+      color: #ffffff;
+      margin: 0;
+      padding: 2rem;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: insaneGlow 8s infinite alternate;
+    }
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 12px #ff66cc, 0 0 20px #ff66cc;
+    }
+    p {
+      font-size: 1.5rem;
+      margin: 1rem;
+      max-width: 700px;
+      text-shadow: 0 0 8px #330033;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: #00ffcc;
+      color: #330033;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #00ffcc;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #ff0033;
+      color: #ffffff;
+      box-shadow: 0 0 25px #ff0033;
+    }
+    @keyframes insaneGlow {
+      0% { background-position: 0% 50%; transform: rotate(0deg); }
+      50% { background-position: 100% 50%; transform: rotate(5deg); }
+      100% { background-position: 0% 50%; transform: rotate(-5deg); }
+    }
+  </style>
+</head>
+<body>
+
+<h1>VIP Afterparty of Regret</h1>
+<p>Welcome to the final stop. Champagne of bad decisions awaits. Side effects may include extreme sarcasm, loud chair slams, and spontaneous existential crises.</p>
+<button onclick="alert('Congratulations! You are now a Certified Regret Enthusiast.')">Claim Your Regret Badge</button>
+
+<audio autoplay>
+  <source src="https://www.soundjay.com/human/sounds/crowd-party-01.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
