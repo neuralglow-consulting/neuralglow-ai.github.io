@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralGlow.ai - Portal Unlocking</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at center, #330033, #000000);
+      overflow: hidden;
+      font-family: 'Courier New', Courier, monospace;
+      color: #00ffcc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .portal {
+      width: 200px;
+      height: 200px;
+      border: 10px solid #00ffcc;
+      border-radius: 50%;
+      box-shadow: 0 0 30px #00ffcc;
+      transition: all 1s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .crack {
+      animation: crackPortal 1s forwards;
+    }
+
+    @keyframes crackPortal {
+      0% { transform: scale(1) rotate(0deg); border-color: #00ffcc; box-shadow: 0 0 30px #00ffcc; }
+      50% { transform: scale(1.2) rotate(45deg); border-color: #ff0066; box-shadow: 0 0 50px #ff0066; }
+      100% { transform: scale(0) rotate(720deg); border-color: #ffffff; box-shadow: 0 0 80px #ffffff; opacity: 0; }
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.8rem;
+      color: #888888;
+    }
+  </style>
+</head>
+<body>
+
+<div class="portal" onclick="crackPortal()"></div>
+
+<h1 id="title">Click the Portal to Unlock</h1>
+<p id="subtitle">Initiating satire breach sequence...</p>
+
+<footer>NeuralGlow.ai | Cosmic Breach 2025</footer>
+
+<script>
+function crackPortal() {
+  const portal = document.querySelector('.portal');
+  const title = document.getElementById('title');
+  const subtitle = document.getElementById('subtitle');
+
+  portal.classList.add('crack');
+  title.textContent = "Portal Unlocked!";
+  subtitle.textContent = "Welcome to the dimension of eternal satire.";
+}
+</script>
+
+</body>
+</html>
