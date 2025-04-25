@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noise Insurance Rejection</title>
+  <style>
+    body {
+      font-family: 'Impact', fantasy, sans-serif;
+      background: repeating-linear-gradient(135deg, #ff0000, #000000 10%, #ff0000 20%);
+      color: #ffffff;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: rejectionWaves 6s infinite alternate;
+    }
+    h1 {
+      font-size: 4rem;
+      text-shadow: 2px 2px #ff66cc;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      margin: 2rem;
+      text-shadow: 1px 1px #660066;
+    }
+    a {
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background: #ffcc00;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #ffcc00;
+      transition: background 0.3s;
+    }
+    a:hover {
+      background: #ff0033;
+      color: #fff;
+      box-shadow: 0 0 25px #ff0033;
+    }
+    @keyframes rejectionWaves {
+      0% { background-position: 0% 50%; transform: scale(1); }
+      50% { background-position: 100% 50%; transform: scale(1.05); }
+      100% { background-position: 0% 50%; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Application Rejected</h1>
+<p>We regret to inform you that your Noise Insurance application was too noisy to be processed.</p>
+<p>Please resubmit in absolute silence. Preferably while tiptoeing past a vacuum cleaner.</p>
+<a href="/">Return to Regret</a>
+
+<!-- Optional sad trombone sound -->
+<audio autoplay>
+  <source src="https://www.soundjay.com/button/sounds/button-15.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
