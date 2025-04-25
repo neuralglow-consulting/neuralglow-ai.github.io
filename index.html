@@ -2,213 +2,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeuralGlow.ai – Where Artificial Intelligence Meets Sarcasm</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralGlow.ai - Official Portal</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #1f0033, #330033);
-      color: #f0f0f0;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1a001a;
+      color: #ffffff;
+      text-align: center;
     }
+
+    header {
+      padding: 20px;
+      background: #330033;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 40px 20px;
+    }
+
+    footer {
+      padding: 20px;
+      background: #330033;
+      font-size: 0.9em;
+    }
+
+    /* Superflag Combo Mode */
+    @keyframes comboFlag {
+      0% { transform: rotate(0deg) translate(0px, 0px) scale(1); }
+      25% { transform: rotate(4deg) translate(10px, 5px) scale(1.05); }
+      50% { transform: rotate(0deg) translate(0px, 10px) scale(1.1); }
+      75% { transform: rotate(-4deg) translate(-10px, 5px) scale(1.05); }
+      100% { transform: rotate(0deg) translate(0px, 0px) scale(1); }
+    }
+
+    .superflag {
+      animation: comboFlag 6s infinite alternate ease-in-out;
+      width: 300px;
+      margin-top: 20px;
+      box-shadow: 0 0 25px #00ffcc;
+    }
+
     nav {
-      background: #290040;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      margin-top: 20px;
     }
+
     nav a {
-      color: #ff99cc;
-      margin: 0 1rem;
+      color: #00ffcc;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1rem;
     }
+
     nav a:hover {
       text-decoration: underline;
-    }
-    .badge {
-      background-color: #ff66cc;
-      color: white;
-      font-size: 0.6rem;
-      font-weight: bold;
-      padding: 2px 6px;
-      border-radius: 8px;
-      margin-left: 5px;
-      vertical-align: middle;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.7; }
-      100% { opacity: 1; }
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #ff66cc;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #220033;
-      color: #aaa;
-      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
+<header>
+  NeuralGlow.ai
+</header>
+
+<!-- Superflag inserted here -->
+<img src="neuralglow_flag.svg" class="superflag" alt="NeuralGlow Flag">
+
 <nav>
-  <div><strong>NeuralGlow.ai</strong></div>
-  <div>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
-    <a href="/satire-journals/clown_network_firewall_article_responsive.html">Satire Research <span class="badge">NEW</span></a>
-  </div>
+  <a href="/">Home</a>
+  <a href="/satire-journals/">Satire Research</a>
+  <a href="/secret-game-leaderboard.html">Arcade</a>
+  <a href="/victory-trophy.html">Trophy Room</a>
 </nav>
 
-<section id="home">
-  <h1>Artificial Intelligence. Real Panic.</h1>
-  <p>We don’t solve problems. We give them stylish names and wrap them in glowing sarcasm.</p>
-</section>
-
-<section id="about">
-  <h2>About NeuralGlow</h2>
-  <p>Welcome to the Department of Misguided Brilliance. Our mission? To elevate chaos into strategy — one buzzword at a time.</p>
-</section>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <ul>
-    <li>GlowBot AI Audits (now 82% snarkier)</li>
-    <li>Buzzword Heatmaps & Vibe Reports</li>
-    <li>Executive Confusion Training</li>
-    <li>PowerPoint Decks with More Arrows than Insight</li>
-  </ul>
-</section>
-
-<section id="team">
-  <h2>Meet the Team</h2>
-  <p><strong>Chief Paradox Officer:</strong> Glori.ai – speaks only in contradictions.</p>
-  <p><strong>Director of Ethical Ambiguity:</strong> Dr. Bias – redefines fairness daily.</p>
-  <p><strong>GlowBot:</strong> Our AI assistant who asks questions no one wants to answer.</p>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Have a question, a pitch, or an existential crisis? Drop us a line.</p>
-  <p><em>[Insert satirical form here]</em></p>
-</section>
-
-
-<!-- This HTML adds a newsletter form near the footer of the page -->
-<section id="newsletter">
-  <h2>Join the Glowletter</h2>
-  <p>Subscribe for glowing insights, satirical updates, and AI-generated nonsense. You’ll probably regret it.</p>
-  <form action="https://example.com/subscribe" method="post" style="margin-top: 1rem;">
-    <input type="email" name="email" placeholder="Enter your email (real or imaginary)" required
-           style="padding: 0.5rem; width: 250px; max-width: 80%; border: none; border-radius: 4px;" />
-    <button type="submit" style="padding: 0.5rem 1rem; margin-left: 0.5rem; background-color: #ff66cc; color: white; border: none; border-radius: 4px;">
-      Subscribe
-    </button>
-  </form>
-</section>
-
+<main>
+  <h1>Welcome to the Epicenter of Cosmic Satire</h1>
+  <p>Noise, Chaos, and Glowing Brilliance — All in One Place.</p>
+</main>
 
 <footer>
-  &copy; 2025 NeuralGlow.ai – Department of Misguided Brilliance. All errors preserved.
-
-  <div style="margin-top: 1.5rem; font-size: 0.8rem; color: #ff99cc;">
-    <span style="background: #ffcc00; color: #330033; padding: 0.3rem 0.6rem; border-radius: 999px; box-shadow: 0 0 8px #ffcc00;">
-      CLOWN VERIFIED
-    </span>
-    <span style="font-style: italic; margin-left: 0.5rem;">Certified by Upstairs Department of Noise Engineering</span>
-  </div>
-
-
-  <div style="margin-top: 1.5rem; font-size: 0.85rem; color: #ff99cc; text-align: center; animation: rotateWobble 3s infinite alternate;">
-    <span style="background: repeating-linear-gradient(45deg, #ffcc00, #ffcc00 10px, #ff66cc 10px, #ff66cc 20px);
-                 color: #330033; padding: 0.5rem 1rem; border: 3px dashed #ff33cc; border-radius: 50px; box-shadow: 0 0 12px #ff66cc, 0 0 6px #ffcc00;">
-      CLOWN VERIFIED
-    </span>
-    <div style="font-style: italic; margin-top: 0.5rem;">Issued by the Upstairs Syndicate of Chaotic Echoes</div>
-  </div>
-
-  <style>
-    @keyframes rotateWobble {
-      0% { transform: rotate(-2deg) scale(1); }
-      50% { transform: rotate(3deg) scale(1.03); }
-      100% { transform: rotate(-3deg) scale(1.01); }
-    }
-  </style>
-
-
-<div style="margin-top: 2rem; text-align: center; font-size: 0.8rem; color: #ccccff;">
-  <div style="display: inline-block; padding: 0.5rem 1rem; border: 2px solid #cc66ff; border-radius: 20px; cursor: pointer; transition: background-color 0.3s;"
-       onmouseover="this.style.backgroundColor='#330033';" onmouseout="this.style.backgroundColor='transparent';">
-    Made with Echoes
-  </div>
-</div>
-
-<div style="margin-top: 1rem; text-align: center; font-size: 0.75rem; color: #ffccff; font-style: italic;">
-  Certified Noise™ Producer<br/>License #404-Not-Found
-</div>
-
-
-<div style="margin-top: 2rem; text-align: center; font-size: 0.8rem; color: #ff99cc; animation: spinDrama 8s linear infinite;">
-  Powered by Upstairs Drama
-</div>
-
-<style>
-@keyframes spinDrama {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-</style>
-
+  &copy; 2025 NeuralGlow.ai | All Satirical Rights Reserved
 </footer>
-
-
-<!-- Hidden CLOWN ALERT Easter Egg -->
-<audio id="clown-horn" src="https://www.soundjay.com/button/sounds/button-10.mp3" preload="auto"></audio>
-
-<script>
-  document.addEventListener('click', function() {
-    var audio = document.getElementById('clown-horn');
-    if (audio) {
-      audio.play();
-    }
-    alert('CLOWN ALERT: You have clicked within the jurisdiction of NeuralGlow.ai!');
-  });
-</script>
-
-
-<!-- Flash Mode: Background color flashes randomly on click -->
-<script>
-  document.addEventListener('click', function() {
-    // Clown Horn
-    var audio = document.getElementById('clown-horn');
-    if (audio) {
-      audio.play();
-    }
-    alert('CLOWN ALERT: You have clicked within the jurisdiction of NeuralGlow.ai!');
-
-    // Random background flash
-    var colors = ['#ff66cc', '#6600ff', '#00ccff', '#33ff66', '#ffcc00', '#ff0033', '#cc00cc'];
-    document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
-  });
-</script>
 
 </body>
 </html>
