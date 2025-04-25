@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golden Vacuum Victory!</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffcc00, #ff66cc);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #330033;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: sparkleBackground 6s infinite alternate;
+    }
+    @keyframes sparkleBackground {
+      0% { background: linear-gradient(135deg, #ffcc00, #ff66cc); }
+      50% { background: linear-gradient(135deg, #33ccff, #ffcc00); }
+      100% { background: linear-gradient(135deg, #ff0033, #00ffcc); }
+    }
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px #ffffff;
+    }
+    p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 1rem;
+    }
+    img {
+      width: 200px;
+      margin-top: 2rem;
+      filter: drop-shadow(0 0 20px gold);
+      animation: floatTrophy 4s ease-in-out infinite alternate;
+    }
+    @keyframes floatTrophy {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
+    }
+    a {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #330033;
+      color: #ffffff;
+      font-weight: bold;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 0 15px #330033;
+      transition: background 0.3s;
+    }
+    a:hover {
+      background: #ff0033;
+      box-shadow: 0 0 25px #ff0033;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Golden Vacuum Victory!</h1>
+<p>Against all odds, you dodged chaos, chairs, vacuums, and even the Giant Vacuum Boss.<br>
+You are hereby awarded the highest honor in noise survival: The Golden Vacuum Trophy.</p>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Golden_Trophy.png/240px-Golden_Trophy.png" alt="Golden Vacuum Trophy">
+
+<a href="/">Return to Your Throne</a>
+
+<audio autoplay>
+  <source src="https://www.soundjay.com/human/sounds/applause-8.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
