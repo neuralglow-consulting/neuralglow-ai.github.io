@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralGlow.ai - Wormhole Flythrough + Music</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: black;
+      width: 100%;
+      height: 100%;
+      font-family: 'Courier New', monospace;
+      color: #00ffcc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 10;
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<h1>Welcome to NeuralGlow Wormhole</h1>
+
+<!-- Ambient music -->
+<audio id="backgroundMusic" autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_fde19cde7d.mp3?filename=space-ambient-11097.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
+let stars = [];
+const numStars = 400;
+let backgroundMode = "normal";
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+for (let i = 0; i < numStars; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    z: Math.random() * canvas.width
+  });
+}
+
+function randomBackgroundEvent() {
+  const roll = Math.random();
+  if (roll < 0.01) {
+    backgroundMode = "vortex";
+  } else if (roll < 0.02) {
+    backgroundMode = "glitch";
+  } else {
+    backgroundMode = "normal";
+  }
+}
+setInterval(randomBackgroundEvent, 3000);
+
+function moveStars() {
+  if (backgroundMode === "normal") {
+    ctx.fillStyle = "black";
+  } else if (backgroundMode === "vortex") {
+    ctx.fillStyle = "radial-gradient(circle, #330033, #000000)";
+  } else if (backgroundMode === "glitch") {
+    ctx.fillStyle = "#ff0066";
+  }
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < numStars; i++) {
+    let star = stars[i];
+    star.z -= 4;
+    if (star.z <= 0) {
+      star.z = canvas.width;
+      star.x = Math.random() * canvas.width;
+      star.y = Math.random() * canvas.height;
+    }
+
+    let k = 128.0 / star.z;
+    let px = star.x * k + canvas.width / 2;
+    let py = star.y * k + canvas.height / 2;
+
+    if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
+      let size = (1 - star.z / canvas.width) * 5;
+      if (backgroundMode === "glitch") {
+        ctx.fillStyle = "#ffcc00";
+      } else {
+        ctx.fillStyle = "#00ffcc";
+      }
+      ctx.fillRect(px, py, size, size);
+    }
+  }
+
+  requestAnimationFrame(moveStars);
+}
+
+// Try to adjust music volume lower when available
+window.onload = function() {
+  const music = document.getElementById('backgroundMusic');
+  if (music) {
+    music.volume = 0.2;
+  }
+};
+
+moveStars();
+</script>
+
+</body>
+</html>
