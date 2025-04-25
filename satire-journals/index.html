@@ -1,94 +1,119 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Satirical Research Archive – NeuralGlow.ai</title>
+  <title>NeuralGlow.ai – Where Artificial Intelligence Meets Sarcasm</title>
   <style>
     body {
-      font-family: 'Georgia', serif;
-      background: #f9f9f9;
-      color: #222;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1f0033, #330033);
+      color: #f0f0f0;
       margin: 0;
-      padding: 2rem;
+      padding: 0;
     }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
+    nav {
+      background: #290040;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
-    h1 {
-      color: #6610f2;
-      font-size: 2rem;
+    nav a {
+      color: #ff99cc;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
     }
-    .paper-list {
-      max-width: 800px;
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .badge {
+      background-color: #ff66cc;
+      color: white;
+      font-size: 0.6rem;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 8px;
+      margin-left: 5px;
+      vertical-align: middle;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
       margin: auto;
     }
-    .paper {
-      border-left: 5px solid #b30059;
-      padding-left: 1rem;
-      margin-bottom: 2rem;
-      background: #fff;
-      padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .paper h2 {
-      margin: 0;
-      color: #b30059;
-    }
-    .paper p {
-      margin: 0.5rem 0 0 0;
-    }
-    a.download {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #6610f2;
-      text-decoration: underline;
-      font-size: 0.9rem;
+    h1, h2 {
+      color: #ff66cc;
     }
     footer {
       text-align: center;
-      margin-top: 3rem;
+      padding: 2rem;
+      background: #220033;
+      color: #aaa;
       font-size: 0.9rem;
-      color: #999;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>NeuralGlow.ai – Satirical Research Archive</h1>
-  <p>Because science deserves a little chaos, too.</p>
-</header>
+<nav>
+  <div><strong>NeuralGlow.ai</strong></div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+    <a href="/satire-journals/">Satire Research <span class="badge">NEW</span></a>
+  </div>
+</nav>
 
-<section class="paper-list" id="paper-list">
-  <!-- Articles will be injected here dynamically -->
+<section id="home">
+  <h1>Artificial Intelligence. Real Panic.</h1>
+  <p>We don’t solve problems. We give them stylish names and wrap them in glowing sarcasm.</p>
+</section>
+
+<section id="about">
+  <h2>About NeuralGlow</h2>
+  <p>Welcome to the Department of Misguided Brilliance. Our mission? To elevate chaos into strategy — one buzzword at a time.</p>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>GlowBot AI Audits (now 82% snarkier)</li>
+    <li>Buzzword Heatmaps & Vibe Reports</li>
+    <li>Executive Confusion Training</li>
+    <li>PowerPoint Decks with More Arrows than Insight</li>
+  </ul>
+</section>
+
+<section id="team">
+  <h2>Meet the Team</h2>
+  <p><strong>Chief Paradox Officer:</strong> Glori.ai – speaks only in contradictions.</p>
+  <p><strong>Director of Ethical Ambiguity:</strong> Dr. Bias – redefines fairness daily.</p>
+  <p><strong>GlowBot:</strong> Our AI assistant who asks questions no one wants to answer.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Have a question, a pitch, or an existential crisis? Drop us a line.</p>
+  <p><em>[Insert satirical form here]</em></p>
 </section>
 
 <footer>
-  &copy; 2025 NeuralGlow.ai | Department of Misguided Brilliance
+  &copy; 2025 NeuralGlow.ai – Department of Misguided Brilliance. All errors preserved.
 </footer>
-
-<script>
-  async function loadArticles() {
-    const response = await fetch('articles.json');
-    const articles = await response.json();
-    const container = document.getElementById('paper-list');
-    
-    articles.forEach(article => {
-      const div = document.createElement('div');
-      div.className = 'paper';
-      div.innerHTML = `
-        <h2>${article.title}</h2>
-        <p>${article.description}</p>
-        <a class="download" href="${article.filename}">Read Full Article</a>
-      `;
-      container.appendChild(div);
-    });
-  }
-
-  loadArticles();
-</script>
 
 </body>
 </html>
