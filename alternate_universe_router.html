@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralGlow.ai - Multiverse Portal</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #330033, #000000);
+      width: 100%;
+      height: 100%;
+      font-family: 'Courier New', monospace;
+      color: #00ffcc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Crossing Through the Wormhole...</h1>
+<p>Deciding your fate in the NeuralGlow Multiverse...</p>
+
+<script>
+// Define possible landing destinations
+const universes = [
+  { name: "Satirical Archives", url: "/satire-journals/" },
+  { name: "Arcade Galaxy", url: "/secret-game-leaderboard.html" },
+  { name: "Victory Trophy Planet", url: "/victory-trophy.html" },
+  { name: "Mystery Wormhole Relics", url: "/wormhole-artifacts.html" },
+  { name: "Glowing Lab Reports", url: "/neural-lab-journals.html" }
+];
+
+// Randomly select a universe
+function randomLanding() {
+  const chosen = universes[Math.floor(Math.random() * universes.length)];
+  console.log("Redirecting to:", chosen.name, "at", chosen.url);
+  setTimeout(() => {
+    window.location.href = chosen.url;
+  }, 4000); // Pause 4 seconds for dramatic effect
+}
+
+// Launch random landing
+randomLanding();
+</script>
+
+</body>
+</html>
