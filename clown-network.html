@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to the Clown Network</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: repeating-radial-gradient(circle at center, #ff66cc, #6600ff 10%, #ff66cc 20%);
+      color: white;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: rotateBackground 20s linear infinite;
+    }
+    h1 {
+      font-size: 4rem;
+      text-shadow: 2px 2px #330033;
+    }
+    p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      margin: 2rem;
+      text-shadow: 1px 1px #330033;
+    }
+    @keyframes rotateBackground {
+      0% { background-position: center center; transform: rotate(0deg); }
+      100% { background-position: center center; transform: rotate(360deg); }
+    }
+    a {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #ff0033;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ff0033;
+      transition: background 0.3s;
+    }
+    a:hover {
+      background: #330033;
+      box-shadow: 0 0 15px #ff66cc;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Welcome to the Clown Network</h1>
+<p>You have successfully located the epicenter of illogical noise, strategic chaos, and weaponized stupidity.</p>
+<a href="/">Escape to Sanity</a>
+
+<!-- Secret clown horn when page loads -->
+<audio autoplay>
+  <source src="https://www.soundjay.com/button/sounds/button-10.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
