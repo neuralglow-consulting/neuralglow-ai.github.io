@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralGlow.ai - Landing Station</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #000000 0%, #330033 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Courier New', monospace;
+      color: #00ffcc;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 500px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    a {
+      text-decoration: none;
+      padding: 15px 30px;
+      background: #00ffcc;
+      color: #330033;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    a:hover {
+      background: #ff0066;
+      color: #ffffff;
+    }
+
+    .glow {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #00ffcc 0%, transparent 70%);
+      position: absolute;
+      z-index: -1;
+      animation: pulseGlow 4s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.2); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<h1>Landing Station Reached</h1>
+<p>You've survived the flythrough. Prepare for the next step in NeuralGlow's cosmic journey.</p>
+
+<a href="/satire-journals/">Enter the Archives</a>
+
+</body>
+</html>
