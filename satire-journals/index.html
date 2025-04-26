@@ -1,94 +1,133 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Satirical Research Archive – NeuralGlow.ai</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeuralGlow Research — Satire Journals</title>
+  <meta name="description" content="NeuralGlow Satirical Research: Smart humor, structured chaos, and cognitive clarity experiments.">
+  <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
   <style>
     body {
-      font-family: 'Georgia', serif;
-      background: #f9f9f9;
-      color: #222;
       margin: 0;
-      padding: 2rem;
+      padding: 0;
+      font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #e0f2e9, #c8e6c9);
+      background-attachment: fixed;
+      color: #1a1a1a;
+      overflow-x: hidden;
     }
     header {
-      text-align: center;
-      margin-bottom: 2rem;
+      background: rgba(10, 50, 10, 0.8);
+      color: #ffffff;
+      padding: 20px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #b2fab4;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    main {
+      max-width: 1000px;
+      margin: 80px auto 40px auto;
+      padding: 20px;
     }
     h1 {
-      color: #6610f2;
-      font-size: 2rem;
+      font-size: 2.5rem;
+      text-align: center;
+      color: #1b5e20;
+      margin-bottom: 40px;
     }
-    .paper-list {
-      max-width: 800px;
-      margin: auto;
+    .journal-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
-    .paper {
-      border-left: 5px solid #b30059;
-      padding-left: 1rem;
-      margin-bottom: 2rem;
-      background: #fff;
-      padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    .journal-entry {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
-    .paper h2 {
-      margin: 0;
-      color: #b30059;
+    .journal-entry:hover {
+      transform: translateY(-5px);
     }
-    .paper p {
-      margin: 0.5rem 0 0 0;
+    .journal-entry h2 {
+      font-size: 1.6rem;
+      color: #1b5e20;
     }
-    a.download {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #6610f2;
+    .journal-entry p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .journal-entry a {
+      color: #2e7d32;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .journal-entry a:hover {
       text-decoration: underline;
-      font-size: 0.9rem;
     }
     footer {
+      background: rgba(10, 50, 10, 0.8);
+      color: #ccc;
       text-align: center;
-      margin-top: 3rem;
+      padding: 20px 10px;
       font-size: 0.9rem;
-      color: #999;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>NeuralGlow.ai – Satirical Research Archive</h1>
-  <p>Because science deserves a little chaos, too.</p>
+  <div><strong>NeuralGlow.ai</strong></div>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/satire-journals/">Research</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
 </header>
 
-<section class="paper-list" id="paper-list">
-  <!-- Articles will be injected here dynamically -->
-</section>
+<main>
+  <h1>Satirical Research Journals</h1>
+
+  <div class="journal-list">
+
+    <div class="journal-entry">
+      <h2>Clown Network Firewall</h2>
+      <p>A satirical analysis of unauthorized psychological experiments — resilience built through weaponized absurdity.</p>
+      <a href="/satire-journals/clown_network_firewall_article_responsive.html">Read Full Article →</a>
+    </div>
+
+    <div class="journal-entry">
+      <h2>More Journals Coming Soon...</h2>
+      <p>Stay tuned as more strange research blooms quietly under the canopy.</p>
+      <a href="#">Stay Curious</a>
+    </div>
+
+  </div>
+
+</main>
 
 <footer>
-  &copy; 2025 NeuralGlow.ai | Department of Misguided Brilliance
+  &copy; 2025 NeuralGlow.ai | Calm. Curious. Silent Research.
 </footer>
-
-<script>
-  async function loadArticles() {
-    const response = await fetch('articles.json');
-    const articles = await response.json();
-    const container = document.getElementById('paper-list');
-    
-    articles.forEach(article => {
-      const div = document.createElement('div');
-      div.className = 'paper';
-      div.innerHTML = `
-        <h2>${article.title}</h2>
-        <p>${article.description}</p>
-        <a class="download" href="${article.filename}">Read Full Article</a>
-      `;
-      container.appendChild(div);
-    });
-  }
-
-  loadArticles();
-</script>
 
 </body>
 </html>
