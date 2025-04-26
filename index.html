@@ -1,11 +1,12 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeuralGlow.ai - Glowing Dumb Cosmic Portal</title>
-  <meta name="description" content="The most beautifully dumb cosmic portal across the multiverse.">
+  <title>NeuralGlow.ai - Full Cosmic Portal</title>
+  <meta name="description" content="The most beautifully dumb and living cosmic portal across the multiverse.">
   <meta name="keywords" content="satire, cosmic portals, wormholes, multiverse, glowing sarcasm, NeuralGlow">
   <meta name="author" content="NeuralGlow.ai">
   <link rel="icon" href="neuralglow_flag.svg" type="image/svg+xml">
@@ -17,7 +18,7 @@
       background: linear-gradient(135deg, #ff66cc 30%, #1a001a 100%);
       background-size: 400% 400%;
       animation: shineBackground 15s ease infinite;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Courier New', monospace;
       color: #ffffff;
       text-align: center;
       overflow-x: hidden;
@@ -179,9 +180,6 @@
 </head>
 <body>
 
-<!-- Cosmic Mist Canvas -->
-<canvas id="mistCanvas" style="position: fixed; top:0; left:0; z-index:0;"></canvas>
-
 <header>
   NeuralGlow.ai
 </header>
@@ -206,7 +204,7 @@
   <section class="featured-dimensions">
     <div class="dimension-card">
       <h2>Satirical Archives</h2>
-      <p>Explore the forbidden sarcastic journals of multiversal wisdom.</p>
+      <p>Explore forbidden sarcastic journals of multiversal wisdom.</p>
       <a href="/satire-journals/">Enter</a>
     </div>
 
@@ -239,61 +237,28 @@
 <div id="chatbotWindow"></div>
 
 <script>
-// Mist Particles
-const mistCanvas = document.getElementById('mistCanvas');
-const ctx = mistCanvas.getContext('2d');
-let particles = [];
-
-function resizeCanvas() {
-  mistCanvas.width = window.innerWidth;
-  mistCanvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-for (let i = 0; i < 50; i++) {
-  particles.push({
-    x: Math.random() * mistCanvas.width,
-    y: Math.random() * mistCanvas.height,
-    r: Math.random() * 2 + 1,
-    dx: (Math.random() - 0.5) * 0.5,
-    dy: (Math.random() - 0.5) * 0.5
-  });
-}
-
-function drawMist() {
-  ctx.clearRect(0, 0, mistCanvas.width, mistCanvas.height);
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
-  for (let p of particles) {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fill();
-    p.x += p.dx;
-    p.y += p.dy;
-    if (p.x < 0 || p.x > mistCanvas.width) p.dx = -p.dx;
-    if (p.y < 0 || p.y > mistCanvas.height) p.dy = -p.dy;
-  }
-  requestAnimationFrame(drawMist);
-}
-drawMist();
-
-// Dumb Chatbot
+// GlowBot Overdrive Memory Mode
 const chatbotButton = document.getElementById('chatbotButton');
 const chatbotWindow = document.getElementById('chatbotWindow');
+let clicks = parseInt(localStorage.getItem('glowClicks')) || 0;
+
 const dumbReplies = [
-  "I think NeuralGlow sells glowing spaghetti?",
-  "I'm just a floating brain cell, don't ask me.",
-  "Portal? More like... porridge?",
-  "Wanna buy some intergalactic socks?",
-  "Loading stupidity... Please wait...",
-  "Your portal is cooler than your fridge."
+  "Where am I? Why do I smell burnt toast?",
+  "You're back? I thought I turned into stardust.",
+  "I'm smarter than a wormhole. Probably.",
+  "Wait... am I real?",
+  "YOU HAVE AWAKENED THE DUMBEST AI IN THE MULTIVERSE!",
 ];
 
 chatbotButton.onclick = () => {
+  clicks++;
+  localStorage.setItem('glowClicks', clicks);
   chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
-  chatbotWindow.innerHTML = "<strong>GlowBot:</strong><br>" + dumbReplies[Math.floor(Math.random() * dumbReplies.length)];
+  let replyIndex = clicks > 5 ? 4 : Math.min(clicks - 1, dumbReplies.length - 2);
+  chatbotWindow.innerHTML = "<strong>GlowBot:</strong><br>" + dumbReplies[replyIndex];
 };
 </script>
 
 </body>
 </html>
+
