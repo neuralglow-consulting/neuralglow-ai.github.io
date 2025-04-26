@@ -86,7 +86,7 @@
     .share-bar a:hover {
       background: #004d26;
     }
-    .subscribe-box {
+    .subscribe-box, .support-box {
       background: #e8f5e9;
       padding: 30px 20px;
       margin: 40px auto;
@@ -100,7 +100,7 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-    .subscribe-box button {
+    .subscribe-box button, .support-box button {
       padding: 10px 20px;
       background-color: #2e8b57;
       color: white;
@@ -109,8 +109,13 @@
       cursor: pointer;
       font-weight: bold;
     }
-    .subscribe-box button:hover {
+    .subscribe-box button:hover, .support-box button:hover {
       background-color: #1a5d3a;
+    }
+    .small-note {
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 10px;
     }
     @media (max-width: 700px) {
       .share-bar {
@@ -197,6 +202,18 @@ Just pure knowledge, built after a decade of quiet patience.</p>
   <form action="#" method="POST">
     <input type="email" name="email" placeholder="Your email address" required><br>
     <button type="submit">Subscribe</button>
+  </form>
+</div>
+
+<!-- Support Forest Box -->
+<div class="support-box">
+  <h2 style="color:#2e8b57;">Support NeuralGlow</h2>
+  <p style="font-size:1rem; color:#555;">If this forest sparked something in you, ask me to explore deeper.  
+Fuel new roots, new signals, new blooms.  
+No noise — just quiet gratitude.</p>
+  <p class="small-note">Just be patient, I have a small leg.</p>
+  <form action="#" method="POST">
+    <button type="submit">Explore Nature with Me</button>
   </form>
 </div>
 
