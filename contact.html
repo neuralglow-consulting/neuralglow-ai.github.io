@@ -19,13 +19,16 @@
     header {
       background: rgba(46, 139, 87, 0.9);
       color: #fff;
-      padding: 15px 30px;
+      padding: 10px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 100;
+    }
+    header .logo img {
+      height: 40px;
     }
     header nav a {
       color: #f0fff0;
@@ -81,6 +84,40 @@
     footer a:hover {
       text-decoration: underline;
     }
+    .share-bar {
+      position: fixed;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 100;
+    }
+    .share-bar a {
+      width: 36px;
+      height: 36px;
+      background: #2e8b57;
+      color: #f0fff0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .share-bar a:hover {
+      background: #004d26;
+    }
+    @media (max-width: 700px) {
+      .share-bar {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px 0;
+      }
+    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -91,7 +128,9 @@
 <body>
 
 <header>
-  <div><strong>NeuralGlow.ai</strong></div>
+  <div class="logo">
+    <a href="/"><img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow Logo" style="height: 40px;"></a>
+  </div>
   <nav>
     <a href="/about.html">About</a>
     <a href="/research.html">Research</a>
@@ -101,15 +140,23 @@
 </header>
 
 <main>
+
+<div class="share-bar">
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai" target="_blank" aria-label="Share on LinkedIn">in</a>
+  <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai" target="_blank" aria-label="Share on Twitter">X</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai" target="_blank" aria-label="Share on Facebook">f</a>
+</div>
+
+
 <h1>Contact Us</h1>
 <p>For inquiries, collaborations, or just to say hello:</p>
 <p>Email: <a href="mailto:contact@neuralglow.ai">contact@neuralglow.ai</a></p>
 <p>We welcome thoughtful connections.</p>
-</main>
 
+
+</main>
 <footer>
   &copy; 2025 NeuralGlow.ai — <a href="/contact.html">Contact</a> | <a href="/privacy.html">Privacy</a>
 </footer>
-
 </body>
 </html>
