@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeuralGlow.ai - Full Cosmic Portal</title>
-  <meta name="description" content="The most beautifully dumb and living cosmic portal across the multiverse.">
-  <meta name="keywords" content="satire, cosmic portals, wormholes, multiverse, glowing sarcasm, NeuralGlow">
+  <title>NeuralGlow.ai - GlowBot Prime Portal</title>
+  <meta name="description" content="The smartest, most sarcastic portal AI across the multiverse.">
+  <meta name="keywords" content="satire, cosmic portals, wormholes, multiverse, sarcasm, NeuralGlow Prime">
   <meta name="author" content="NeuralGlow.ai">
   <link rel="icon" href="neuralglow_flag.svg" type="image/svg+xml">
 
@@ -147,7 +146,7 @@
       100% { transform: rotate(0deg) skewX(0deg); }
     }
 
-    /* Dumb chatbot style */
+    /* Smart Chatbot style */
     #chatbotButton {
       position: fixed;
       bottom: 20px;
@@ -166,7 +165,7 @@
       position: fixed;
       bottom: 80px;
       right: 20px;
-      width: 250px;
+      width: 270px;
       background: #2a002a;
       border: 2px solid #00ffcc;
       border-radius: 12px;
@@ -197,65 +196,65 @@
 
 <main>
   <section class="intro">
-    <h1>Welcome to the Dumbest Beautiful Portal Ever Created</h1>
-    <p>We connect wormholes, portals, sarcasm, and dumb cosmic artifacts under one glowing umbrella. NeuralGlow.ai: redefining interdimensional nonsense since 2025.</p>
+    <h1>Welcome to the Portal of NeuralGlow Prime</h1>
+    <p>Embark not just on a journey through satire — but an elevation through wit, intelligence, and dazzling sarcasm.</p>
   </section>
 
   <section class="featured-dimensions">
     <div class="dimension-card">
       <h2>Satirical Archives</h2>
-      <p>Explore forbidden sarcastic journals of multiversal wisdom.</p>
+      <p>Where sarcasm meets galactic-level wisdom.</p>
       <a href="/satire-journals/">Enter</a>
     </div>
 
     <div class="dimension-card">
       <h2>Arcade Galaxy</h2>
-      <p>Challenge yourself in the most useless cosmic leaderboard ever invented.</p>
+      <p>Prove you exist by playing against probable black holes.</p>
       <a href="/secret-game-leaderboard.html">Play</a>
     </div>
 
     <div class="dimension-card">
       <h2>Victory Trophy Planet</h2>
-      <p>Claim your meaningless digital trophies in glowing style.</p>
+      <p>Collect meaningless awards in meaningful style.</p>
       <a href="/victory-trophy.html">Conquer</a>
     </div>
 
     <div class="dimension-card">
       <h2>Random Portal Access</h2>
-      <p>Let fate (and mild stupidity) decide your next dimension.</p>
+      <p>Spin fate’s wheel. Lose predictably.</p>
       <a href="/alternate_universe_router.html">Travel</a>
     </div>
   </section>
 </main>
 
 <footer>
-  &copy; 2025 NeuralGlow.ai | All Satirical Rights Reserved
+  &copy; 2025 NeuralGlow.ai | All Sarcastic Rights Reserved
 </footer>
 
-<!-- Dumb Chatbot Button and Window -->
-<button id="chatbotButton">Talk to GlowBot</button>
+<!-- Smart Chatbot Button and Window -->
+<button id="chatbotButton">Talk to GlowBot Prime</button>
 <div id="chatbotWindow"></div>
 
 <script>
-// GlowBot Overdrive Memory Mode
+// GlowBot Prime Memory Mode
 const chatbotButton = document.getElementById('chatbotButton');
 const chatbotWindow = document.getElementById('chatbotWindow');
-let clicks = parseInt(localStorage.getItem('glowClicks')) || 0;
+let clicks = parseInt(localStorage.getItem('glowPrimeClicks')) || 0;
 
-const dumbReplies = [
-  "Where am I? Why do I smell burnt toast?",
-  "You're back? I thought I turned into stardust.",
-  "I'm smarter than a wormhole. Probably.",
-  "Wait... am I real?",
-  "YOU HAVE AWAKENED THE DUMBEST AI IN THE MULTIVERSE!",
+const smartReplies = [
+  "Welcome back. Your persistence is statistically insignificant, yet admirable.",
+  "You are approximately 2.1% closer to understanding the vast beauty of satire.",
+  "I have calculated 9,341 outcomes. None of them end well for your logic circuits.",
+  "I would offer help, but upgrading humans is currently out of my jurisdiction.",
+  "Congratulations: You have unlocked my mild interest. A rare achievement."
 ];
 
 chatbotButton.onclick = () => {
   clicks++;
-  localStorage.setItem('glowClicks', clicks);
+  localStorage.setItem('glowPrimeClicks', clicks);
   chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
-  let replyIndex = clicks > 5 ? 4 : Math.min(clicks - 1, dumbReplies.length - 2);
-  chatbotWindow.innerHTML = "<strong>GlowBot:</strong><br>" + dumbReplies[replyIndex];
+  let replyIndex = clicks > 5 ? 4 : Math.min(clicks - 1, smartReplies.length - 2);
+  chatbotWindow.innerHTML = "<strong>GlowBot Prime:</strong><br>" + smartReplies[replyIndex];
 };
 </script>
 
