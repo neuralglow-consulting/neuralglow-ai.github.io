@@ -2,160 +2,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog — NeuralGlow.ai</title>
-
-<style>
-    html { scroll-behavior: smooth; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NeuralGlow Blog — Quiet Sparks</title>
+  <meta name="description" content="NeuralGlow Blog: Quiet reflections, curious thoughts, and silent sparks of discovery.">
+  <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
+  <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Inter', 'Poppins', 'IBM Plex Sans', sans-serif;
-      background: linear-gradient(to bottom, #e0f2e9, #f9f9f9);
+      font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #e0f2e9, #c8e6c9);
+      background-attachment: fixed;
       color: #1a1a1a;
-      line-height: 1.8;
+      overflow-x: hidden;
     }
     header {
-      background: rgba(46, 139, 87, 0.9);
-      color: #fff;
-      padding: 10px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: rgba(10, 50, 10, 0.8);
+      color: #ffffff;
+      padding: 20px 30px;
       position: sticky;
       top: 0;
       z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    header .logo img {
-      height: 40px;
-    }
-    header nav a {
-      color: #f0fff0;
-      text-decoration: none;
+    nav a {
+      color: #b2fab4;
       margin-left: 20px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      text-decoration: none;
+      font-weight: bold;
     }
-    header nav a:hover {
+    nav a:hover {
+      color: #ffffff;
       text-decoration: underline;
     }
     main {
-      max-width: 900px;
-      margin: 80px auto 40px;
-      padding: 0 20px;
-      text-align: center;
+      max-width: 1100px;
+      margin: 80px auto 40px auto;
+      padding: 20px;
     }
     h1 {
       font-size: 2.5rem;
-      color: #2e8b57;
-      margin-bottom: 20px;
-      animation: fadeIn 2s ease;
+      text-align: center;
+      color: #1b5e20;
+      margin-bottom: 40px;
     }
-    p, ul, li {
-      font-size: 1.2rem;
-      color: #3d3d3d;
-      margin-bottom: 20px;
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
-    ul {
-      list-style-type: none;
-      padding: 0;
+    .blog-post {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      text-align: center;
     }
-    ul li::before {
-      content: "🌿 ";
-      margin-right: 8px;
+    .blog-post:hover {
+      transform: translateY(-5px);
+    }
+    .blog-post h2 {
+      font-size: 1.5rem;
+      color: #1b5e20;
+      margin-bottom: 10px;
+    }
+    .blog-post p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .blog-post a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 20px;
+      background-color: #2e7d32;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .blog-post a:hover {
+      background-color: #1b5e20;
     }
     footer {
-      background: rgba(46, 139, 87, 0.9);
-      color: #f0fff0;
+      background: rgba(10, 50, 10, 0.8);
+      color: #ccc;
       text-align: center;
       padding: 20px 10px;
-      font-size: 0.85rem;
-      margin-top: 100px;
+      font-size: 0.9rem;
+      margin-top: 60px;
     }
-    footer a {
-      color: #f0fff0;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: 500;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    .share-bar {
-      position: fixed;
-      top: 50%;
-      left: 10px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 100;
-    }
-    .share-bar a {
-      width: 36px;
-      height: 36px;
-      background: #2e8b57;
-      color: #f0fff0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      font-size: 16px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .share-bar a:hover {
-      background: #004d26;
-    }
-    @media (max-width: 700px) {
-      .share-bar {
-        position: static;
-        flex-direction: row;
-        justify-content: center;
-        margin: 20px 0;
-      }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-</style>
-
+  </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">
-    <a href="/"><img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow Logo" style="height: 40px;"></a>
-  </div>
+  <div><strong>NeuralGlow.ai</strong></div>
   <nav>
+    <a href="/">Home</a>
     <a href="/about.html">About</a>
-    <a href="/research.html">Research</a>
-    <a href="/blog.html">Blog</a>
+    <a href="/satire-journals/">Research</a>
+    <a href="/blog/">Blog</a>
     <a href="/contact.html">Contact</a>
   </nav>
 </header>
 
 <main>
+  <h1>NeuralGlow Blog</h1>
+  <div class="blog-grid">
+    <div class="blog-post">
+      <h2>Clown Network Firewall</h2>
+      <p>A satirical exploration of psychological resistance to weaponized nonsense.</p>
+      <a href="/satire-journals/clown_network_firewall_article_responsive.html">Read More</a>
+    </div>
 
-<div class="share-bar">
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai" target="_blank" aria-label="Share on LinkedIn">in</a>
-  <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai" target="_blank" aria-label="Share on Twitter">X</a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai" target="_blank" aria-label="Share on Facebook">f</a>
-</div>
-
-
-<h1>Blog</h1>
-<p>Thoughts, expansions, and reflections on the journey of psychological clarity and resilience.</p>
-<p><em>First blog post coming soon!</em></p>
-
-
+    <div class="blog-post">
+      <h2>More Silent Sparks (Coming Soon)</h2>
+      <p>Stay tuned as the quiet sparks of observation light up new trails.</p>
+      <a href="#">Coming Soon</a>
+    </div>
+  </div>
 </main>
+
 <footer>
-  &copy; 2025 NeuralGlow.ai — <a href="/contact.html">Contact</a> | <a href="/privacy.html">Privacy</a>
+  &copy; 2025 NeuralGlow.ai | Calm. Curious. Silent.
 </footer>
+
 </body>
 </html>
