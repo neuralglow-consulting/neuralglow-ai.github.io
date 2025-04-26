@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NeuralGlow.ai — Psychological Defense</title>
-  <meta name="description" content="NeuralGlow: Psychological Defense in an Absurd World. Research, resilience, and clarity for the modern mind.">
-  <link rel="icon" href="/neuralglow_flag.svg" type="image/svg+xml">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NeuralGlow.ai — Psychological Defense</title>
+<meta name="description" content="NeuralGlow: Psychological Defense in an Absurd World. Research, resilience, and clarity for the modern mind.">
+<link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
+<style>
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
@@ -20,13 +20,16 @@
     header {
       background: rgba(46, 139, 87, 0.9);
       color: #fff;
-      padding: 15px 30px;
+      padding: 10px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 100;
+    }
+    header .logo img {
+      height: 40px;
     }
     header nav a {
       color: #f0fff0;
@@ -41,15 +44,14 @@
       text-decoration: underline;
     }
     main {
-      max-width: 960px;
+      max-width: 900px;
       margin: 80px auto 40px;
       padding: 0 20px;
       text-align: center;
     }
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       color: #2e8b57;
-      margin-top: 100px;
       margin-bottom: 20px;
       animation: fadeIn 2s ease;
     }
@@ -59,6 +61,40 @@
       max-width: 700px;
       margin: 0 auto 60px auto;
       animation: fadeIn 3s ease;
+    }
+    .share-bar {
+      position: fixed;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 100;
+    }
+    .share-bar a {
+      width: 36px;
+      height: 36px;
+      background: #2e8b57;
+      color: #f0fff0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .share-bar a:hover {
+      background: #004d26;
+    }
+    @media (max-width: 700px) {
+      .share-bar {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin: 20px 0;
+      }
     }
     footer {
       background: rgba(46, 139, 87, 0.9);
@@ -81,12 +117,13 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-  </style>
+</style>
 </head>
 <body>
-
 <header>
-  <div><strong>NeuralGlow.ai</strong></div>
+  <div class="logo">
+    <a href="/"><img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow Logo" style="height: 40px;"></a>
+  </div>
   <nav>
     <a href="/about.html">About</a>
     <a href="/research.html">Research</a>
@@ -96,9 +133,19 @@
 </header>
 
 <main>
-  <h1>Psychological Defense in an Absurd World</h1>
-  <p class="lead">Researching resilience, building clarity, and standing firm amidst informational chaos.<br>
-  NeuralGlow is your calm within the storm — quiet strength in a world of noise.</p>
+<div class="share-bar">
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai" target="_blank" aria-label="Share on LinkedIn">in</a>
+  <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai" target="_blank" aria-label="Share on Twitter">X</a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai" target="_blank" aria-label="Share on Facebook">f</a>
+</div>
+
+<h1>Psychological Defense in an Absurd World</h1>
+<p class="lead">Researching resilience, building clarity, and standing firm amidst informational chaos.<br>
+NeuralGlow is your calm within the storm — quiet strength in a world of noise.</p>
+
+<div class="flower-divider">
+  <img src="/assets/images/IMG_1210.jpeg" alt="Wild Flower" style="max-width:300px; margin:40px auto; display:block; opacity:0.8; border-radius:8px;">
+</div>
 </main>
 
 <footer>
