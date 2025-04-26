@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralGlow.ai - Portal Code Generator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ff66cc 30%, #1a001a 100%);
+      font-family: 'Courier New', monospace;
+      color: #00ffcc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #00ffcc;
+      color: #330033;
+      border: none;
+      padding: 12px 20px;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #ff66ff;
+      color: white;
+    }
+
+    #codeResult {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      background: #2a002a;
+      padding: 10px 20px;
+      border: 2px solid #00ffcc;
+      border-radius: 12px;
+    }
+
+    .hidden-link {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .hidden-link a {
+      color: #00ffcc;
+      text-decoration: underline;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Generate Your Portal Code</h1>
+<button onclick="generateCode()">Generate Portal Code!</button>
+<div id="codeResult">Waiting for your cosmic fate...</div>
+<div id="secretLink" class="hidden-link"></div>
+
+<script>
+const secretCodes = {
+  "GLOW-2025-X": "/satire-journals/",
+  "GLOW-9999-Z": "/secret-game-leaderboard.html",
+  "NEURAL-777-Y": "/victory-trophy.html"
+};
+
+function randomCode() {
+  const prefix = ["GLOW", "NEURAL", "PORTAL", "WORMHOLE"];
+  const part1 = prefix[Math.floor(Math.random() * prefix.length)];
+  const part2 = Math.floor(Math.random() * 9000) + 1000;
+  const part3 = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+  return `${part1}-${part2}-${part3}`;
+}
+
+function generateCode() {
+  const code = randomCode();
+  document.getElementById('codeResult').innerText = code;
+  const secretLink = document.getElementById('secretLink');
+  if (secretCodes[code]) {
+    secretLink.innerHTML = `<a href="${secretCodes[code]}">Enter your portal!</a>`;
+    secretLink.style.display = "block";
+  } else {
+    secretLink.innerHTML = "<em>Oops, you opened a potato dimension.</em>";
+    secretLink.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
