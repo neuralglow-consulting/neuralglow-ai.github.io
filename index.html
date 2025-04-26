@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeuralGlow.ai - Dumb Cosmic Portal</title>
+  <title>NeuralGlow.ai - Glowing Dumb Cosmic Portal</title>
   <meta name="description" content="Officially the most beautifully dumb portal across the NeuralGlow multiverse.">
   <meta name="keywords" content="satire, cosmic portals, wormholes, multiverse, glowing sarcasm, NeuralGlow">
   <meta name="author" content="NeuralGlow.ai">
@@ -15,10 +15,18 @@
       margin: 0;
       padding: 0;
       background: linear-gradient(135deg, #ff66cc 30%, #1a001a 100%);
+      background-size: 400% 400%;
+      animation: shineBackground 15s ease infinite;
       color: #ffffff;
       font-family: 'Arial', sans-serif;
       text-align: center;
       overflow-x: hidden;
+    }
+
+    @keyframes shineBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     header, footer {
@@ -118,7 +126,14 @@
       color: white;
     }
 
+    
     @keyframes comboFlag {
+      0% { transform: rotate(0deg) translate(0px, 0px) scale(1); }
+      25% { transform: rotate(2deg) translate(5px, 3px) scale(1.03); }
+      50% { transform: rotate(0deg) translate(0px, 5px) scale(1.06); }
+      75% { transform: rotate(-2deg) translate(-5px, 3px) scale(1.03); }
+      100% { transform: rotate(0deg) translate(0px, 0px) scale(1); }
+    
       0% { transform: rotate(0deg) translate(0px, 0px) scale(1); }
       25% { transform: rotate(4deg) translate(10px, 5px) scale(1.05); }
       50% { transform: rotate(0deg) translate(0px, 10px) scale(1.1); }
