@@ -1,1 +1,169 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glow Seeds: Monthly Quotes — NeuralGlow.ai</title>
+<meta name="description" content="Monthly changing quotes from the Glow Forest to plant calmness, curiosity, and clarity.">
+<link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
+<style>
+    html { scroll-behavior: smooth; }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', 'Poppins', 'IBM Plex Sans', sans-serif;
+        background: linear-gradient(to bottom, #e0f2e9, #f9f9f9);
+        color: #1a1a1a;
+        line-height: 1.8;
+        overflow-x: hidden;
+    }
+    header {
+        background: rgba(46, 139, 87, 0.9);
+        color: #fff;
+        padding: 10px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    header .logo img {
+        height: 40px;
+    }
+    header nav a {
+        color: #f0fff0;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    header nav a:hover {
+        text-decoration: underline;
+    }
+    main {
+        max-width: 800px;
+        margin: 100px auto 40px;
+        padding: 0 20px;
+        text-align: center;
+        position: relative;
+    }
+    h1 {
+        font-size: 2.5rem;
+        color: #2e8b57;
+        margin-bottom: 20px;
+        animation: fadeIn 2s ease;
+    }
+    #quote {
+        font-size: 1.6rem;
+        font-style: italic;
+        color: #3d3d3d;
+        margin: 40px 0 20px;
+        opacity: 0;
+        animation: fadeIn 2s ease forwards;
+        position: relative;
+    }
+    .leaf {
+        font-size: 2rem;
+        color: #2e8b57;
+        margin-top: 10px;
+        animation: float 4s infinite ease-in-out;
+    }
+    .back-home {
+        margin-top: 40px;
+    }
+    .back-home a {
+        text-decoration: none;
+        background: #2e8b57;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: background 0.3s;
+    }
+    .back-home a:hover {
+        background: #1a5d3a;
+    }
+    footer {
+        margin-top: 80px;
+        text-align: center;
+        font-size: 0.8rem;
+        color: #666;
+        padding-bottom: 30px;
+    }
+    .mist {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+        z-index: 0;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+</style>
+</head>
+<body>
+
+<div class="mist"></div>
+
+<header>
+  <div class="logo">
+    <a href="/"><img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow Logo"></a>
+  </div>
+  <nav>
+    <a href="/about.html">About</a>
+    <a href="/research.html">Research</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+<h1>Glow Seeds: Monthly Quotes</h1>
+<div id="quote">Loading...</div>
+<div class="leaf">🍃</div>
+
+<div class="back-home">
+  <a href="/">Back to Home</a>
+</div>
+</main>
+
+<footer>
+  &copy; 2025 NeuralGlow.ai — Calm. Curious. Quiet.
+</footer>
+
+<script>
+  const quotes = [
+    "January: New beginnings need old roots.",
+    "February: Curiosity is quieter than love, but it lasts longer.",
+    "March: Even seeds laugh underground before blooming.",
+    "April: Rain teaches forests more than sunlight does.",
+    "May: Patience grows faster than ambition if you feed it properly.",
+    "June: Calm minds harvest better gardens.",
+    "July: Slow rivers shape the strongest stones.",
+    "August: Droughts test roots — not leaves.",
+    "September: Quiet harvests build strong winters.",
+    "October: Forests let go, humans hold on.",
+    "November: Decay is just preparation for spring.",
+    "December: Silent seeds sleep louder than storms."
+  ];
+
+  const today = new Date();
+  const monthIndex = today.getMonth(); // 0 = January
+  document.getElementById("quote").innerText = quotes[monthIndex];
+</script>
+
+</body>
+</html>
