@@ -193,6 +193,18 @@
 
 </main>
 
+<!-- Add this script at the end of the <main> section or before the closing </body> tag -->
+<div id="disqus_thread"></div>
+<script>
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://your-disqus-shortname.disqus.com/embed.js'; // Replace 'your-disqus-shortname' with your Disqus shortname
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+
 <div class="back-home">
   <a href="/">← Back to Home</a>
 </div>
