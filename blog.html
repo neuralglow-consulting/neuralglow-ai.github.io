@@ -1,60 +1,66 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NeuralGlow Blog — Chronicles of Calm and Madness</title>
-  <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
-  <style>
-    body {
-      font-family: 'Poppins', 'Inter', sans-serif;
-      background: #e0f2e9;
-      color: #1a1a1a;
-      margin: 0;
-      padding: 0;
-    }
-    header, footer {
-      background: #2e8b57;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    .blog-list {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .blog-post {
-      margin-bottom: 30px;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .blog-post h3 {
-      margin-top: 0;
-      font-size: 1.5rem;
-      color: #2e8b57;
-    }
-    .blog-post a {
-      color: #1a1a1a;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .blog-post a:hover {
-      text-decoration: underline;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Post Card — NeuralGlow.ai</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .card {
+    background: #ffffff;
+    width: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  .card-header {
+    background: linear-gradient(to right, #2e8b57, #66bb6a);
+    color: #fff;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .card-body {
+    padding: 20px;
+  }
+  .card-body p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+  .card-footer {
+    padding: 10px 20px 20px 20px;
+  }
+  .card-footer a {
+    text-decoration: none;
+    background: #2e8b57;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .card-footer a:hover {
+    background: #1a5d3a;
+  }
+</style>
 </head>
-
 <body>
-
-<header>
-  <h1>NeuralGlow Blog</h1>
-  <p>Chronicles of Calm, Forests, and Glorious Madness</p>
-</header>
-
-<main class="blog-list">
 
 <div class="card">
   <div class="card-header">
@@ -66,45 +72,7 @@
   <div class="card-footer">
     <a href="/blog/serendipitous_spark_of_old_code.html">Read More</a>
   </div>
-</div>  
-
-  <div class="blog-post">
-  <a href="http://neuralglow.ai/blog/GitHub-copilot-new.html" style="text-decoration:none; color:inherit;">
-    <div class="card-content">
-      <h3>GitHub Copilot: Calm Power for Creators</h3>
-      <p>Explore how AI-assisted coding shapes a new era where resilience, precision, and creativity lead the way beyond noisy automation.</p>
-      <span class="read-more">Read More →</span>
-    </div>
-  </a>
-  </div>  
-  
-  <div class="blog-post">
-  <a href="http://neuralglow.ai/blog/whispering_stones_calm_storm.html" style="text-decoration:none; color:inherit;">
-    <div class="card-content">
-      <h3>Whispering Stones: Calm Storm</h3>
-      <p>In a noisy world, silence wins. Explore how resilience outlasts chaos, the NeuralGlow way.</p>
-      <span class="read-more">Read More →</span>
-    </div>
-  </a>
-  </div>
-
-  <div class="blog-post">
-  <a href="http://neuralglow.ai/blog/v2025-4-21-Clown_Network_Science_of_Stupidity_GitHub_Ready.html" style="text-decoration:none; color:inherit;">
-    <div class="card-content">
-      <h3>The Science of Stupidity: Clown Network Chronicles</h3>
-      <p>A journey through absurdity, chaos theory, and building cognitive firewalls of calm.</p>
-      <span class="read-more">Read More →</span>
-    </div>
-  </a>
-  </div>  
-
-  <!-- Future blog posts can be added here -->
-
-</main>
-
-<footer>
-  &copy; 2025 NeuralGlow.ai | Glowing through Chaos
-</footer>
+</div>
 
 </body>
 </html>
