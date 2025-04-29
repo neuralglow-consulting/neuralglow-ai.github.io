@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', 'Inter', sans-serif;
-    background: #eef8f1;
+    background: #034f21;
     color: #1a1a1a;
     line-height: 1.8;
   }
@@ -30,7 +30,7 @@
   }
   h1 {
     font-size: 2.5rem;
-    color: #034f21;
+    color: #f5f9f6;
   }
   p {
     font-size: 1.2rem;
@@ -59,33 +59,52 @@
   <h1>NeuralGlow.ai</h1>
 </header>
 
+<style>
+  /* Add floating animation styles */
+  .float-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .float-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
 <main>
   <h1>Welcome to the Efficiency Forest</h1>
   <p>No storms. No drama. No manipulation.<br>Just silent roots, sharp growth, and clear outcomes.</p>
 
   <ul id="efficiency-list">
-    <li style="opacity: 0;"><strong>One silent seed → One clear action.</strong></li>
-    <li style="opacity: 0;"><strong>Zero noise → Full roots into progress.</strong></li>
-    <li style="opacity: 0;"><strong>No need for 10 meetings → No need for 10 years waiting.</strong></li>
-    <li style="opacity: 0;"><strong>Small moves, huge ripples — without bragging.</strong></li>
-    <li style="opacity: 0;"><strong>Clarity in thought → Precision in results.</strong></li>
-    <li style="opacity: 0;"><strong>Less clutter → More focus, deeper impact.</strong></li>
-    <li style="opacity: 0;"><strong>Quiet roots grow the strongest trees.</strong></li>
-    <li style="opacity: 0;"><strong>Efficiency is calm progress, not chaotic speed.</strong></li>
-</ul>
+    <li class="float-in"><strong>One silent seed → One clear action.</strong></li>
+    <li class="float-in"><strong>Zero noise → Full roots into progress.</strong></li>
+    <li class="float-in"><strong>No need for 10 meetings → No need for 10 years waiting.</strong></li>
+    <li class="float-in"><strong>Small moves, huge ripples — without bragging.</strong></li>
+    <li class="float-in"><strong>Clarity in thought → Precision in results.</strong></li>
+    <li class="float-in"><strong>Less clutter → More focus, deeper impact.</strong></li>
+    <li class="float-in"><strong>Quiet roots grow the strongest trees.</strong></li>
+    <li class="float-in"><strong>Efficiency is calm progress, not chaotic speed.</strong></li>
+  </ul>
 
-<script>
-  // JavaScript to make list items appear one by one in sequence when the page is loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    const listItems = document.querySelectorAll('#efficiency-list li');
-    listItems.forEach((item, index) => {
-      setTimeout(() => {
-        item.style.opacity = 1;
-        item.style.transition = 'opacity 0.5s ease-in';
-      }, index * 500); // Adjust the delay (500ms) as needed
+  <script>
+    // JavaScript to add floating animation effect upon scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const listItems = document.querySelectorAll('.float-in');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      listItems.forEach((item) => observer.observe(item));
     });
-  });
-</script>
+  </script>
+</main>
 
   <p>Efficiency isn't about speed. It's about accuracy without chaos.</p>
 
