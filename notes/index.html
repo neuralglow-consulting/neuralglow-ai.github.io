@@ -119,46 +119,6 @@
     <div id="quote-container" class="note">
       <!-- The quote will be dynamically inserted here -->
     </div>
-  </main>
-  
-  <script>
-    // JavaScript to display one quote per month
-    document.addEventListener('DOMContentLoaded', () => {
-      const quotes = [
-        { month: 0, date: "January 2025", content: "Patience grows the strongest roots." },
-        { month: 1, date: "February 2025", content: "Quiet minds hear the loudest truths." },
-        { month: 2, date: "March 2025", content: "Simplicity is the ultimate sophistication." },
-        { month: 3, date: "April 2025", content: "Reality is sometimes just a poorly edited meme." },
-        { month: 4, date: "May 2025", content: "Waiting for chaos to exhaust itself is an underrated life skill." },
-        { month: 5, date: "June 2025", content: "Growth happens in the silence between storms." },
-        { month: 6, date: "July 2025", content: "Small steps quietly lead to great journeys." },
-        { month: 7, date: "August 2025", content: "Calm waters reflect the clearest skies." },
-        { month: 8, date: "September 2025", content: "Focus is the art of saying no to noise." },
-        { month: 9, date: "October 2025", content: "Even falling leaves teach us how to let go." },
-        { month: 10, date: "November 2025", content: "Resilience is built in the quiet moments." },
-        { month: 11, date: "December 2025", content: "The glow of kindness warms the coldest nights." }
-      ];
-  
-      const currentMonth = new Date().getMonth(); // Get the current month (0-11)
-      const quote = quotes.find(q => q.month === currentMonth);
-  
-      if (quote) {
-        const quoteContainer = document.getElementById('quote-container');
-        quoteContainer.innerHTML = `
-          <div class="note-date">${quote.date}</div>
-          <div class="note-content">${quote.content}</div>
-        `;
-      }
-    });
-  </script>
-
-<footer style="text-align:center; font-size:0.8rem; margin:40px 0; color:#666;">
-  &copy; 2025 NeuralGlow.ai — Calm. Curious. Quiet.<br>
-  <a href="https://uptimerobot.com/" target="_blank" style="color: #bbbbbb; text-decoration: none;">
-    🌿 Monitored quietly by UptimeRobot
-  </a>
-</footer>
-
 <!-- Add the calendar script here -->
 <div id="calendar-container" class="calendar">
     <div id="calendar-header">
@@ -313,6 +273,48 @@
       background: #e0f2e9;
     }
   </style>
+
+  </main>
+  
+  <script>
+    // JavaScript to display one quote per month
+    document.addEventListener('DOMContentLoaded', () => {
+      const quotes = [
+        { month: 0, date: "January 2025", content: "Patience grows the strongest roots." },
+        { month: 1, date: "February 2025", content: "Quiet minds hear the loudest truths." },
+        { month: 2, date: "March 2025", content: "Simplicity is the ultimate sophistication." },
+        { month: 3, date: "April 2025", content: "Reality is sometimes just a poorly edited meme." },
+        { month: 4, date: "May 2025", content: "Waiting for chaos to exhaust itself is an underrated life skill." },
+        { month: 5, date: "June 2025", content: "Growth happens in the silence between storms." },
+        { month: 6, date: "July 2025", content: "Small steps quietly lead to great journeys." },
+        { month: 7, date: "August 2025", content: "Calm waters reflect the clearest skies." },
+        { month: 8, date: "September 2025", content: "Focus is the art of saying no to noise." },
+        { month: 9, date: "October 2025", content: "Even falling leaves teach us how to let go." },
+        { month: 10, date: "November 2025", content: "Resilience is built in the quiet moments." },
+        { month: 11, date: "December 2025", content: "The glow of kindness warms the coldest nights." }
+      ];
+  
+      const currentMonth = new Date().getMonth(); // Get the current month (0-11)
+      const quote = quotes.find(q => q.month === currentMonth);
+  
+      if (quote) {
+        const quoteContainer = document.getElementById('quote-container');
+        quoteContainer.innerHTML = `
+          <div class="note-date">${quote.date}</div>
+          <div class="note-content">${quote.content}</div>
+        `;
+      }
+    });
+  </script>
+
+<footer style="text-align:center; font-size:0.8rem; margin:40px 0; color:#666;">
+  &copy; 2025 NeuralGlow.ai — Calm. Curious. Quiet.<br>
+  <a href="https://uptimerobot.com/" target="_blank" style="color: #bbbbbb; text-decoration: none;">
+    🌿 Monitored quietly by UptimeRobot
+  </a>
+</footer>
+
+
 
 </body>
 </html>
