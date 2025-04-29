@@ -17,7 +17,7 @@
     line-height: 1.8;
   }
   header, footer {
-    background: #2e8b57;
+    background: #034f21;
     color: white;
     text-align: center;
     padding: 15px 10px;
@@ -30,7 +30,7 @@
   }
   h1 {
     font-size: 2.5rem;
-    color: #2e8b57;
+    color: #034f21;
   }
   p {
     font-size: 1.2rem;
@@ -63,12 +63,27 @@
   <h1>Welcome to the Efficiency Forest</h1>
   <p>No storms. No drama. No manipulation.<br>Just silent roots, sharp growth, and clear outcomes.</p>
 
-  <ul>
-    <li><strong>One silent seed → One clear action.</strong></li>
-    <li><strong>Zero noise → Full roots into progress.</strong></li>
-    <li><strong>No need for 10 meetings → No need for 10 years waiting.</strong></li>
-    <li><strong>Small moves, huge ripples — without bragging.</strong></li>
+  <ul id="efficiency-list">
+    <li style="opacity: 0;"><strong>One silent seed → One clear action.</strong></li>
+    <li style="opacity: 0;"><strong>Zero noise → Full roots into progress.</strong></li>
+    <li style="opacity: 0;"><strong>No need for 10 meetings → No need for 10 years waiting.</strong></li>
+    <li style="opacity: 0;"><strong>Small moves, huge ripples — without bragging.</strong></li>
+    <li style="opacity: 0;"><strong>Clarity in thought → Precision in results.</strong></li>
+    <li style="opacity: 0;"><strong>Less clutter → More focus, deeper impact.</strong></li>
+    <li style="opacity: 0;"><strong>Quiet roots grow the strongest trees.</strong></li>
+    <li style="opacity: 0;"><strong>Efficiency is calm progress, not chaotic speed.</strong></li>
   </ul>
+  
+  <script>
+  // JavaScript to make list items appear one by one
+  const listItems = document.querySelectorAll('#efficiency-list li');
+  listItems.forEach((item, index) => {
+    setTimeout(() => {
+      item.style.opacity = 1;
+      item.style.transition = 'opacity 0.5s ease-in';
+    }, index * 500); // Adjust the delay (500ms) as needed
+  });
+  </script>
 
   <p>Efficiency isn't about speed. It's about accuracy without chaos.</p>
 
