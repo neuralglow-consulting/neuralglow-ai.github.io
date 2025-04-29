@@ -196,33 +196,47 @@
       let currentDate = new Date();
   
       function renderCalendar(date) {
-        const year = date.getFullYear();
-        const month = date.getMonth();
-        const firstDay = new Date(year, month, 1).getDay();
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-  
-        // Update the header
-        calendarMonthYear.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
-  
-        // Clear previous calendar days
-        calendarBody.innerHTML = '';
-  
-        // Fill in the days
-        let row = document.createElement('tr');
-        for (let i = 0; i < firstDay; i++) {
-          row.appendChild(document.createElement('td')); // Empty cells for days before the first day
-        }
-  
-        for (let day = 1; day <= daysInMonth; day++) {
-          const cell = document.createElement('td');
-          cell.textContent = day;
-          row.appendChild(cell);
-  
-          if ((firstDay + day) % 7 === 0 || day === daysInMonth) {
-            calendarBody.appendChild(row);
-            row = document.createElement('tr');
-          }
-        }
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  // Update the header
+  calendarMonthYear.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
+
+  // Clear previous calendar days
+  calendarBody.innerHTML = '';
+
+  // Fill in the days
+  let row = document.createElement('tr');
+  for (let i = 0; i < firstDay; i++) {
+    row.appendChild(document.createElement('td')); // Empty cells for days before the first day
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const cell = document.createElement('td');
+    cell.textContent = day;
+
+    // Highlight the current date
+    if (
+      year === new Date().getFullYear() &&
+      month === new Date().getMonth() &&
+      day === new Date().getDate()
+    ) {
+      cell.style.backgroundColor = '#2e8b57';
+      cell.style.color = '#fff';
+      cell.style.fontWeight = 'bold';
+      cell.style.borderRadius = '50%';
+    }
+
+    row.appendChild(cell);
+
+    if ((firstDay + day) % 7 === 0 || day === daysInMonth) {
+      calendarBody.appendChild(row);
+      row = document.createElement('tr');
+    }
+  }
+}
       }
   
       // Event listeners for navigation buttons
