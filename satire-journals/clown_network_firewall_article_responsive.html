@@ -376,6 +376,118 @@
       </a>
     </div>
 
+    <div class="pdf-download">
+  <button id="downloadPDF" class="download-btn">
+    <i class="fas fa-file-pdf"></i> Download PDF Version
+  </button>
+</div>
+
+<!-- Add this CSS to your existing style section -->
+<style>
+  /* PDF Download Button Styles */
+  .pdf-download {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .download-btn {
+    background-color: #c27ba0;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .download-btn:hover {
+    background-color: #a94c7f;
+  }
+
+  .download-btn i {
+    font-size: 1.2rem;
+  }
+
+  @media print {
+    .pdf-download,
+    .share-bar,
+    .comments-section,
+    header nav {
+      display: none;
+    }
+  }
+</style>
+
+<!-- Add these scripts just before the closing </body> tag -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+  document.getElementById('downloadPDF').addEventListener('click', function() {
+    // Configure PDF options
+    const options = {
+      margin: 10,
+      filename: 'ClownNetworkFirewall_NeuralGlow.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { 
+        scale: 2,
+        useCORS: true,
+        logging: false
+      },
+      jsPDF: { 
+        unit: 'mm', 
+        format: 'a4', 
+        orientation: 'portrait'
+      },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+
+    // Select the article content
+    const element = document.querySelector('article');
+
+    // Add a loading state to button
+    const button = this;
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+    button.disabled = true;
+
+    // Generate PDF
+    html2pdf()
+      .set(options)
+      .from(element)
+      .save()
+      .then(() => {
+        // Restore button state
+        button.innerHTML = originalText;
+        button.disabled = false;
+      })
+      .catch(error => {
+        console.error('PDF generation failed:', error);
+        button.innerHTML = originalText;
+        button.disabled = false;
+        alert('PDF generation failed. Please try again.');
+      });
+  });
+
+  // Add custom page breaks before major sections
+  document.querySelectorAll('section').forEach(section => {
+    section.style.pageBreakBefore = 'always';
+  });
+
+  // Ensure tables don't break across pages
+  document.querySelectorAll('table').forEach(table => {
+    table.style.pageBreakInside = 'avoid';
+  });
+
+  // Ensure figures and blockquotes don't break across pages
+  document.querySelectorAll('figure, blockquote').forEach(element => {
+    element.style.pageBreakInside = 'avoid';
+  });
+</script>
+
     <article>
       <h1>Clown Network Firewall: A Satirical Analysis of Unauthorized Psychological Experiments</h1>
       <div class="meta">Published: April 26, 2025 | Author: NeuralGlow Research Division</div>
