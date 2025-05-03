@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +7,19 @@
 <meta name="description" content="Planting curiosity quietly, one absurd observation at a time. Welcome to the NeuralGlow Forest Notes.">
 <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
 <style>
+    /* General Styles */
     html { scroll-behavior: smooth; }
     body {
         margin: 0;
         padding: 0;
         font-family: 'Inter', 'Poppins', 'IBM Plex Sans', sans-serif;
-        background: linear-gradient(to bottom, #e0f2e9, #f9f9f9);
-        color: #1a1a1a;
+        background: linear-gradient(to bottom, #E8F5E9, #F1F8E9); /* Light Green Gradient */
+        color: #333;
         line-height: 1.8;
+        overflow-x: hidden;
     }
     header {
-        background: #034f21;
+        background: #689F38; /* Olive Green */
         color: #fff;
         padding: 10px 30px;
         display: flex;
@@ -27,20 +28,23 @@
         position: sticky;
         top: 0;
         z-index: 100;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     header .logo img {
         height: 40px;
     }
     header nav a {
-        color: #f0fff0;
+        color: #E8F5E9; /* Light Green */
         text-decoration: none;
         margin-left: 20px;
         font-weight: 500;
         font-size: 0.95rem;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        transition: color 0.3s ease;
     }
     header nav a:hover {
+        color: #A5D6A7; /* Pastel Green */
         text-decoration: underline;
     }
     main {
@@ -51,7 +55,7 @@
     }
     h1 {
         font-size: 2.5rem;
-        color: #034f21;
+        color: #558B2F; /* Dark Olive Green */
         margin-bottom: 10px;
         animation: fadeIn 2s ease;
     }
@@ -64,7 +68,7 @@
         background: rgba(255, 255, 255, 0.8);
         margin-bottom: 20px;
         padding: 20px;
-        border-left: 5px solid #2e8b57;
+        border-left: 5px solid #8BC34A; /* Light Olive Green */
         border-radius: 5px;
         text-align: left;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -84,8 +88,65 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+        background: radial-gradient(circle at center, rgba(174, 213, 129, 0.2) 0%, #DCEDC8 70%); /* Light Green Mist */
         z-index: 0;
+    }
+    /* Calendar Styles */
+    .calendar {
+      margin: 20px auto;
+      max-width: 400px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      background: #8BC34A; /* Light Olive Green */
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .calendar-nav {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .calendar-nav:hover {
+      text-decoration: underline;
+    }
+
+    #calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #calendar-table th,
+    #calendar-table td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    #calendar-table th {
+      background: #f4f4f4;
+      font-weight: bold;
+    }
+
+    #calendar-table td {
+      cursor: pointer;
+    }
+
+    #calendar-table td:hover {
+      background: #e0f2e9;
     }
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
@@ -114,209 +175,37 @@
 
 <main>
     <h1>Glow Seeds: Quiet Observations</h1>
-    <p class="description">Tiny thoughts, quietly growing in the Glow Forest.</p>
-  
-    <div id="quote-container" class="note">
-      <!-- The quote will be dynamically inserted here -->
+    <p class="description">Tiny thoughts, quietly growing in the Glow Forest. (Handle with care—may cause unexpected bursts of insight.)</p>
+
+    <div id="note-container">
+      <!-- Notes will be dynamically inserted here -->
     </div>
 
-    <!-- display the image in original size
-    <div id="image-section">
-      <img src="/assets/images/IMG_2357.png" alt="Glow Forest Observation" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-    </div>-->
-
-    <!-- display the image in a postcard size
-    <div id="image-section" style="display: flex; justify-content: center; margin: 20px 0;">
-      <img src="/assets/images/IMG_2357.png" alt="Glow Forest Observation" style="width: 400px; height: 300px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-    </div>-->
-
-<!-- Add the calendar script here -->
-<div id="calendar-container" class="calendar">
-    <div id="calendar-header">
-      <button id="prev-month" class="calendar-nav">←</button>
-      <span id="calendar-month-year"></span>
-      <button id="next-month" class="calendar-nav">→</button>
+    <!-- Calendar -->
+    <div id="calendar-container" class="calendar">
+      <div id="calendar-header">
+        <button id="prev-month" class="calendar-nav">←</button>
+        <span id="calendar-month-year"></span>
+        <button id="next-month" class="calendar-nav">→</button>
+      </div>
+      <table id="calendar-table">
+        <thead>
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body">
+          <!-- Calendar days will be dynamically inserted here -->
+        </tbody>
+      </table>
     </div>
-    <table id="calendar-table">
-      <thead>
-        <tr>
-          <th>Sun</th>
-          <th>Mon</th>
-          <th>Tue</th>
-          <th>Wed</th>
-          <th>Thu</th>
-          <th>Fri</th>
-          <th>Sat</th>
-        </tr>
-      </thead>
-      <tbody id="calendar-body">
-        <!-- Calendar days will be dynamically inserted here -->
-      </tbody>
-    </table>
-  </div>
-  
-  <script>
-    // JavaScript to generate a dynamic calendar and mark the current date
-    document.addEventListener('DOMContentLoaded', () => {
-      const calendarContainer = document.getElementById('calendar-container');
-      const calendarMonthYear = document.getElementById('calendar-month-year');
-      const calendarBody = document.getElementById('calendar-body');
-      const prevMonthBtn = document.getElementById('prev-month');
-      const nextMonthBtn = document.getElementById('next-month');
-  
-      let currentDate = new Date();
-      const today = new Date(); // Store today's date for marking
-  
-      function renderCalendar(date) {
-        const year = date.getFullYear();
-        const month = date.getMonth();
-        const firstDay = new Date(year, month, 1).getDay();
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-  
-        // Update the header
-        calendarMonthYear.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
-  
-        // Clear previous calendar days
-        calendarBody.innerHTML = '';
-  
-        // Fill in the days
-        let row = document.createElement('tr');
-        for (let i = 0; i < firstDay; i++) {
-          row.appendChild(document.createElement('td')); // Empty cells for days before the first day
-        }
-  
-        for (let day = 1; day <= daysInMonth; day++) {
-          const cell = document.createElement('td');
-          cell.textContent = day;
-  
-          // Highlight the current date
-          if (
-            year === today.getFullYear() &&
-            month === today.getMonth() &&
-            day === today.getDate()
-          ) {
-            cell.style.backgroundColor = '#2e8b57';
-            cell.style.color = '#fff';
-            cell.style.fontWeight = 'bold';
-            cell.style.borderRadius = '50%';
-          }
-  
-          row.appendChild(cell);
-  
-          if ((firstDay + day) % 7 === 0 || day === daysInMonth) {
-            calendarBody.appendChild(row);
-            row = document.createElement('tr');
-          }
-        }
-      }
-  
-      // Event listeners for navigation buttons
-      prevMonthBtn.addEventListener('click', () => {
-        currentDate.setMonth(currentDate.getMonth() - 1);
-        renderCalendar(currentDate);
-      });
-  
-      nextMonthBtn.addEventListener('click', () => {
-        currentDate.setMonth(currentDate.getMonth() + 1);
-        renderCalendar(currentDate);
-      });
-  
-      // Initial render
-      renderCalendar(currentDate);
-    });
-  </script>
-  
-  <style>
-    .calendar {
-      margin: 20px auto;
-      max-width: 400px;
-      text-align: center;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-  
-    #calendar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      background: #2e8b57;
-      color: #fff;
-      font-weight: bold;
-    }
-  
-    .calendar-nav {
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-  
-    .calendar-nav:hover {
-      text-decoration: underline;
-    }
-  
-    #calendar-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-  
-    #calendar-table th,
-    #calendar-table td {
-      padding: 10px;
-      text-align: center;
-      border: 1px solid #ddd;
-    }
-  
-    #calendar-table th {
-      background: #f4f4f4;
-      font-weight: bold;
-    }
-  
-    #calendar-table td {
-      cursor: pointer;
-    }
-  
-    #calendar-table td:hover {
-      background: #e0f2e9;
-    }
-  </style>
-
-  </main>
-  
-  <script>
-    // JavaScript to display one quote per month
-    document.addEventListener('DOMContentLoaded', () => {
-      const quotes = [
-        { month: 0, date: "January 2025", content: "Patience grows the strongest roots." },
-        { month: 1, date: "February 2025", content: "Quiet minds hear the loudest truths." },
-        { month: 2, date: "March 2025", content: "Simplicity is the ultimate sophistication." },
-        { month: 3, date: "April 2025", content: "Reality is sometimes just a poorly edited meme." },
-        { month: 4, date: "May 2025", content: "Waiting for chaos to exhaust itself is an underrated life skill." },
-        { month: 5, date: "June 2025", content: "Growth happens in the silence between storms." },
-        { month: 6, date: "July 2025", content: "Small steps quietly lead to great journeys." },
-        { month: 7, date: "August 2025", content: "Calm waters reflect the clearest skies." },
-        { month: 8, date: "September 2025", content: "Focus is the art of saying no to noise." },
-        { month: 9, date: "October 2025", content: "Even falling leaves teach us how to let go." },
-        { month: 10, date: "November 2025", content: "Resilience is built in the quiet moments." },
-        { month: 11, date: "December 2025", content: "The glow of kindness warms the coldest nights." }
-      ];
-  
-      const currentMonth = new Date().getMonth(); // Get the current month (0-11)
-      const quote = quotes.find(q => q.month === currentMonth);
-  
-      if (quote) {
-        const quoteContainer = document.getElementById('quote-container');
-        quoteContainer.innerHTML = `
-          <div class="note-date">${quote.date}</div>
-          <div class="note-content">${quote.content}</div>
-        `;
-      }
-    });
-  </script>
+</main>
 
 <footer style="text-align:center; font-size:0.8rem; margin:40px 0; color:#666;">
   &copy; 2025 NeuralGlow.ai — Calm. Curious. Quiet.<br>
@@ -325,7 +214,103 @@
   </a>
 </footer>
 
+<script>
+  // JavaScript to generate a dynamic calendar and mark the current date
+  document.addEventListener('DOMContentLoaded', () => {
+    const calendarContainer = document.getElementById('calendar-container');
+    const calendarMonthYear = document.getElementById('calendar-month-year');
+    const calendarBody = document.getElementById('calendar-body');
+    const prevMonthBtn = document.getElementById('prev-month');
+    const nextMonthBtn = document.getElementById('next-month');
 
+    let currentDate = new Date();
+    const today = new Date(); // Store today's date for marking
+
+    function renderCalendar(date) {
+      const year = date.getFullYear();
+      const month = date.getMonth();
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      // Update the header
+      calendarMonthYear.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
+
+      // Clear previous calendar days
+      calendarBody.innerHTML = '';
+
+      // Fill in the days
+      let row = document.createElement('tr');
+      for (let i = 0; i < firstDay; i++) {
+        row.appendChild(document.createElement('td')); // Empty cells for days before the first day
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const cell = document.createElement('td');
+        cell.textContent = day;
+
+        // Highlight the current date
+        if (
+          year === today.getFullYear() &&
+          month === today.getMonth() &&
+          day === today.getDate()
+        ) {
+          cell.style.backgroundColor = '#8BC34A'; /* Light Olive Green */
+          cell.style.color = '#fff';
+          cell.style.fontWeight = 'bold';
+          cell.style.borderRadius = '50%';
+        }
+
+        row.appendChild(cell);
+
+        if ((firstDay + day) % 7 === 0 || day === daysInMonth) {
+          calendarBody.appendChild(row);
+          row = document.createElement('tr');
+        }
+      }
+    }
+
+    // Event listeners for navigation buttons
+    prevMonthBtn.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      renderCalendar(currentDate);
+    });
+
+    nextMonthBtn.addEventListener('click', () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      renderCalendar(currentDate);
+    });
+
+    // Initial render
+    renderCalendar(currentDate);
+  });
+
+  // JavaScript to display notes
+  document.addEventListener('DOMContentLoaded', () => {
+    const notes = [
+      { date: "May 3, 2025", content: "The best view comes after the hardest climb. (Or, you know, after a really good cup of tea.)" },
+      { date: "May 2, 2025", content: "Silence isn't empty; it's full of answers waiting to be heard." },
+      { date: "May 1, 2025", content: "Curiosity didn't kill the cat; it just made it wiser. And slightly more eccentric." },
+      { date: "April 30, 2025", content: "Sometimes, the most productive thing you can do is wander aimlessly in a forest of thoughts." },
+      { date: "April 29, 2025", content: "Resilience is the art of laughing when you want to scream. (Or, at least, quietly chuckling.)" },
+      { date: "April 28, 2025", content: "The universe is under no obligation to make sense to you. But it's fun to try anyway." },
+      { date: "April 27, 2025", content: "Embrace the glorious mess that you are. (Just try to keep the mess contained.)" },
+      { date: "April 26, 2025", content: "The quietest minds often have the loudest thoughts." },
+      { date: "April 25, 2025", content: "Plant kindness like seeds, and watch the world bloom." },
+      { date: "April 24, 2025", content: "Even the longest journey begins with a single, slightly hesitant step." }
+    ];
+
+    const noteContainer = document.getElementById('note-container');
+    notes.forEach(note => {
+      const noteDiv = document.createElement('div');
+      noteDiv.classList.add('note');
+      noteDiv.innerHTML = `
+        <div class="note-date">${note.date}</div>
+        <div class="note-content">${note.content}</div>
+      `;
+      noteContainer.appendChild(noteDiv);
+    });
+  });
+</script>
 
 </body>
 </html>
