@@ -10,6 +10,10 @@
   <meta name="keywords" content="psychological resilience, digital psychology, cognitive defense, NeuralGlow, behavioral analysis">
   <meta name="author" content="NeuralGlow Research Division">
 
+  <!-- enable PDF scanning -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://neuralglow.ai/research/clown-network-firewall">
@@ -427,24 +431,74 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
   document.getElementById('downloadPDF').addEventListener('click', function() {
-    // Configure PDF options
-    const options = {
-      margin: 10,
-      filename: 'ClownNetworkFirewall_NeuralGlow.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { 
-        scale: 2,
-        useCORS: true,
-        logging: false
-      },
-      jsPDF: { 
-        unit: 'mm', 
-        format: 'a4', 
-        orientation: 'portrait'
-      },
-      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    };
-
+    // Configure PDF options with explicit permissions and enhanced settings
+const options = {
+  margin: {
+    top: 20,
+    right: 20,
+    bottom: 20,
+    left: 20
+  },
+  filename: 'ClownNetworkFirewall_NeuralGlow.pdf',
+  image: { 
+    type: 'jpeg', 
+    quality: 0.98,
+    enableLinks: true
+  },
+  html2canvas: { 
+    scale: 2,
+    useCORS: true,
+    logging: false,
+    allowTaint: true,
+    foreignObjectRendering: true,
+    imageTimeout: 15000,
+    removeContainer: true,
+    letterRendering: true
+  },
+  jsPDF: { 
+    unit: 'mm', 
+    format: 'a4', 
+    orientation: 'portrait',
+    compress: true,
+    precision: 16,
+    encrypt: {
+      userPassword: "",
+      ownerPassword: "",
+      userPermissions: [
+        'print',
+        'copy',
+        'modify'
+      ]
+    },
+    putOnlyUsedFonts: true,
+    floatPrecision: 16
+  },
+  pagebreak: { 
+    mode: ['avoid-all', 'css', 'legacy'],
+    before: '.page-break-before',
+    after: '.page-break-after',
+    avoid: '.page-break-avoid'
+  },
+  enable: {
+    text: true,
+    images: true,
+    svg: true,
+    canvas: true,
+    links: true,
+    forms: true,
+    buttons: true,
+    annotations: true,
+    javascript: true,
+    backgroundImages: true
+  },
+  watermark: {
+    text: '© 2025 NeuralGlow.ai',
+    font: 'helvetica',
+    fontSize: 8,
+    opacity: 0.1,
+    angle: 45
+  }
+};
     // Select the article content
     const element = document.querySelector('article');
 
