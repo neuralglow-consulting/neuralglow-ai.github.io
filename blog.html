@@ -9,29 +9,21 @@
 <meta name="author" content="NeuralGlow Research Division">
 <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
 <style>
-  /* ... existing styles ... */
-  
-  .month-section {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 40px auto;
+  /* General Styles */
+  body {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
   }
 
-  .month-header {
-    background: #034f21;
+  header {
+    background: #7B68EE; /* Medium Purple */
     color: white;
-    padding: 10px 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
-
-  .month-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 
   main {
@@ -41,9 +33,101 @@
     align-items: center;
   }
 
+  /* Month Section Styles */
+  .month-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+  }
+
+  .month-header {
+    background: #A0522D; /* Sienna */
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .month-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
+  /* Card Styles */
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: calc(33.33% - 20px); /* Three cards per row */
+    min-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .card-header {
+    background: #2E8B57; /* Sea Green */
+    color: white;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .card-body {
+    padding: 20px;
+    text-align: justify;
+  }
+
+  .card-body p {
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .card-footer {
+    padding: 15px;
+    text-align: right;
+    background: #f0f0f0;
+  }
+
+  .card-footer a {
+    color: #7B68EE; /* Medium Purple */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .card-footer a:hover {
+    color: #A0522D; /* Sienna */
+  }
+
+  footer {
+    background: #7B68EE; /* Medium Purple */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Media Queries for Responsiveness */
   @media (max-width: 768px) {
     .month-cards {
       justify-content: center;
+    }
+    .card {
+      width: calc(50% - 20px); /* Two cards per row on smaller screens */
+      min-width: 300px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .card {
+      width: 100%; /* One card per row on even smaller screens */
     }
   }
 </style>
