@@ -168,6 +168,24 @@
     }
   }
 </style>
+ // ...existing code...
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+function downloadPDF() {
+    const element = document.querySelector('main');
+    const opt = {
+        margin: 1,
+        filename: 'Clown_Network_Analysis.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    
+    html2pdf().set(opt).from(element).save();
+}
+</script>
+</head> 
 </head>
 
 <body>
@@ -533,6 +551,16 @@
     <a href="https://www.linkedin.com/shareArticle?url=[URL_TO_THIS_ARTICLE]&title=The%20Science%20of%20Stupidity:%20A%20Clown%20Network%20Analysis&summary=A%20detailed%20satirical%20study%20on%20the%20Clown%20Network%20phenomenon.&source=NeuralGlow.ai" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
     <a href="mailto:?subject=The%20Science%20of%20Stupidity:%20A%20Clown%20Network%20Analysis&body=Check%20out%20this%20analysis%20of%20the%20Clown%20Network:%20[URL_TO_THIS_ARTICLE]" target="_blank" rel="noopener noreferrer" aria-label="Share via Email"><i class="fas fa-envelope"></i></a>
     <a href="https://www.threads.net/share?url=[URL_TO_THIS_ARTICLE]" target="_blank" rel="noopener noreferrer" aria-label="Share on Threads"><i class="fab fa-threads"></i></a>
+</div>
+
+<div class="sharing">
+    // ...existing sharing buttons...
+</div>
+
+<div class="download-pdf" style="text-align: center; margin: 2em 0;">
+    <button onclick="downloadPDF()" style="padding: 10px 20px; background-color: #3c1053; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">
+        <i class="fas fa-file-pdf"></i> Download as PDF
+    </button>
 </div>
 
 <div class="back-home">
