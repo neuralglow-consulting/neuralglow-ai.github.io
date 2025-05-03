@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,158 +5,143 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog — NeuralGlow.ai</title>
 <meta name="description" content="NeuralGlow Blog: Calm Sparks of Curiosity and Resilience.">
+<meta name="keywords" content="NeuralGlow, blog, digital psychology, AI, resilience, technology">
+<meta name="author" content="NeuralGlow Research Division">
 <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', 'Inter', sans-serif;
-    background: #f9f9f9;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  /* ... existing styles ... */
+  
+  .month-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
   }
-  header {
-    background: #034f21;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  main {
-    flex: 1;
-    padding: 40px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  .card {
-    background: #ffffff;
-    width: 320px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(216, 160, 212, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  .card-header {
-    background: linear-gradient(to right, #034f21, #034f21);
-    color: #fff;
-    padding: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  .card-body {
-    padding: 20px;
-  }
-  .card-body p {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  .card-footer {
-    padding: 10px 20px 20px 20px;
-  }
-  .card-footer a {
-    text-decoration: none;
+
+  .month-header {
     background: #034f21;
     color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-size: 1.3rem;
     font-weight: bold;
-    transition: background 0.3s;
   }
-  .card-footer a:hover {
-    background: #034f21;
+
+  .month-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
   }
-  footer {
-    background: #034f21;
-    color: #fff;
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 0.85rem;
+
+  main {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .month-cards {
+      justify-content: center;
+    }
   }
 </style>
 </head>
 <body>
 
-  <header>
-    <a href="http://neuralglow.ai" style="text-decoration: none; color: white;">
-      NeuralGlow Blog
-    </a>
-  </header>
+<header>
+  <a href="http://neuralglow.ai" style="text-decoration: none; color: white;">
+    NeuralGlow Blog
+  </a>
+</header>
 
 <main>
+  <!-- May 2025 Section -->
+  <section class="month-section">
+    <div class="month-header">May 2025</div>
+    <div class="month-cards">
+      <div class="card">
+        <div class="card-header">
+          The Circus Files: A Professional Analysis of Digital Network Psychology
+        </div>
+        <div class="card-body">
+          <p>A satirical yet professional exploration of recurring behavioral patterns in underperforming networks and outdated management systems. Discover how manipulation tactics and accountability gaps contribute to systemic inefficiencies.</p>
+        </div>
+        <div class="card-footer">
+          <a href="/blog/May/Circus_Files_Final_With_Summary.html">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-  <div class="card-header">
-    Clown Networks: Efficiency Loss Report
-  </div>
-  <div class="card-body">
-    <p>How strategic confusion, noise, and imaginary meetings achieve record-breaking inefficiency. A satirical field study by NeuralGlow.</p>
-  </div>
-  <div class="card-footer">
-    <a href="/blog/April/clown_network_efficiency_loss_report.html">Read More</a>
-  </div>
-</div>
-  
-  <div class="card">
-    <div class="card-header">
-      The Serendipitous Spark
-    </div>
-    <div class="card-body">
-      <p>How a forgotten Visual Basic project lit up unexpected creativity. Calm, curious, quietly brilliant.</p>
-    </div>
-    <div class="card-footer">
-      <a href="/blog/April/serendipitous_spark_of_old_code.html">Read More</a>
-    </div>
-  </div>
+  <!-- April 2025 Section -->
+  <section class="month-section">
+    <div class="month-header">April 2025</div>
+    <div class="month-cards">
+      <div class="card">
+        <div class="card-header">
+          Clown Networks: Efficiency Loss Report
+        </div>
+        <div class="card-body">
+          <p>How strategic confusion, noise, and imaginary meetings achieve record-breaking inefficiency. A satirical field study by NeuralGlow.</p>
+        </div>
+        <div class="card-footer">
+          <a href="/blog/April/clown_network_efficiency_loss_report.html">Read More</a>
+        </div>
+      </div>
 
-  <div class="card">
-    <div class="card-header">
-      GitHub Copilot: Calm Power for Creators
-    </div>
-    <div class="card-body">
-      <p>Explore how AI-assisted coding shapes a new era where resilience, precision, and creativity lead the way beyond noisy automation.</p>
-    </div>
-    <div class="card-footer">
-      <a href="/blog/April/GitHub-copilot-new.html">Read More</a>
-    </div>
-  </div>
+      <div class="card">
+        <div class="card-header">
+          The Serendipitous Spark
+        </div>
+        <div class="card-body">
+          <p>How a forgotten Visual Basic project lit up unexpected creativity. Calm, curious, quietly brilliant.</p>
+        </div>
+        <div class="card-footer">
+          <a href="/blog/April/serendipitous_spark_of_old_code.html">Read More</a>
+        </div>
+      </div>
 
-  <div class="card">
-    <div class="card-header">
-      Whispering Stones: Calm Storm
-    </div>
-    <div class="card-body">
-      <p>In a noisy world, silence wins. Explore how resilience outlasts chaos, the NeuralGlow way.</p>
-    </div>
-    <div class="card-footer">
-      <a href="/blog/April/whispering_stones_calm_storm.html">Read More</a>
-    </div>
-  </div>
+      <div class="card">
+        <div class="card-header">
+          GitHub Copilot: Calm Power for Creators
+        </div>
+        <div class="card-body">
+          <p>Explore how AI-assisted coding shapes a new era where resilience, precision, and creativity lead the way beyond noisy automation.</p>
+        </div>
+        <div class="card-footer">
+          <a href="/blog/April/GitHub-copilot-new.html">Read More</a>
+        </div>
+      </div>
 
-  <div class="card">
-    <div class="card-header">
-      The Science of Stupidity: Clown Network Chronicles
+      <div class="card">
+        <div class="card-header">
+          Whispering Stones: Calm Storm
+        </div>
+        <div class="card-body">
+          <p>In a noisy world, silence wins. Explore how resilience outlasts chaos, the NeuralGlow way.</p>
+        </div>
+        <div class="card-footer">
+          <a href="/blog/April/whispering_stones_calm_storm.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          The Science of Stupidity: Clown Network Chronicles
+        </div>
+        <div class="card-body">
+          <p>A journey through absurdity, chaos theory, and building cognitive firewalls of calm.</p>
+        </div>
+        <div class="card-footer">
+          <a href="/blog/April/v2025-4-21-Clown_Network_Science_of_Stupidity_GitHub_Ready.html">Read More</a>
+        </div>
+      </div>
     </div>
-    <div class="card-body">
-      <p>A journey through absurdity, chaos theory, and building cognitive firewalls of calm.</p>
-    </div>
-    <div class="card-footer">
-      <a href="/blog/April/v2025-4-21-Clown_Network_Science_of_Stupidity_GitHub_Ready.html">Read More</a>
-    </div>
-  </div>
- 
+  </section>
 </main>
 
-  
 <footer>
   &copy; 2025 NeuralGlow.ai | Calm Sparks Growing into Forests🌲
 </footer>
