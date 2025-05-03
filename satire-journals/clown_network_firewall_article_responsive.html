@@ -446,95 +446,75 @@
   }
 </style>
 
+<div class="pdf-download">
+  <button id="downloadPDF" class="download-btn">
+    <i class="fas fa-file-pdf"></i> Download PDF Version
+  </button>
+</div>
+
+<!-- Add this CSS to your existing style section -->
+<style>
+  /* PDF Download Button Styles */
+  .pdf-download {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .download-btn {
+    background-color: #c27ba0;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .download-btn:hover {
+    background-color: #a94c7f;
+  }
+
+  .download-btn i {
+    font-size: 1.2rem;
+  }
+
+  @media print {
+    .pdf-download,
+    .share-bar,
+    .comments-section,
+    header nav {
+      display: none;
+    }
+  }
+</style>
+
 <!-- Add these scripts just before the closing </body> tag -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
   document.getElementById('downloadPDF').addEventListener('click', function() {
-    // Configure PDF options with explicit permissions and enhanced settings
-// Update the PDF options in your existing script
-const options = {
-  margin: {
-    top: 20,
-    right: 20,
-    bottom: 20,
-    left: 20
-  },
-  filename: 'ClownNetworkFirewall_NeuralGlow.pdf',
-  image: { 
-    type: 'jpeg', 
-    quality: 0.98,
-    enableLinks: true
-  },
-  html2canvas: { 
-    scale: 2,
-    useCORS: true,
-    logging: false,
-    allowTaint: true,
-    foreignObjectRendering: true,
-    imageTimeout: 15000,
-    removeContainer: true,
-    letterRendering: true
-  },
-  jsPDF: { 
-    unit: 'mm', 
-    format: 'a4', 
-    orientation: 'portrait',
-    compress: true,
-    precision: 16,
-    encrypt: {
-      userPassword: "",
-      ownerPassword: "",
-      userPermissions: [
-        'print',
-        'copy',
-        'modify',
-        'extract',
-        'annotations',
-        'screenReaders'
-      ]
-    },
-    putOnlyUsedFonts: true,
-    floatPrecision: 16,
-    metadata: {
-      title: 'Clown Network Firewall: A Satirical Analysis',
-      author: 'NeuralGlow Research Division',
-      subject: 'Psychological Analysis of Digital Chaos',
-      keywords: 'clown network, psychological defense, cognitive firewall, satire',
-      creator: 'NeuralGlow.ai',
-      producer: 'html2pdf.js',
-      creationDate: new Date(),
-      modDate: new Date(),
-      trapped: 'False'
-    }
-  },
-  pagebreak: { 
-    mode: ['avoid-all', 'css', 'legacy'],
-    before: '.page-break-before',
-    after: '.page-break-after',
-    avoid: '.page-break-avoid'
-  },
-  enable: {
-    text: true,
-    images: true,
-    svg: true,
-    canvas: true,
-    links: true,
-    forms: true,
-    buttons: true,
-    annotations: true,
-    javascript: true,
-    backgroundImages: true,
-    accessibility: true,
-    scanning: true
-  },
-  watermark: {
-    text: '© 2025 NeuralGlow.ai',
-    font: 'helvetica',
-    fontSize: 8,
-    opacity: 0.1,
-    angle: 45
-  }
-};
+    // Configure PDF options
+    const options = {
+      margin: 10,
+      filename: 'ClownNetworkFirewall_NeuralGlow.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { 
+        scale: 2,
+        useCORS: true,
+        logging: false
+      },
+      jsPDF: { 
+        unit: 'mm', 
+        format: 'a4', 
+        orientation: 'portrait'
+      },
+      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+
     // Select the article content
     const element = document.querySelector('article');
 
