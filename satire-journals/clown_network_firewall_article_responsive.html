@@ -348,6 +348,25 @@
       }
     }
   </style>
+  <!-- Additional scripts for PDF functionality -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://unpkg.com/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.min.js"></script>
+
+<!-- Meta tags for PDF scanning -->
+<meta name="pdf:title" content="Clown Network Firewall: A Satirical Analysis">
+<meta name="pdf:author" content="NeuralGlow Research Division">
+<meta name="pdf:subject" content="Psychological Analysis of Digital Chaos">
+<meta name="pdf:keywords" content="clown network, psychological defense, cognitive firewall, satire">
+<meta name="pdf:creator" content="NeuralGlow.ai">
+<meta name="pdf:producer" content="html2pdf.js">
+<meta name="pdf:language" content="en">
+
+<!-- Additional permissions for PDF scanning -->
+<meta name="robots" content="index, follow, scan">
+<meta name="googlebot" content="index, follow, scan">
+<meta http-equiv="X-Robots-Tag" content="index, follow, scan">
+<meta name="pdf-scanning" content="enabled">
 </head>
 <body>
 
@@ -432,6 +451,7 @@
 <script>
   document.getElementById('downloadPDF').addEventListener('click', function() {
     // Configure PDF options with explicit permissions and enhanced settings
+// Update the PDF options in your existing script
 const options = {
   margin: {
     top: 20,
@@ -467,11 +487,25 @@ const options = {
       userPermissions: [
         'print',
         'copy',
-        'modify'
+        'modify',
+        'extract',
+        'annotations',
+        'screenReaders'
       ]
     },
     putOnlyUsedFonts: true,
-    floatPrecision: 16
+    floatPrecision: 16,
+    metadata: {
+      title: 'Clown Network Firewall: A Satirical Analysis',
+      author: 'NeuralGlow Research Division',
+      subject: 'Psychological Analysis of Digital Chaos',
+      keywords: 'clown network, psychological defense, cognitive firewall, satire',
+      creator: 'NeuralGlow.ai',
+      producer: 'html2pdf.js',
+      creationDate: new Date(),
+      modDate: new Date(),
+      trapped: 'False'
+    }
   },
   pagebreak: { 
     mode: ['avoid-all', 'css', 'legacy'],
@@ -489,7 +523,9 @@ const options = {
     buttons: true,
     annotations: true,
     javascript: true,
-    backgroundImages: true
+    backgroundImages: true,
+    accessibility: true,
+    scanning: true
   },
   watermark: {
     text: '© 2025 NeuralGlow.ai',
