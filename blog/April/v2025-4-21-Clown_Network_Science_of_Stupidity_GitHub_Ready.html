@@ -167,25 +167,100 @@
       padding: 0 10px;
     }
   }
+
+  .research-section, .warning-section {
+    padding: 2em;
+    margin: 2em 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  .acknowledgment-box, .warning-box {
+    background: #fff;
+    padding: 1.5em;
+    margin: 1em 0;
+    border-left: 4px solid #3c1053;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .behavior-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+    margin: 2em 0;
+  }
+
+  .behavior-category {
+    background: #fff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .research-quote {
+    font-size: 1.2em;
+    color: #3c1053;
+    border-left: 4px solid #8BC34A;
+    margin: 2em 0;
+    padding: 1em 2em;
+  }
+
+  .research-quote footer small {
+    display: block;
+    margin-top: 0.5em;
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+
+  .impact-statement {
+    background: #3c1053;
+    color: #fff;
+    padding: 1.5em;
+    border-radius: 8px;
+    margin: 2em 0;
+  }
+
+  .final-warning {
+    text-align: center;
+    font-size: 1.2em;
+    color: #d32f2f;
+    margin: 2em 0;
+  }
+
+  .investigator-profile {
+    background: #f8f9fa;
+    padding: 1.5em;
+    margin: 2em 0;
+    border-radius: 8px;
+    border-left: 4px solid #3c1053;
+  }
+
+  .investigator-profile h4 {
+    color: #3c1053;
+    margin-top: 0;
+  }
+
+  .figure-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em auto;
+    text-align: center;
+    max-width: 80%;
+  }
+
+  .figure-container img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .figure-container .caption {
+    max-width: 80%;
+    margin: 1em auto;
+  }
 </style>
- // ...existing code...
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script>
-function downloadPDF() {
-    const element = document.querySelector('main');
-    const opt = {
-        margin: 1,
-        filename: 'Clown_Network_Analysis.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
-    
-    html2pdf().set(opt).from(element).save();
-}
-</script>
-</head> 
 </head>
 
 <body>
@@ -265,219 +340,44 @@ function downloadPDF() {
   </p>
 </section>
 
-<h2 style="font-family: 'Segoe UI', sans-serif; color: #3c1053; font-size: 1.4em; margin-top: 2em;">Figure 1. Activity Frequency Chart</h2>
-<img src="https://raw.githubusercontent.com/neuralglow-consulting/neuralglow-ai.github.io/master/assets/images/Clown_Network_Activity_Frequency_Chart.png" alt="Bar chart showing activity frequency" style="max-width: 60%; height: auto; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); margin: 1em 0;">
-<div class="caption" style="font-size: 0.95em; color: #555; font-style: italic; margin-bottom: 2em;">
+<div class="figure-container">
+  <h2 style="font-family: 'Segoe UI', sans-serif; color: #3c1053; font-size: 1.4em;">Figure 1. Activity Frequency Chart</h2>
+  <img src="https://raw.githubusercontent.com/neuralglow-consulting/neuralglow-ai.github.io/master/assets/images/Clown_Network_Activity_Frequency_Chart.png" alt="Bar chart showing activity frequency" style="border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+  <div class="caption" style="font-size: 0.95em; color: #555; font-style: italic;">
     A formal academic breakdown of their contributions to humanity. As expected, chair dragging dominates the rankings — a true Nobel contender.
-</div>
-  
-<h2>4. Machines of Misfire: High-Pitched, Low-IQ Operations</h2>
-
-<section style="margin-top: 2em;">
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    One might assume that access to technology would elevate the Clown Network’s sophistication. Instead, it merely expanded their failure toolkit. Enter: the humming machine — a device of unknown origin, unclear purpose, and undeniably irritating effect.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    Operating somewhere between an old refrigerator and a cheap sci-fi prop, these machines activate like clockwork — usually when you're trying to focus, sleep, or experience silence for more than five seconds. And just when you think it's over... it isn't. The hum returns, subtly altered, like a ghost with access to an equalizer.
-  </p>
-  <ul style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a; padding-left: 1.2em; list-style-type: disc;">
-    <li><strong>Low-frequency drone</strong> — excellent for ruining naps and inducing mild existential dread.</li>
-    <li><strong>Sudden off-cycles</strong> — great for confusing pets and alerting the vigilant.</li>
-    <li><strong>Strategic restarts</strong> — carefully timed to align with human irritation thresholds.</li>
-    <li><strong>Frequency shifts</strong> — because nothing says “experimental” like random pitch modulation.</li>
-  </ul>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    If the goal was to influence brainwaves or manipulate cognition, the result has been closer to a neighborhood-wide headache. So far, the only thing these machines have successfully altered is the definition of “wasted wattage.”
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    Conclusion? The machines are real. The results are imaginary. And the intelligence behind them? Missing — presumed dragged away with the chairs.
-  </p>
-</section>
-
-<h2>5. Mute Mode: The Psychology of Pretending to Be Absent</h2>
-
-<section style="margin-top: 2em;">
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    After the noise comes the void. Enter “mute mode” — a state of strategic silence employed by the Clown Network when they believe absence is more unnerving than presence. It's their version of hiding in plain sight, except no one asked them to appear in the first place.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    This mode usually activates right after a surge of unnecessary activity — as if the performers took their final bow and stepped behind the curtain. But fear not, they’re still there, eavesdropping with the intensity of a low-budget spy thriller while hoping their complete inaction is somehow mystifying.
-  </p>
-  <ul style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a; padding-left: 1.2em; list-style-type: disc;">
-    <li><strong>Complete silence</strong> — occasionally broken by a poorly timed cough or mysterious floorboard creak.</li>
-    <li><strong>Stealth breathing</strong> — their attempt at invisibility, ruined by their inability to not exist loudly.</li>
-    <li><strong>Door watching</strong> — presumably with the hope that someone finally walks out dramatically.</li>
-    <li><strong>Suspense buildup</strong> — leading to absolutely nothing, which ironically becomes the theme.</li>
-  </ul>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    The logic behind mute mode appears to be psychological warfare, but the execution feels more like an amateur improv group trying to “yes, and” the concept of absence. It doesn’t intimidate. It doesn’t confuse. It merely highlights that, even in silence, they’re painfully present.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    Mute mode isn’t a tactic. It’s a technical failure masquerading as strategy. And if the Clown Network ever disappears entirely, we’ll know they’ve finally mastered it — by accident.
-  </p>
-</section>
-
-<h2>6. Bathroom Theatre: A New Performance Venue</h2>
-
-<section style="margin-top: 2em;">
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    Just when you think the Clown Network’s creative range is exhausted, they take their performance to the tiled acoustics of the bathroom — a space typically reserved for privacy, now transformed into a soundstage for echo-filled absurdity.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    Their bathroom activities defy logic. Items are dragged, moved, and possibly interrogated. Every trip to the toilet seems to double as a set change, complete with shifting props and ambient water-based percussion. If there's a point, it’s been flushed long ago.
-  </p>
-  <ul style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a; padding-left: 1.2em; list-style-type: disc;">
-    <li><strong>Furniture relocation</strong> — because nothing says innovation like moving a chair next to the sink.</li>
-    <li><strong>Drawer symphonies</strong> — where opening and closing becomes a dramatic beat drop.</li>
-    <li><strong>Toilet proximity dances</strong> — unclear choreography, unclear purpose, loud results.</li>
-    <li><strong>Sink-side stomping</strong> — for those special moments when brushing teeth requires full-body emphasis.</li>
-  </ul>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    The acoustics, of course, amplify every gesture. It’s like they’ve discovered reverb and can’t let go. One could argue it’s a study in sonic reflection — if only it weren’t happening directly above your head during your own bathroom visit.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    Is it surveillance? A psychological test? A toilet-seat-centered art installation? The world may never know. What we do know is that the bathroom has officially become a performance venue, and unfortunately, the rest of us are seated front row — without consent or intermission.
-  </p>
-</section>
-
-<h2>7. Dream Manipulation: Failed Jedi Mind Tricks</h2>
-
-<section style="margin-top: 2em;">
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    Somewhere between an overused air purifier and a bad sci-fi plot, the Clown Network seems to believe they’ve discovered dream manipulation. Their approach? Flood the airwaves with unexplained hums, vibrations, and high-pitched frequencies during sleep hours — then hope for... what? Mind control? Narrative influence? The Nobel Prize in Nocturnal Nonsense?
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    The result is more laughable than lucid. At best, it triggers a vague dream about taking an exam in a hallway. At worst, it wakes you up wondering if an aircraft just passed through your bedroom wall. Subtlety is not their strength. Nor is effectiveness.
-  </p>
-  <ul style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a; padding-left: 1.2em; list-style-type: disc;">
-    <li><strong>Frequency pulses</strong> — because apparently, your REM cycle needs a soundtrack.</li>
-    <li><strong>Synchronized machine hums</strong> — their attempt at binaural beats, minus the brain.</li>
-    <li><strong>Unnatural wakeups</strong> — not caused by alarm clocks, but by strategically placed stupid.</li>
-    <li><strong>Dream narrative mimicry</strong> — as if inserting characters or voices from real life will somehow override free will.</li>
-  </ul>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    The underlying assumption here is almost adorable: that dreams are easily hijacked with amateur radio signals and poorly timed stomps. What they forget is that the human brain is not a walkie-talkie, and most of us have already built mental firewalls stronger than their collective intellect.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    In the end, their “dream experiments” don’t unlock inner worlds — they just confirm outer idiocy. If REM sleep is a sacred realm, the Clown Network is the drunk guy banging on the door, demanding to be let in without a ticket.
-  </p>
-</section>
-
-<h2>8. Deaf but Loud: The Paradox of Selective Hearing</h2>
-
-<section style="margin-top: 2em;">
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    The Clown Network exhibits a curious auditory phenomenon: an uncanny ability to ignore direct communication while simultaneously producing a cacophony of sounds that suggest a complete disregard for their own noise levels. It's as if they possess a superpower that allows them to be both oblivious and obtrusive in equal measure.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    This behavior aligns with the well-documented <a href="https://en.wikipedia.org/wiki/Lombard_effect" target="_blank" style="color: #3c1053; text-decoration: underline;">Lombard effect</a>, where individuals unconsciously increase their vocal effort in noisy environments to enhance audibility. However, in the case of the Clown Network, this manifests as an incessant barrage of chair dragging, door slamming, and inexplicable appliance usage, all while remaining impervious to external stimuli.
-  </p>
-  <ul style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a; padding-left: 1.2em; list-style-type: disc;">
-    <li><strong>Volume escalation</strong> — conversations that start at a whisper and inexplicably crescendo into shouting matches.</li>
-    <li><strong>Appliance symphonies</strong> — operating multiple noisy devices simultaneously, creating a domestic orchestra of chaos.</li>
-    <li><strong>Selective responsiveness</strong> — ignoring direct communication attempts while reacting to the faintest of background noises.</li>
-    <li><strong>Involuntary percussion</strong> — tapping, banging, and stomping that seem to follow no discernible rhythm or purpose.</li>
-  </ul>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    The result is a living environment where the Clown Network's auditory output dominates the soundscape, leaving neighbors to ponder whether this is a deliberate act of sonic domination or merely a byproduct of their unique auditory processing. Regardless, the impact is the same: a relentless assault on the senses that challenges the very notion of peaceful coexistence.
-  </p>
-</section>
-
-<h2>9. Weekend Specials: Stupidity in HD</h2>
-
-<section style="margin-top: 2em;">
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    Weekdays are for amateurs. The Clown Network saves its most ambitious performances for the weekend—a time when most seek rest, but they seek resonance. It's as if Saturday and Sunday come with a special license to amplify absurdity.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    These weekend specials are not mere escalations; they are full-blown festivals of futility. From sunrise to the wee hours, the Clown Network orchestrates a symphony of sounds that defy both logic and acoustics, ensuring that tranquility remains a distant memory.
-  </p>
-  <ul style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a; padding-left: 1.2em; list-style-type: disc;">
-    <li><strong>Morning Mayhem</strong> — commencing at dawn with synchronized chair dragging and spontaneous appliance activation.</li>
-    <li><strong>Afternoon Antics</strong> — featuring impromptu furniture rearrangements and the occasional interpretive stomp dance.</li>
-    <li><strong>Evening Escapades</strong> — culminating in a crescendo of door slams, muffled arguments, and inexplicable object drops.</li>
-    <li><strong>Midnight Madness</strong> — a surprise encore of all previous acts, performed with renewed vigor and questionable intent.</li>
-  </ul>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    The weekend performances are less about routine and more about ritual—a sacred observance of noise for noise's sake. It's a testament to their unwavering commitment to disruption, ensuring that no moment of peace goes unpunished.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    In the grand theater of the Clown Network, weekends are the main event. And while the rest of the world unwinds, they wind up—proving that for some, the concept of rest is merely a setup for the next act of chaos.
-  </p>
-</section>
-
-<h2 style="font-family: 'Segoe UI', sans-serif; color: #3c1053; font-size: 1.4em; margin-top: 2em;">Figure 2. Timeline of Logged Clown Activity</h2>
-<img src="https://raw.githubusercontent.com/neuralglow-consulting/neuralglow-ai.github.io/master/assets/images/clown_network_timeline.png" alt="Timeline chart of Clown Network activity" style="max-width: 60%; height: auto; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); margin: 1em 0;">
-<div class="caption" style="font-size: 0.95em; color: #555; font-style: italic; margin-bottom: 2em;">
-    As shown above, stupidity trends upward with each passing day. Like a fine wine of failure.
-</div>  
-
-<h2>10. Identity-Impact Games: How They Fail at Influence</h2>
-
-    <section style="margin-top: 2em;">
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    Beyond the cacophony of chairs and the hum of mysterious machines, the Clown Network delves into more insidious territory: identity-impact games. These aren't games in the traditional sense—there are no rules, objectives, or end goals. Instead, they're a series of psychological misfires aimed at unsettling their neighbors through a distorted mirror of familiarity.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    The tactics are as varied as they are perplexing. From mimicking daily routines to adopting similar speech patterns, the Clown Network attempts to blur the lines between their own identities and those of their unsuspecting neighbors. It's a performance art piece no one asked to be part of, where the audience is both the subject and the unwilling participant.
-  </p>
-  <ul style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a; padding-left: 1.2em; list-style-type: disc;">
-    <li><strong>Routine mirroring</strong> — synchronizing daily activities to create a sense of intrusion.</li>
-    <li><strong>Vocal mimicry</strong> — adopting speech patterns or phrases to unsettle and confuse.</li>
-    <li><strong>Behavioral imitation</strong> — replicating habits or mannerisms to erode personal boundaries.</li>
-    <li><strong>Spatial encroachment</strong> — occupying shared spaces in a manner that feels invasive.</li>
-  </ul>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    These identity-impact games are less about direct confrontation and more about a slow, creeping erosion of individuality. It's a psychological strategy that lacks both finesse and purpose, leaving only discomfort in its wake.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    In the end, the Clown Network's attempts at identity manipulation are as transparent as they are ineffective. Their efforts serve only to highlight their own lack of originality, turning their neighbors into unwilling muses for a performance that fails to resonate.
-  </p>
-</section>
-    
-    <h2>11. Anecdotes from the Abyss: Top Moments in Clown History</h2>
-
-    <section style="margin-top: 2em;">
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    While the Clown Network's antics often defy categorization, certain episodes stand out as exemplars of their commitment to the art of absurdity. These anecdotes, collected over countless hours of involuntary observation, offer a glimpse into the depths of their performative chaos.
-  </p>
-  <ul style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a; padding-left: 1.2em; list-style-type: disc;">
-    <li><strong>The Midnight Furniture Ballet</strong> — At precisely 3:17 AM, a symphony of scraping and thudding commenced, suggesting a full-scale living room rearrangement. By morning, all appeared unchanged, leaving only questions and a disrupted sleep cycle.</li>
-    <li><strong>The Appliance Aria</strong> — A chorus of humming devices activated in unison, creating a droning melody that persisted for hours. The purpose remains unknown, but the resonance lingers in memory.</li>
-    <li><strong>The Whispering Walls</strong> — Faint, unintelligible murmurs emanated through the walls, evoking a sense of unease. Whether a deliberate act or a byproduct of their activities, the effect was undeniably disconcerting.</li>
-    <li><strong>The Phantom Flush</strong> — Repeated toilet flushes occurred in rapid succession, absent any accompanying footsteps or door movements. A plumbing malfunction, or a new form of avant-garde expression?</li>
-  </ul>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    These vignettes, while seemingly trivial, coalesce into a broader narrative of persistent disruption. Each act, whether intentional or incidental, contributes to the Clown Network's overarching mission: to challenge the boundaries of neighborly tolerance through relentless, inexplicable behavior.
-  </p>
-</section>
-    
-    <h2>12. Visualizing Their Failure: Patterns in the Chaos</h2>
-
-    <section style="margin-top: 2em;">
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    For those who demand evidence—and rightly so—we’ve done what the Clown Network never could: translated their nonsense into data. These charts don’t just illustrate behavior; they document obsession, delusion, and the raw dedication it takes to achieve absolutely nothing with such persistence.
-  </p>
-  <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-    What follows is not scientific discovery. It’s what happens when you give absurdity a spreadsheet and a timeline. A breakdown of idiocy, visualized for the benefit of future anthropologists—or anyone wondering how long someone can drag a chair before realizing they’ve hit rock bottom acoustically.
-  </p>
-
-<h2 style="font-family: 'Segoe UI', sans-serif; color: #3c1053; font-size: 1.4em; margin-top: 2em;">Figure 3. Timeline of Logged Clown Activity</h2>
-<img src="https://raw.githubusercontent.com/neuralglow-consulting/neuralglow-ai.github.io/master/assets/images/clown_network_timeline.png" alt="Timeline chart of Clown Network activity" style="max-width: 60%; height: auto; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); margin: 1em 0;">
-<div class="caption" style="font-size: 0.95em; color: #555; font-style: italic; margin-bottom: 2em;">
-    As shown above, stupidity trends upward with each passing day. Like a fine wine of failure.
+  </div>
 </div>
 
-<h2 style="font-family: 'Segoe UI', sans-serif; color: #3c1053; font-size: 1.4em; margin-top: 2em;">Figure 4. Activity Distribution Pie</h2>
-<img src="https://raw.githubusercontent.com/neuralglow-consulting/neuralglow-ai.github.io/master/assets/images/clown_network_pie_chart.png" alt="Pie chart of Clown Network activity types" style="max-width: 60%; height: auto; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); margin: 1em 0;">
-<div class="caption" style="font-size: 0.95em; color: #555; font-style: italic; margin-bottom: 2em;">
-    This perfectly circular chart represents the completeness of their irrelevance, sliced into even portions of dumb.
+<div class="figure-container">
+  <h2 style="font-family: 'Segoe UI', sans-serif; color: #3c1053; font-size: 1.4em;">Figure 2. Timeline of Logged Clown Activity</h2>
+  <img src="https://raw.githubusercontent.com/neuralglow-consulting/neuralglow-ai.github.io/master/assets/images/clown_network_timeline.png" alt="Timeline chart showing increasing frequency of disruptive activities" style="border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+  <div class="caption" style="font-size: 0.95em; color: #555; font-style: normal; text-align: justify;">
+    The temporal analysis reveals a chaotic pattern spanning from November 2024 through April 15, 2025, with particularly intensive monitoring from April 6-15, 2025. Our longitudinal data shows not just an upward trend but a hectic progression of disruptions, suggesting either an evolution in their methodology or, more likely, a complete abandonment of any pretense of rationality. Peak disturbances consistently occur between 2-4 AM, with notable spikes during what we've termed "The April Crescendo" — a 10-day period of unprecedented stupidity density.
+  </div>
 </div>
 
-<h2 style="font-family: 'Segoe UI', sans-serif; color: #3c1053; font-size: 1.4em; margin-top: 2em;">Figure 5. Noise Complexity vs. Stupidity Level</h2>
-<img src="https://raw.githubusercontent.com/neuralglow-consulting/neuralglow-ai.github.io/master/assets/images/clown_network_scatter_plot.png" alt="Scatter plot of noise complexity vs stupidity level" style="max-width: 60%; height: auto; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); margin: 1em 0;">
-<div class="caption" style="font-size: 0.95em; color: #555; font-style: italic; margin-bottom: 2em;">
-    A data-backed confirmation that the more complex their effort, the higher their failure rate. A straight-line correlation between trying too hard and achieving nothing.
+<div class="figure-container">
+  <h2 style="font-family: 'Segoe UI', sans-serif; color: #3c1053; font-size: 1.4em;">Figure 3. Timeline of Logged Clown Activity</h2>
+  <img src="https://raw.githubusercontent.com/neuralglow-consulting/neuralglow-ai.github.io/master/assets/images/clown_network_timeline.png" alt="Timeline chart showing increasing frequency of disruptive activities from January to April 2025" style="border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+  <div class="caption" style="font-size: 0.95em; color: #555; font-style: normal; text-align: justify;">
+    As shown above, stupidity trends upward with each passing day. Like a fine wine of failure, the data reveals a consistent 47% month-over-month increase in chair-dragging incidents (red line), synchronized with a 62% rise in unexplained mechanical hums (blue line). Note the peculiar spikes during full moons, suggesting either lunar influence or simply more visibility for nighttime furniture choreography. Statistical significance: p < 0.001 (or would be, if this made any sense).
+  </div>
+</div>
+
+<div class="figure-container">
+  <h2 style="font-family: 'Segoe UI', sans-serif; color: #3c1053; font-size: 1.4em;">Figure 4. Activity Distribution Pie</h2>
+  <img src="https://raw.githubusercontent.com/neuralglow-consulting/neuralglow-ai.github.io/master/assets/images/clown_network_pie_chart.png" alt="Pie chart of Clown Network activity types" style="border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+  <div class="caption" style="font-size: 0.95em; color: #555; font-style: normal; text-align: justify;">
+    This perfectly circular chart represents the completeness of their irrelevance, sliced into even portions of dumb. Analysis shows chair dragging accounts for 42% of all activities, followed by mysterious humming (28%), door slamming (18%), and miscellaneous chaos (12%). The remarkable consistency in their distribution suggests either careful planning or, more likely, a complete lack of creative variation in their disruptive repertoire.
+  </div>
+</div>
+
+<div class="figure-container">
+  <h2 style="font-family: 'Segoe UI', sans-serif; color: #3c1053; font-size: 1.4em;">Figure 5. Noise Complexity vs. Stupidity Level</h2>
+  <img src="https://raw.githubusercontent.com/neuralglow-consulting/neuralglow-ai.github.io/master/assets/images/clown_network_scatter_plot.png" alt="Scatter plot of noise complexity vs stupidity level" style="border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+  <div class="caption" style="font-size: 0.95em; color: #555; font-style: normal; text-align: justify;">
+    Our scatter plot analysis reveals a direct correlation between attempted complexity and achieved stupidity (r = 0.97, p < 0.001). The data demonstrates that for every unit increase in noise complexity, there is a corresponding 1.5-unit increase in perceived stupidity. This relationship holds true across all observed activities, from simple chair dragging to elaborate multi-appliance orchestrations. The trend line suggests a perfect inverse relationship between effort invested and intelligence displayed.
+  </div>
 </div>
 
   <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
@@ -486,7 +386,7 @@ function downloadPDF() {
 </section>
     
  
-    <h2>13. The Universe Has Jokes Too: Coincidence or Cosmic Satire?</h2>
+    <h2>4. The Universe Has Jokes Too: Coincidence or Cosmic Satire?</h2>
 
     <section style="margin-top: 2em;">
   <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
@@ -509,7 +409,7 @@ function downloadPDF() {
   </p>
 </section>
     
-    <h2>14. Conclusion: Their Legacy is... a Blog Post</h2>
+    <h2>5. Conclusion: Their Legacy is... a Blog Post</h2>
 
   <p style="font-family: Georgia, serif; font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
     After months of observation, documentation, data collection, and psychic endurance, the results are in: the Clown Network has produced no innovation, no influence, no meaningful psychological outcome. What they’ve created—painstakingly and with unrelenting commitment—is a masterpiece of wasted energy. A slow-burning exhibit of how far effort can travel without purpose.
@@ -544,29 +444,57 @@ function downloadPDF() {
   </p>
 </section>
 
-<div class="sharing">
-    Share this analysis:
-    <a href="https://twitter.com/intent/tweet?url=[URL_TO_THIS_ARTICLE]&text=The%20Science%20of%20Stupidity:%20A%20Clown%20Network%20Analysis%20by%20@NeuralGlowAI" target="_blank" rel="noopener noreferrer" aria-label="Share on X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=[URL_TO_THIS_ARTICLE]" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.linkedin.com/shareArticle?url=[URL_TO_THIS_ARTICLE]&title=The%20Science%20of%20Stupidity:%20A%20Clown%20Network%20Analysis&summary=A%20detailed%20satirical%20study%20on%20the%20Clown%20Network%20phenomenon.&source=NeuralGlow.ai" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:?subject=The%20Science%20of%20Stupidity:%20A%20Clown%20Network%20Analysis&body=Check%20out%20this%20analysis%20of%20the%20Clown%20Network:%20[URL_TO_THIS_ARTICLE]" target="_blank" rel="noopener noreferrer" aria-label="Share via Email"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.threads.net/share?url=[URL_TO_THIS_ARTICLE]" target="_blank" rel="noopener noreferrer" aria-label="Share on Threads"><i class="fab fa-threads"></i></a>
-</div>
 
-<div class="sharing">
-</div>
+<section id="acknowledgments" class="research-section">
+  <h2>Acknowledgments & Research Ethics</h2>
+  
+  <div class="grant-info">
+    <p><strong>Research Grant:</strong> CL-42-2025-IANS</p>
+    <p><strong>Ethics Approval:</strong> IANS-ETH-2025-048</p>
+    <p><strong>Data Collection Period:</strong> January 2025 - April 2025</p>
+  </div>
 
-<div class="download-pdf" style="text-align: center; margin: 2em 0;">
-    <button onclick="downloadPDF()" style="padding: 10px 20px; background-color: #3c1053; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">
-        <i class="fas fa-file-pdf"></i> Download as PDF
-    </button>
-</div>
+  <p>This research owes its existence to the unwavering dedication of our volunteer participants, whose heroic tolerance of systematic cognitive perturbation—particularly at ℂ₄₈ (Corridoni 48, Pisa)—has propelled our understanding of psychological defense mechanisms to new, albeit peculiar, heights. Special recognition goes to Subject Group A ("The Resilient Ones") who maintained their sanity through 2,184 hours of controlled absurdity exposure.</p>
 
-<div class="back-home">
-  <a href="/">Back to Home</a>
-</div>
+  <div class="investigator-profile">
+    <h3>Lead Investigator</h3>
+    <p>Dr. Serenity Humorberg is the founding director of the Center for Resilience Against Practiced Stupidity (CRAPS) and a pioneer in the field of Defensive Humor Psychology. Following her groundbreaking work on the "Inverse Correlation Between Volume and Intelligence" theory, she has dedicated her career to documenting and analyzing patterns of intentional disruption in residential settings.</p>
+    <p><strong>Notable Achievements:</strong></p>
+    <ul>
+      <li>Winner, 2024 IANS Medal for Distinguished Patience in the Face of Absurdity</li>
+      <li>Author of "Laughing Through the Noise: A Guide to Cognitive Resilience"</li>
+      <li>Developer of "Involuntary Ethnographic Immersion" methodology</li>
+    </ul>
+  </div>
 
-</main>
+  <div class="acknowledgment-box">
+    <h3>Institutional Support</h3>
+    <ul>
+      <li>The Sleep Laboratory's Archived Behavioral Stimulus Collection (SLABS-C)</li>
+      <li>Institute for Applied Nonsense Studies (IANS)</li>
+      <li>Department of Unconventional Psychology (DUP)</li>
+      <li>Center for Resilience Against Practiced Stupidity (CRAPS)</li>
+    </ul>
+  </div>
+
+  <blockquote class="research-quote">
+    "In the grand tradition of psychological research, the most profound insights often emerge from the absurd. Our participants' evolution from bewilderment to strategic apathy is a testament to the resilience of the human mind."
+    <footer>
+      — Dr. Serenity Humorberg, Ph.D.<br>
+      <small>Lead Investigator, Department of Unconventional Psychology</small>
+    </footer>
+  </blockquote>
+
+  <div class="ethics-declaration">
+    <h3>Ethics & Safety Declarations</h3>
+    <ul>
+      <li>No professional clowns were harmed (physically)</li>
+      <li>Psychological damage was limited to researchers only</li>
+      <li>All noise levels remained below legal thresholds (technically)</li>
+      <li>Dreams were monitored but not manipulated (intentionally)</li>
+    </ul>
+  </div>
+</section>
 
 <footer>
   &copy; 2025 NeuralGlow.ai<br>
