@@ -1,25 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact NeuralGlow — Stay Connected</title>
-  <meta name="description" content="Contact NeuralGlow: Calmly reach out, connect ideas, or just say hello.">
+  <meta name="description" content="Contact NeuralGlow: Calmly reach out, connect ideas, or just say hello. We're all ears (and keyboards).">
   <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
   <style>
+    /* General Styles */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
-      background: linear-gradient(to bottom right, #e0f2e9, #c8e6c9);
+      background: linear-gradient(to bottom right, #E8F5E9, #FCE4EC); /* Light Green to Light Pink */
       background-attachment: fixed;
-      color: #1a1a1a;
+      color: #333;
       overflow-x: hidden;
+      line-height: 1.6;
     }
+
+    /* Header Styles */
     header {
-      background: #034f21;
-      color: #ffffff;
+      background: #673AB7; /* Deep Purple */
+      color: #fff;
       padding: 20px 30px;
       position: sticky;
       top: 0;
@@ -27,67 +30,133 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
+
+    header a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+
+    header a:hover {
+      color: #FFD740; /* Gold */
+    }
+
     nav a {
-      color: #ffffff;
+      color: #FFCCBC; /* Light Coral */
       margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
-      color: #ffffff;
+      color: #FFAB91; /* Coral */
       text-decoration: underline;
     }
+
+    /* Main Content Styles */
     main {
-      max-width: 600px;
-      margin: 80px auto 40px auto;
-      padding: 20px;
+      max-width: 700px;
+      margin: 60px auto 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.9); /* Semi-transparent White */
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       text-align: center;
     }
+
     h1 {
       font-size: 2.5rem;
+      color: #5E35B1; /* Deep Purple */
       margin-bottom: 20px;
-      color: #034f21;
     }
+
     p {
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.7;
       margin-bottom: 30px;
+      color: #555;
     }
+
     form {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 10px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: left;
     }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #4A148C; /* Dark Purple */
+      font-weight: bold;
+    }
+
     input, textarea {
       width: 100%;
       padding: 12px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 8px;
       font-size: 1rem;
+      transition: border-color 0.3s ease;
     }
+
+    input:focus, textarea:focus {
+      border-color: #7E57C2; /* Medium Purple */
+      outline: none;
+    }
+
     button {
       padding: 12px 30px;
-      background-color: #034f21;
+      background-color: #7E57C2; /* Medium Purple */
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
       font-size: 1rem;
+      transition: background-color 0.3s ease;
     }
+
     button:hover {
-      background-color: #034f21;
+      background-color: #5E35B1; /* Deep Purple */
     }
+
+    /* Footer Styles */
     footer {
-      background: #034f21;
-      color: #ccc;
+      background: #673AB7; /* Deep Purple */
+      color: #eee;
       text-align: center;
       padding: 20px 10px;
       font-size: 0.9rem;
       margin-top: 60px;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    }
+
+    footer a {
+      color: #B39DDB; /* Lavender */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #FFD54F; /* Amber */
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      main {
+        padding: 20px;
+        margin: 40px auto;
+      }
+
+      form {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -95,15 +164,15 @@
 
   <header>
     <div>
-      <a href="/" style="text-decoration: none; color: #ffffff;">
-        <strong>NeuralGlow.ai</strong>
+      <a href="/" style="text-decoration: none; color: #ffffff; font-weight: bold; font-size: 1.2rem;">
+        NeuralGlow.ai
       </a>
     </div>
     <nav>
       <a href="/">Home</a>
       <a href="/about.html">About</a>
-      <a href="/satire-journals/">Research</a>
-      <a href="/blog/">Blog</a>
+      <a href="/research.html">Research</a>
+      <a href="/blog.html">Blog</a>
       <a href="/contact.html">Contact</a>
       <a href="/quotes/">Quotes</a>
       <a href="/notes/">Notes</a>
@@ -112,14 +181,18 @@
 
 <main>
   <h1>Contact NeuralGlow</h1>
-  <p>Got a thought, an observation, or a soft whisper to share?  
-  Send it our way.  
-  Patience blooms best when nurtured by curiosity.</p>
+  <p>Got a thought, an observation, or a soft whisper to share? Send it our way. We're all ears (and keyboards), ready to nurture your curiosity with a sprinkle of patience.</p>
 
   <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <label for="name">Your Name</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <label for="email">Your Email</label>
+    <input type="email" id="email" placeholder="Enter your email" required>
+
+    <label for="message">Your Message</label>
+    <textarea id="message" rows="5" placeholder="Share your thoughts..." required></textarea>
+
     <button type="submit">Send Message</button>
   </form>
 </main>
