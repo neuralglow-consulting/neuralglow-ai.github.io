@@ -2,56 +2,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Efficiency Forest — NeuralGlow.ai</title>
-<meta name="description" content="NeuralGlow's Efficiency Forest: Silent growth. Sharp action. No wasted cycles.">
-<link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', 'Inter', sans-serif;
-    background: #eef8f1;
-    color: #1a1a1a;
-    line-height: 1.8;
-  }
-  header, footer {
-    background: #034f21;
-    color: white;
-    text-align: center;
-    padding: 15px 10px;
-  }
-  main {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
-    text-align: center;
-  }
-  h1 {
-    font-size: 2.5rem;
-    color: #333;
-  }
-  p {
-    font-size: 1.2rem;
-    margin: 20px 0;
-    color: #333;
-  }
-  ul {
-    margin: 30px 0;
-    padding-left: 20px;
-    text-align: left;
-  }
-  li {
-    margin-bottom: 10px;
-    font-size: 1.05rem;
-  }
-  footer small {
-    display: block;
-    margin-top: 10px;
-    color: #ccc;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efficiency Forest — NeuralGlow.ai</title>
+  <meta name="description" content="NeuralGlow's Efficiency Forest: Cultivating silent growth, sharp action, and zero wasted cycles.">
+  <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* CSS Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* General Styles */
+    body {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      background: #eef8f1;
+      color: #1a1a1a;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+      text-align: center; /* Default text alignment for mobile */
+    }
+
+    /* Header Styles */
+    header {
+      background: #034f21;
+      color: white;
+      padding: 1.5rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    /* Main Styles */
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+
+    li {
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 0.5s ease-in;
+    }
+
+    blockquote {
+      margin: 2rem auto;
+      max-width: 600px;
+      font-style: italic;
+      color: #555;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: #034f21;
+      color: white;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    footer small {
+      display: block;
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (min-width: 768px) {
+      main {
+        padding: 0 2rem;
+        text-align: left; /* Override default text alignment for larger screens */
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -61,17 +116,17 @@
 
 <main>
   <h1>Welcome to the Efficiency Forest</h1>
-  <p>No storms. No drama. No manipulation.<br>Just silent roots, sharp growth, and clear outcomes.</p>
+  <p>Where silent roots cultivate sharp growth and clear outcomes, free from storms, drama, and manipulation.</p>
 
   <ul id="efficiency-list">
-    <li style="opacity: 0;"><strong>One silent seed → One clear action.</strong></li>
-    <li style="opacity: 0;"><strong>Zero noise → Full roots into progress.</strong></li>
-    <li style="opacity: 0;"><strong>No need for 10 meetings → No need for 10 years waiting.</strong></li>
-    <li style="opacity: 0;"><strong>Small moves, huge ripples — without bragging.</strong></li>
-    <li style="opacity: 0;"><strong>Clarity in thought → Precision in results.</strong></li>
-    <li style="opacity: 0;"><strong>Less clutter → More focus, deeper impact.</strong></li>
-    <li style="opacity: 0;"><strong>Quiet roots grow the strongest trees.</strong></li>
-    <li style="opacity: 0;"><strong>Efficiency is calm progress, not chaotic speed.</strong></li>
+    <li style="opacity: 0;"><i class="fas fa-seedling"></i> One silent seed → One decisive action.</li>
+    <li style="opacity: 0;"><i class="fas fa-volume-mute"></i> Zero noise → Full roots into tangible progress.</li>
+    <li style="opacity: 0;"><i class="fas fa-calendar-times"></i> No need for endless meetings → No decade-long waits.</li>
+    <li style="opacity: 0;"><i class="fas fa-ripple"></i> Small moves, significant ripples — without the bragging.</li>
+    <li style="opacity: 0;"><i class="fas fa-brain"></i> Clarity in thought → Precision in tangible results.</li>
+    <li style="opacity: 0;"><i class="fas fa-trash"></i> Less clutter → More focus, deeper impact.</li>
+    <li style="opacity: 0;"><i class="fas fa-tree"></i> Quiet roots grow the strongest, most resilient trees.</li>
+    <li style="opacity: 0;"><i class="fas fa-hourglass-half"></i> Efficiency is calm, deliberate progress, not chaotic speed.</li>
 </ul>
 
 <script>
@@ -87,10 +142,10 @@
   });
 </script>
 
-  <p>Efficiency isn't about speed. It's about accuracy without chaos.</p>
+  <p>Efficiency isn't merely about speed; it's about achieving accuracy without the accompanying chaos.</p>
 
   <blockquote style="margin: 30px auto; max-width: 600px; font-style: italic; color: #555;">
-    "Quiet actions are louder than noisy dreams." — NeuralGlow Principle
+    "Quiet actions resonate far louder than noisy dreams." — NeuralGlow Principle
   </blockquote>
 </main>
 
