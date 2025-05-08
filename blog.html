@@ -4,231 +4,971 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog — NeuralGlow.ai</title>
-<meta name="description" content="NeuralGlow Blog: Calm Sparks of Curiosity and Resilience.">
-<meta name="keywords" content="NeuralGlow, blog, digital psychology, AI, resilience, technology">
+<meta name="description" content="NeuralGlow Blog: Insights on workplace psychology, productivity, and organizational behavior through a lens of curiosity and resilience.">
+<meta name="keywords" content="NeuralGlow, blog, digital psychology, AI, resilience, technology, productivity, workplace culture">
 <meta name="author" content="NeuralGlow Research Division">
 <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
-  /* General Styles */
-  body {
-    font-family: 'Poppins', 'Inter', sans-serif;
-    background: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
+    /* Base Styles */
+    :root {
+      --primary: #512DA8; /* Deep Purple */
+      --primary-light: #D1C4E9; /* Light Purple */
+      --secondary: #b30059; /* Deep Pink */
+      --dark: #333333;
+      --light: #fafafa;
+      --gray: #757575;
+      --card-bg: #ffffff;
+      --success: #4CAF50;
+      --link: #7E57C2;
+      --tag-bg: #EDE7F6;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
 
-  header {
-    background: #7B68EE; /* Medium Purple */
-    color: white;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
+    /* Typography */
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.3;
+      color: var(--primary);
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--secondary);
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+    
+    a {
+      color: var(--link);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--secondary);
+    }
 
-  main {
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    /* Header Styles */
+    header {
+      background: #ffffff;
+      color: var(--dark);
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
 
-  /* Month Section Styles */
-  .month-section {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 40px auto;
-  }
+    header .logo img {
+      height: 40px;
+    }
 
-  .month-header {
-    background: #A0522D; /* Sienna */
-    color: white;
-    padding: 10px 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
+    header nav {
+      display: flex;
+      gap: 2rem;
+    }
 
-  .month-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start;
-  }
+    header nav a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+      padding-bottom: 5px;
+    }
+    
+    header nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--secondary);
+      transition: width 0.3s ease;
+    }
+    
+    header nav a:hover::after {
+      width: 100%;
+    }
 
-  /* Card Styles */
-  .card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    width: calc(33.33% - 20px); /* Three cards per row */
-    min-width: 300px;
-    margin-bottom: 20px;
-  }
+    /* Hero Section */
+    .hero {
+      background-color: var(--primary);
+      background-image: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      color: white;
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+    
+    /* Main Content Styles */
+    .page-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    
+    /* Categories */
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    
+    .filter-btn {
+      padding: 0.6rem 1.2rem;
+      background-color: var(--light);
+      border: 1px solid var(--primary-light);
+      border-radius: 50px;
+      color: var(--primary);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+      background-color: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
 
-  .card-header {
-    background: #2E8B57; /* Sea Green */
-    color: white;
-    padding: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-  }
+    /* Blog Post Cards */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin: 2rem 0;
+    }
+    
+    .blog-card {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+    
+    .blog-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .blog-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .blog-date {
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .blog-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .blog-tag {
+      font-size: 0.75rem;
+      background-color: var(--tag-bg);
+      color: var(--primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+    
+    .blog-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.4;
+      color: var(--dark);
+    }
+    
+    .blog-title a {
+      color: var(--dark);
+    }
+    
+    .blog-title a:hover {
+      color: var(--primary);
+    }
+    
+    .blog-excerpt {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    
+    .blog-meta {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--gray);
+      border-top: 1px solid #f0f0f0;
+      padding-top: 1rem;
+    }
+    
+    .read-time {
+      display: flex;
+      align-items: center;
+    }
+    
+    .read-time i {
+      margin-right: 5px;
+    }
+    
+    .blog-card .social-buttons {
+      display: flex;
+      gap: 0.8rem;
+    }
+    
+    .blog-card .social-icon {
+      color: var(--gray);
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+    
+    .blog-card .social-icon:hover {
+      color: var(--primary);
+    }
 
-  .card-body {
-    padding: 20px;
-    text-align: justify;
-  }
+    /* Month Section */
+    .month-section {
+      margin-bottom: 4rem;
+    }
+    
+    .month-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    
+    .month-header h2 {
+      margin: 0;
+      color: var(--primary);
+    }
+    
+    .month-divider {
+      flex-grow: 1;
+      height: 1px;
+      background-color: #e0e0e0;
+      margin-left: 1rem;
+    }
 
-  .card-body p {
-    color: #555;
-    line-height: 1.6;
-  }
+    /* Social Sharing Sidebar */
+    .social-sidebar {
+      position: fixed;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 50;
+    }
+    
+    .social-icon-large {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      color: var(--primary);
+      border-radius: 50%;
+      font-size: 1.2rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon-large:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
 
-  .card-footer {
-    padding: 15px;
-    text-align: right;
-    background: #f0f0f0;
-  }
+    /* Search Bar */
+    .search-container {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      position: relative;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      padding-left: 3rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary-light);
+      box-shadow: 0 3px 20px rgba(0,0,0,0.1);
+    }
+    
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      left: 1.2rem;
+      transform: translateY(-50%);
+      color: var(--gray);
+      font-size: 1.2rem;
+    }
 
-  .card-footer a {
-    color: #7B68EE; /* Medium Purple */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-
-  .card-footer a:hover {
-    color: #A0522D; /* Sienna */
-  }
-
-  footer {
-    background: #7B68EE; /* Medium Purple */
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
-  }
-
-  /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
-    .month-cards {
+    /* Newsletter Section */
+    .newsletter {
+      background-color: var(--primary-light);
+      border-radius: 15px;
+      padding: 3.5rem 2.5rem;
+      margin: 5rem 0 3rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    .newsletter::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
       justify-content: center;
     }
-    .card {
-      width: calc(50% - 20px); /* Two cards per row on smaller screens */
-      min-width: 300px;
+    
+    .newsletter::after {
+      content: '✉️';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
     }
-  }
+    
+    .newsletter-title {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    
+    .newsletter-description {
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-input {
+      flex-grow: 1;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .newsletter-btn {
+      padding: 0 1.8rem;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .newsletter-btn:hover {
+      background-color: var(--secondary);
+    }
 
-  @media (max-width: 576px) {
-    .card {
-      width: 100%; /* One card per row on even smaller screens */
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 3rem 0 1.5rem;
+      margin-top: 5rem;
     }
-  }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-links a {
+      color: #bbdefb;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #555;
+      width: 100%;
+    }
+    
+    .copyright {
+      font-size: 0.9rem;
+      color: #bbdefb;
+    }
+    
+    .footer-meta {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #757575;
+    }
+    
+    .footer-meta a {
+      color: #757575;
+    }
+    
+    .footer-meta a:hover {
+      color: #bbdefb;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1100px) {
+      .social-sidebar {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin: 2rem 0;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .newsletter {
+        padding: 2.5rem 1.5rem;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .newsletter-input, .newsletter-btn {
+        width: 100%;
+        border-radius: 5px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+      }
+      
+      header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .filter-container {
+        justify-content: center;
+      }
+      
+      .hero {
+        padding: 4rem 1rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
 </style>
 </head>
-<body>
 
+<body>
 <header>
-  <a href="http://neuralglow.ai" style="text-decoration: none; color: white;">
-    NeuralGlow Blog
-  </a>
+  <div class="logo">
+    <a href="/"><img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow Logo"></a>
+  </div>
+  <nav>
+    <a href="/about.html">About</a>
+    <a href="/research.html">Research</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
 </header>
 
-<main>
+<div class="hero">
+  <h1>NeuralGlow Blog</h1>
+  <p>Thoughtful perspectives on workplace psychology, productivity, and the quiet art of thriving in chaotic environments.</p>
+</div>
+
+<div class="social-sidebar">
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai/blog.html" class="social-icon-large" target="_blank" aria-label="Share on LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://twitter.com/intent/tweet?text=Check%20out%20NeuralGlow's%20insights%20on%20workplace%20psychology%20and%20productivity&url=https://neuralglow.ai/blog.html" class="social-icon-large" target="_blank" aria-label="Share on Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai/blog.html" class="social-icon-large" target="_blank" aria-label="Share on Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://medium.com/new-story?url=https://neuralglow.ai/blog.html&title=NeuralGlow%20Blog%20-%20Insights%20on%20Workplace%20Psychology" class="social-icon-large" target="_blank" aria-label="Share on Medium">
+    <i class="fab fa-medium-m"></i>
+  </a>
+</div>
+
+<div class="page-container">
+  <div class="search-container">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" class="search-input" placeholder="Search articles..." id="search-input">
+  </div>
+  
+  <div class="filter-container">
+    <button class="filter-btn active" data-filter="all">All Topics</button>
+    <button class="filter-btn" data-filter="workplace">Workplace Psychology</button>
+    <button class="filter-btn" data-filter="productivity">Productivity</button>
+    <button class="filter-btn" data-filter="satire">Satirical Analysis</button>
+    <button class="filter-btn" data-filter="resilience">Resilience</button>
+    <button class="filter-btn" data-filter="technology">Technology</button>
+  </div>
+  
   <!-- May 2025 Section -->
   <section class="month-section">
-    <div class="month-header">May 2025</div>
-    <div class="month-cards">
-      <div class="card">
-        <div class="card-header">
-          The Circus Files: A Professional Analysis of Digital Network Psychology
+    <div class="month-header">
+      <h2>May 2025</h2>
+      <div class="month-divider"></div>
+    </div>
+    
+    <div class="blog-grid">
+      <article class="blog-card" data-categories="workplace satire productivity">
+        <img src="/assets/images/discipline-concept.jpg" alt="Discipline Concept" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-date">May 08, 2025</div>
+          <div class="blog-tags">
+            <span class="blog-tag">Workplace Psychology</span>
+            <span class="blog-tag">Productivity</span>
+          </div>
+          <h3 class="blog-title">
+            <a href="http://neuralglow.ai/satire-journals/clown_network_firewall_article_responsive.html">The Discipline Deception: Escape the Performance Theater That's Killing Your Potential</a>
+          </h3>
+          <p class="blog-excerpt">Discover how true discipline goes beyond 9-to-5 routines and early wake-ups. Learn how to cultivate real discipline through autonomy and outcome-based work.</p>
+          <div class="blog-meta">
+            <div class="read-time">
+              <i class="far fa-clock"></i> 12 min read
+            </div>
+            <div class="social-buttons">
+              <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai/satire-journals/clown_network_firewall_article_responsive.html" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai/satire-journals/clown_network_firewall_article_responsive.html" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai/satire-journals/clown_network_firewall_article_responsive.html" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <p>A satirical yet professional exploration of recurring behavioral patterns in underperforming networks and outdated management systems. Discover how manipulation tactics and accountability gaps contribute to systemic inefficiencies.</p>
+      </article>
+      
+      <article class="blog-card" data-categories="workplace satire">
+        <img src="/assets/images/circus-analysis.jpg" alt="Circus Analysis Concept" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-date">May 15, 2025</div>
+          <div class="blog-tags">
+            <span class="blog-tag">Satire</span>
+            <span class="blog-tag">Digital Psychology</span>
+          </div>
+          <h3 class="blog-title">
+            <a href="/blog/May/Circus_Files_Final_With_Summary.html">The Circus Files: A Professional Analysis of Digital Network Psychology</a>
+          </h3>
+          <p class="blog-excerpt">A satirical yet professional exploration of recurring behavioral patterns in underperforming networks and outdated management systems. Discover how manipulation tactics and accountability gaps contribute to systemic inefficiencies.</p>
+          <div class="blog-meta">
+            <div class="read-time">
+              <i class="far fa-clock"></i> 10 min read
+            </div>
+            <div class="social-buttons">
+              <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai/blog/May/Circus_Files_Final_With_Summary.html" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai/blog/May/Circus_Files_Final_With_Summary.html" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai/blog/May/Circus_Files_Final_With_Summary.html" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="card-footer">
-          <a href="/blog/May/Circus_Files_Final_With_Summary.html">Read More</a>
-        </div>
-      </div>
+      </article>
     </div>
   </section>
-
+  
   <!-- April 2025 Section -->
   <section class="month-section">
-    <div class="month-header">April 2025</div>
-    <div class="month-cards">
-      <div class="card">
-        <div class="card-header">
-          Clown Networks: Efficiency Loss Report
+    <div class="month-header">
+      <h2>April 2025</h2>
+      <div class="month-divider"></div>
+    </div>
+    
+    <div class="blog-grid">
+      <article class="blog-card" data-categories="satire workplace">
+        <img src="/assets/images/clown-network.jpg" alt="Clown Network Concept" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-date">April 28, 2025</div>
+          <div class="blog-tags">
+            <span class="blog-tag">Satire</span>
+            <span class="blog-tag">Workplace Analysis</span>
+          </div>
+          <h3 class="blog-title">
+            <a href="/blog/April/clown_network_efficiency_loss_report.html">Clown Networks: Efficiency Loss Report</a>
+          </h3>
+          <p class="blog-excerpt">How strategic confusion, noise, and imaginary meetings achieve record-breaking inefficiency. A satirical field study by NeuralGlow.</p>
+          <div class="blog-meta">
+            <div class="read-time">
+              <i class="far fa-clock"></i> 8 min read
+            </div>
+            <div class="social-buttons">
+              <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai/blog/April/clown_network_efficiency_loss_report.html" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai/blog/April/clown_network_efficiency_loss_report.html" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai/blog/April/clown_network_efficiency_loss_report.html" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <p>How strategic confusion, noise, and imaginary meetings achieve record-breaking inefficiency. A satirical field study by NeuralGlow.</p>
+      </article>
+      
+      <article class="blog-card" data-categories="technology resilience">
+        <img src="/assets/images/serendipity.jpg" alt="Serendipity Concept" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-date">April 21, 2025</div>
+          <div class="blog-tags">
+            <span class="blog-tag">Creativity</span>
+            <span class="blog-tag">Technology</span>
+          </div>
+          <h3 class="blog-title">
+            <a href="/blog/April/serendipitous_spark_of_old_code.html">The Serendipitous Spark</a>
+          </h3>
+          <p class="blog-excerpt">How a forgotten Visual Basic project lit up unexpected creativity. Calm, curious, quietly brilliant.</p>
+          <div class="blog-meta">
+            <div class="read-time">
+              <i class="far fa-clock"></i> 6 min read
+            </div>
+            <div class="social-buttons">
+              <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai/blog/April/serendipitous_spark_of_old_code.html" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai/blog/April/serendipitous_spark_of_old_code.html" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai/blog/April/serendipitous_spark_of_old_code.html" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="card-footer">
-          <a href="/blog/April/clown_network_efficiency_loss_report.html">Read More</a>
+      </article>
+      
+      <article class="blog-card" data-categories="technology productivity">
+        <img src="/assets/images/github-copilot.jpg" alt="GitHub Copilot" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-date">April 15, 2025</div>
+          <div class="blog-tags">
+            <span class="blog-tag">Technology</span>
+            <span class="blog-tag">AI Tools</span>
+          </div>
+          <h3 class="blog-title">
+            <a href="/blog/April/GitHub-copilot-new.html">GitHub Copilot: Calm Power for Creators</a>
+          </h3>
+          <p class="blog-excerpt">Explore how AI-assisted coding shapes a new era where resilience, precision, and creativity lead the way beyond noisy automation.</p>
+          <div class="blog-meta">
+            <div class="read-time">
+              <i class="far fa-clock"></i> 7 min read
+            </div>
+            <div class="social-buttons">
+              <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai/blog/April/GitHub-copilot-new.html" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai/blog/April/GitHub-copilot-new.html" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai/blog/April/GitHub-copilot-new.html" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          The Serendipitous Spark
+      </article>
+      
+      <article class="blog-card" data-categories="resilience">
+        <img src="/assets/images/whispering-stones.jpg" alt="Whispering Stones Concept" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-date">April 10, 2025</div>
+          <div class="blog-tags">
+            <span class="blog-tag">Resilience</span>
+            <span class="blog-tag">Personal Growth</span>
+          </div>
+          <h3 class="blog-title">
+            <a href="/blog/April/whispering_stones_calm_storm.html">Whispering Stones: Calm Storm</a>
+          </h3>
+          <p class="blog-excerpt">In a noisy world, silence wins. Explore how resilience outlasts chaos, the NeuralGlow way.</p>
+          <div class="blog-meta">
+            <div class="read-time">
+              <i class="far fa-clock"></i> 5 min read
+            </div>
+            <div class="social-buttons">
+              <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai/blog/April/whispering_stones_calm_storm.html" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai/blog/April/whispering_stones_calm_storm.html" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai/blog/April/whispering_stones_calm_storm.html" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <p>How a forgotten Visual Basic project lit up unexpected creativity. Calm, curious, quietly brilliant.</p>
+      </article>
+      
+      <article class="blog-card" data-categories="workplace satire">
+        <img src="/assets/images/science-stupidity.jpg" alt="Science of Stupidity Concept" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-date">April 5, 2025</div>
+          <div class="blog-tags">
+            <span class="blog-tag">Satire</span>
+            <span class="blog-tag">Chaos Theory</span>
+          </div>
+          <h3 class="blog-title">
+            <a href="/blog/April/v2025-4-21-Clown_Network_Science_of_Stupidity_GitHub_Ready.html">The Science of Stupidity: Clown Network Chronicles</a>
+          </h3>
+          <p class="blog-excerpt">A journey through absurdity, chaos theory, and building cognitive firewalls of calm.</p>
+          <div class="blog-meta">
+            <div class="read-time">
+              <i class="far fa-clock"></i> 9 min read
+            </div>
+            <div class="social-buttons">
+              <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai/blog/April/v2025-4-21-Clown_Network_Science_of_Stupidity_GitHub_Ready.html" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai/blog/April/v2025-4-21-Clown_Network_Science_of_Stupidity_GitHub_Ready.html" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai/blog/April/v2025-4-21-Clown_Network_Science_of_Stupidity_GitHub_Ready.html" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="card-footer">
-          <a href="/blog/April/serendipitous_spark_of_old_code.html">Read More</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          GitHub Copilot: Calm Power for Creators
-        </div>
-        <div class="card-body">
-          <p>Explore how AI-assisted coding shapes a new era where resilience, precision, and creativity lead the way beyond noisy automation.</p>
-        </div>
-        <div class="card-footer">
-          <a href="/blog/April/GitHub-copilot-new.html">Read More</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          Whispering Stones: Calm Storm
-        </div>
-        <div class="card-body">
-          <p>In a noisy world, silence wins. Explore how resilience outlasts chaos, the NeuralGlow way.</p>
-        </div>
-        <div class="card-footer">
-          <a href="/blog/April/whispering_stones_calm_storm.html">Read More</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          The Science of Stupidity: Clown Network Chronicles
-        </div>
-        <div class="card-body">
-          <p>A journey through absurdity, chaos theory, and building cognitive firewalls of calm.</p>
-        </div>
-        <div class="card-footer">
-          <a href="/blog/April/v2025-4-21-Clown_Network_Science_of_Stupidity_GitHub_Ready.html">Read More</a>
-        </div>
-      </div>
+      </article>
     </div>
   </section>
-</main>
+  
+  <div class="newsletter">
+    <h2 class="newsletter-title">Get Weekly Insights</h2>
+    <p class="newsletter-description">Join over 5,000 professionals who've redefined their relationship with work. No spam, just weekly actionable advice.</p>
+    <form class="newsletter-form" id="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="Your email address" required>
+      <button type="submit" class="newsletter-btn">Subscribe</button>
+    </form>
+  </div>
+</div>
 
 <footer>
-  &copy; 2025 NeuralGlow.ai | Calm Sparks Growing into Forests🌲
+  <div class="footer-container">
+    <div class="footer-logo">NeuralGlow AI</div>
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/research.html">Research</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2025 NeuralGlow.ai — All rights reserved</p>
+      <p class="footer-meta">
+        <a href="https://uptimerobot.com/" target="_blank">🌿 Monitored quietly by UptimeRobot</a>
+      </p>
+    </div>
+  </div>
 </footer>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filter = this.getAttribute('data-filter');
+        
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Filter blog cards
+        blogCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-categories').includes(filter)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Search functionality
+    const searchInput = document.getElementById('search-input');
+    
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      
+      blogCards.forEach(card => {
+        const title = card.querySelector('.blog-title').textContent.toLowerCase();
+        const excerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
+        const tags = card.getAttribute('data-categories').toLowerCase();
+        
+        if (title.includes(searchTerm) || excerpt.includes(searchTerm) || tags.includes(searchTerm)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+    
+    // Newsletter form
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for subscribing! In a live implementation, you would receive a confirmation email.');
+        this.reset();
+      });
+    }
+  });
+</script>
 </body>
 </html>
