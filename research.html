@@ -3,186 +3,519 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research — NeuralGlow.ai</title>
-<meta name="description" content="Explore NeuralGlow's research on psychological defense in absurd conditions. Discover satirical analyses and future entries.">
-<meta name="keywords" content="NeuralGlow, research, psychology, satire, analysis, absurd conditions">
+<title>Research & Analysis — NeuralGlow.ai</title>
+<meta name="description" content="Explore NeuralGlow's research on workplace psychology, productivity, and organizational behavior. Evidence-based insights for modern professionals.">
+<meta name="keywords" content="NeuralGlow, research, workplace psychology, productivity, deep work, organizational behavior, satire">
 <meta name="author" content="NeuralGlow Research Division">
 <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
 
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
-    /* General Styles */
-    html { scroll-behavior: smooth; }
+    /* Base Styles */
+    :root {
+      --primary: #512DA8; /* Deep Purple */
+      --primary-light: #D1C4E9; /* Light Purple */
+      --secondary: #b30059; /* Deep Pink */
+      --dark: #333333;
+      --light: #fafafa;
+      --gray: #757575;
+      --card-bg: #ffffff;
+      --success: #4CAF50;
+      --link: #7E57C2;
+      --tag-bg: #EDE7F6;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Inter', 'Poppins', 'IBM Plex Sans', sans-serif;
-      background: linear-gradient(to bottom, #E3F2FD, #F3E5F5); /* Light Blue to Light Pink */
-      color: #333;
-      line-height: 1.8;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.3;
+      color: var(--primary);
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--secondary);
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+    
+    a {
+      color: var(--link);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--secondary);
     }
 
     /* Header Styles */
     header {
-      background: #3949AB; /* Indigo */
-      color: #fff;
-      padding: 10px 30px;
+      background: #ffffff;
+      color: var(--dark);
+      padding: 1.2rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
     header .logo img {
       height: 40px;
     }
 
+    header nav {
+      display: flex;
+      gap: 2rem;
+    }
+
     header nav a {
-      color: #BBDEFB; /* Light Blue */
+      color: var(--dark);
       text-decoration: none;
-      margin-left: 20px;
       font-weight: 500;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      transition: color 0.3s ease;
+      font-size: 1rem;
+      position: relative;
+      padding-bottom: 5px;
     }
-
-    header nav a:hover {
-      color: #9FA8DA; /* Lavender */
-      text-decoration: underline;
+    
+    header nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--secondary);
+      transition: width 0.3s ease;
     }
-
+    
+    header nav a:hover::after {
+      width: 100%;
+    }
+    
     /* Main Content Styles */
-    main {
-      max-width: 900px;
-      margin: 80px auto 40px;
-      padding: 0 20px;
+    .page-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    
+    .page-intro {
+      max-width: 800px;
+      margin: 0 auto 3rem;
       text-align: center;
     }
-
-    h1 {
-      font-size: 2.5rem;
-      color: #512DA8; /* Deep Purple */
-      margin-bottom: 20px;
-      animation: fadeIn 2s ease;
-    }
-
-    p, ul, li {
+    
+    .page-intro p {
       font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 20px;
-      text-align: left;
+      color: var(--gray);
     }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
+    /* Categories */
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
     }
-
-    ul li::before {
-      content: "🌿 ";
-      margin-right: 8px;
-      color: #7E57C2; /* Medium Purple */
-    }
-
-    /* Flower Divider Styles */
-    .flower-divider {
-      text-align: center;
-    }
-
-    .flower-divider img {
-      max-width: 300px;
-      margin: 40px auto;
-      display: block;
-      opacity: 0.8;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-    }
-
-    .flower-divider img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Footer Styles */
-    footer {
-      background: #3949AB; /* Indigo */
-      color: #BBDEFB; /* Light Blue */
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.85rem;
-      margin-top: 100px;
-    }
-
-    footer a {
-      color: #BBDEFB; /* Light Blue */
-      text-decoration: none;
-      margin: 0 10px;
+    
+    .filter-btn {
+      padding: 0.6rem 1.2rem;
+      background-color: var(--light);
+      border: 1px solid var(--primary-light);
+      border-radius: 50px;
+      color: var(--primary);
       font-weight: 500;
-      transition: color 0.3s ease;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+      background-color: var(--primary);
+      color: white;
+      border-color: var(--primary);
     }
 
-    footer a:hover {
-      text-decoration: underline;
-      color: #9FA8DA; /* Lavender */
+    /* Article Cards */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin: 2rem 0;
+    }
+    
+    .article-card {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+    
+    .article-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .article-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .article-tag {
+      font-size: 0.75rem;
+      background-color: var(--tag-bg);
+      color: var(--primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+    
+    .article-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.4;
+      color: var(--dark);
+    }
+    
+    .article-title a {
+      color: var(--dark);
+    }
+    
+    .article-title a:hover {
+      color: var(--primary);
+    }
+    
+    .article-excerpt {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    
+    .article-meta {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--gray);
+      border-top: 1px solid #f0f0f0;
+      padding-top: 1rem;
+    }
+    
+    .article-date {
+      display: flex;
+      align-items: center;
+    }
+    
+    .article-date i {
+      margin-right: 5px;
+    }
+    
+    .article-read {
+      display: flex;
+      align-items: center;
+    }
+    
+    .article-read i {
+      margin-right: 5px;
     }
 
-    /* Share Bar Styles */
-    .share-bar {
+    /* Social Sharing Sidebar */
+    .social-sidebar {
       position: fixed;
+      left: 1.5rem;
       top: 50%;
-      left: 10px;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      z-index: 100;
+      gap: 1rem;
+      z-index: 50;
     }
-
-    .share-bar a {
-      width: 36px;
-      height: 36px;
-      background: #5E35B1; /* Deep Purple */
-      color: #fff;
+    
+    .social-icon {
+      width: 45px;
+      height: 45px;
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: #ffffff;
+      color: var(--primary);
       border-radius: 50%;
-      font-size: 16px;
-      text-decoration: none;
-      transition: background 0.3s;
+      font-size: 1.2rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
     }
 
-    .share-bar a:hover {
-      background: #4527A0; /* Darker Purple */
+    /* CTA Section */
+    .cta-section {
+      background-color: var(--primary-light);
+      border-radius: 15px;
+      padding: 3.5rem 2.5rem;
+      margin: 5rem 0 3rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .cta-section::after {
+      content: '✉️';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
+    }
+    
+    .cta-title {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    
+    .cta-description {
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+    }
+    
+    .cta-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .cta-input {
+      flex-grow: 1;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .cta-button {
+      padding: 0 1.8rem;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .cta-button:hover {
+      background-color: var(--secondary);
     }
 
-    /* Media Queries */
-    @media (max-width: 700px) {
-      .share-bar {
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 3rem 0 1.5rem;
+      margin-top: 5rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-links a {
+      color: #bbdefb;
+      transition: color 0.2s ease;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #555;
+      width: 100%;
+    }
+    
+    .copyright {
+      font-size: 0.9rem;
+      color: #bbdefb;
+    }
+    
+    .footer-meta {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #757575;
+    }
+    
+    .footer-meta a {
+      color: #757575;
+    }
+    
+    .footer-meta a:hover {
+      color: #bbdefb;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1100px) {
+      .social-sidebar {
         position: static;
         flex-direction: row;
         justify-content: center;
-        margin: 20px 0;
+        margin: 2rem 0;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
       }
     }
-
-    /* Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    
+    @media (max-width: 768px) {
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-section {
+        padding: 2.5rem 1.5rem;
+      }
+      
+      .cta-form {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .cta-input, .cta-button {
+        width: 100%;
+        border-radius: 5px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+      }
+      
+      header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .filter-container {
+        justify-content: center;
+      }
     }
 </style>
-
 </head>
 <body>
 
 <header>
   <div class="logo">
-    <a href="/"><img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow Logo" style="height: 40px;"></a>
+    <a href="/"><img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow Logo"></a>
   </div>
   <nav>
     <a href="/about.html">About</a>
@@ -192,35 +525,170 @@
   </nav>
 </header>
 
-<main>
-
-<div class="share-bar">
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai" target="_blank" aria-label="Share on LinkedIn">in</a>
-  <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai" target="_blank" aria-label="Share on Twitter">X</a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai" target="_blank" aria-label="Share on Facebook">f</a>
-</div>
-
-
-<h1>Research</h1>
-<p>Our investigations into psychological defense in absurd conditions include: (Spoiler alert: it involves a lot of quiet observation and the occasional cognitive giggle.)</p>
-<ul>
-  <li><a href="/satire-journals/clown_network_firewall_article_responsive.html">Clown Network Firewall: A Satirical Analysis</a> - Because sometimes, you need a good firewall to keep the clowns out.</li>
-</ul>
-<p>Future entries coming soon. (We promise, they're worth the wait—unless you're allergic to deep thoughts and gentle humor.)</p>
-
-
-<div class="flower-divider">
-  <img src="/assets/images/IMG_1210.jpeg" alt="Wild Flower" style="max-width:300px; margin:40px auto; display:block; opacity:0.8; border-radius:8px;">
-</div>
-
-</main>
-<footer>
-  &copy; 2025 NeuralGlow.ai — <a href="/contact.html">Contact</a> | <a href="/privacy.html">Privacy</a>
-<div style="margin-top: 10px; font-size: 0.7rem; color: #bbbbbb;">
-  <a href="https://uptimerobot.com/" target="_blank" style="color: #bbbbbb; text-decoration: none;">
-    🌿 Monitored quietly by UptimeRobot
+<div class="social-sidebar">
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai/research.html" class="social-icon" target="_blank" aria-label="Share on LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://twitter.com/intent/tweet?text=Check%20out%20NeuralGlow's%20research%20on%20workplace%20psychology%20and%20productivity&url=https://neuralglow.ai/research.html" class="social-icon" target="_blank" aria-label="Share on Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai/research.html" class="social-icon" target="_blank" aria-label="Share on Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://medium.com/new-story?url=https://neuralglow.ai/research.html&title=Research%20on%20Workplace%20Psychology%20and%20Productivity%20by%20NeuralGlow" class="social-icon" target="_blank" aria-label="Share on Medium">
+    <i class="fab fa-medium-m"></i>
   </a>
 </div>
+
+<div class="page-container">
+  <div class="page-intro">
+    <h1>Research & Analysis</h1>
+    <p>Our evidence-based investigations into workplace psychology, productivity systems, and organizational behavior. Each article combines rigorous analysis with practical insights, often delivered with a touch of satire.</p>
+  </div>
+  
+  <div class="filter-container">
+    <button class="filter-btn active" data-filter="all">All Categories</button>
+    <button class="filter-btn" data-filter="psychology">Workplace Psychology</button>
+    <button class="filter-btn" data-filter="productivity">Productivity</button>
+    <button class="filter-btn" data-filter="satire">Satirical Analysis</button>
+    <button class="filter-btn" data-filter="organizational">Organizational Behavior</button>
+  </div>
+  
+  <div class="articles-grid">
+    <!-- New Article -->
+    <article class="article-card" data-category="psychology productivity satire">
+      <img src="/assets/images/discipline-concept.jpg" alt="Performance Theater Concept" class="article-img">
+      <div class="article-content">
+        <div class="article-tags">
+          <span class="article-tag">Workplace Psychology</span>
+          <span class="article-tag">Productivity</span>
+        </div>
+        <h3 class="article-title">
+          <a href="http://neuralglow.ai/satire-journals/clown_network_firewall_article_responsive.html">The Discipline Deception: Escape the Performance Theater That's Killing Your Potential</a>
+        </h3>
+        <p class="article-excerpt">Discover how true discipline goes beyond 9-to-5 routines and early wake-ups. Learn how to cultivate real discipline through autonomy and outcome-based work.</p>
+        <div class="article-meta">
+          <div class="article-date">
+            <i class="far fa-calendar-alt"></i> May 8, 2025
+          </div>
+          <div class="article-read">
+            <i class="far fa-clock"></i> 12 min read
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Original Article -->
+    <article class="article-card" data-category="psychology satire organizational">
+      <img src="/assets/images/clown-network.jpg" alt="Clown Network Concept" class="article-img">
+      <div class="article-content">
+        <div class="article-tags">
+          <span class="article-tag">Satire</span>
+          <span class="article-tag">Organizational Behavior</span>
+        </div>
+        <h3 class="article-title">
+          <a href="/satire-journals/clown_network_firewall_article_responsive.html">Clown Network Firewall: A Satirical Analysis</a>
+        </h3>
+        <p class="article-excerpt">An exploration of psychological defense mechanisms in absurd organizational conditions. Because sometimes, you need a good firewall to keep the clowns out.</p>
+        <div class="article-meta">
+          <div class="article-date">
+            <i class="far fa-calendar-alt"></i> April 15, 2025
+          </div>
+          <div class="article-read">
+            <i class="far fa-clock"></i> 9 min read
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- Placeholder for upcoming article -->
+    <article class="article-card" data-category="productivity organizational">
+      <img src="/assets/images/coming-soon.jpg" alt="Coming Soon" class="article-img">
+      <div class="article-content">
+        <div class="article-tags">
+          <span class="article-tag">Productivity</span>
+          <span class="article-tag">Coming Soon</span>
+        </div>
+        <h3 class="article-title">
+          <a href="#">Upcoming Research: The Illusion of Busyness</a>
+        </h3>
+        <p class="article-excerpt">Our next investigation will explore how performance metrics often incentivize the appearance of productivity rather than actual value creation. Coming June 2025.</p>
+        <div class="article-meta">
+          <div class="article-date">
+            <i class="far fa-calendar-alt"></i> Coming Soon
+          </div>
+          <div class="article-read">
+            <i class="far fa-clock"></i> Est. 15 min
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  <div class="cta-section">
+    <h2 class="cta-title">Join Our Research Community</h2>
+    <p class="cta-description">Get early access to our upcoming research papers, participate in studies, and receive exclusive insights not published on the blog.</p>
+    <form class="cta-form" id="newsletter-form">
+      <input type="email" class="cta-input" placeholder="Your email address" required>
+      <button type="submit" class="cta-button">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">NeuralGlow AI</div>
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/research.html">Research</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2025 NeuralGlow.ai — All rights reserved</p>
+      <p class="footer-meta">
+        <a href="https://uptimerobot.com/" target="_blank">🌿 Monitored quietly by UptimeRobot</a>
+      </p>
+    </div>
+  </div>
 </footer>
+
+<script>
+  // Category filtering functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const articles = document.querySelectorAll('.article-card');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filter = this.getAttribute('data-filter');
+        
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Filter articles
+        articles.forEach(article => {
+          if (filter === 'all' || article.getAttribute('data-category').includes(filter)) {
+            article.style.display = 'block';
+          } else {
+            article.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Form submission
+    const form = document.getElementById('newsletter-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for subscribing! In a live implementation, you would receive a confirmation email.');
+        form.reset();
+      });
+    }
+  });
+</script>
 </body>
 </html>
