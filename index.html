@@ -3,178 +3,609 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About — NeuralGlow.ai</title>
-  <meta name="description" content="About NeuralGlow: Free stubborn project built from 10 years of patience, calm observation, and graceful rebellion.">
+  <title>NeuralGlow.ai — Calm. Curious. Silent.</title>
+  <meta name="description" content="NeuralGlow: Free stubborn project built from 10 years of patience, calm observation, and graceful rebellion.">
   <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* General Styles */
+    :root {
+      --primary-color: #689F38;
+      --primary-dark: #2E7D32;
+      --primary-light: #A5D6A7;
+      --bg-light: #F1F8E9;
+      --bg-gradient-start: #E8F5E9;
+      --bg-gradient-end: #F1F8E9;
+      --text-dark: #333333;
+      --text-medium: #555555;
+      --text-light: #777777;
+      --white: #ffffff;
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+    }
+    
     html { scroll-behavior: smooth; }
+    
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Inter', 'Poppins', 'IBM Plex Sans', sans-serif;
-      background: linear-gradient(to bottom, #E8F5E9, #F1F8E9); /* Light Green Gradient */
-      color: #333;
+      font-family: 'Inter', 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+      color: var(--text-dark);
       line-height: 1.8;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     /* Header Styles */
     header {
-      background: #689F38; /* Olive Green */
-      color: #fff;
-      padding: 10px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: var(--white);
+      color: var(--text-dark);
+      padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     header .logo img {
-      height: 40px;
+      height: 45px;
+      transition: var(--transition);
+    }
+
+    header .logo:hover img {
+      transform: scale(1.05);
+    }
+
+    nav {
+      display: flex;
+      gap: 5px;
     }
 
     header nav a {
-      color: #E8F5E9; /* Light Green */
+      color: var(--text-dark);
       text-decoration: none;
       margin-left: 20px;
       font-weight: 500;
       font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      transition: color 0.3s ease;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: var(--transition);
     }
 
     header nav a:hover {
-      color: #A5D6A7; /* Pastel Green */
-      text-decoration: underline;
+      background-color: var(--bg-light);
+      color: var(--primary-dark);
     }
 
-    /* Main Content Styles */
-    main {
-      max-width: 900px;
-      margin: 80px auto 40px;
-      padding: 0 20px;
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.8)), url('/assets/images/nature-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 20px;
       text-align: center;
+      margin-bottom: 60px;
+      border-radius: 0 0 30px 30px;
+      box-shadow: var(--card-shadow);
     }
 
-    h1, h2 {
-      color: #388E3C; /* Dark Green */
+    .hero h1 {
+      font-size: 2.8rem;
+      color: var(--primary-dark);
       margin-bottom: 20px;
+      font-weight: 700;
+      animation: fadeIn 1.5s ease;
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: var(--text-medium);
       animation: fadeIn 2s ease;
     }
 
-    p {
-      font-size: 1.2rem;
-      color: #555;
+    .hero-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: var(--transition);
+      animation: fadeIn 2.5s ease;
+    }
+
+    .hero-btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Card Layout */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .card-img {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .card:hover .card-img img {
+      transform: scale(1.05);
+    }
+
+    .card-content {
+      padding: 25px;
+    }
+
+    .card-category {
+      display: inline-block;
+      background-color: var(--bg-light);
+      color: var(--primary-dark);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      transition: var(--transition);
+    }
+
+    .card-category:hover {
+      background-color: var(--primary-light);
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      margin: 0 0 12px;
+      color: var(--text-dark);
+    }
+
+    .card-text {
+      color: var(--text-medium);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .card-link i {
+      margin-left: 5px;
+      transition: var(--transition);
+    }
+
+    .card-link:hover {
+      color: var(--primary-dark);
+    }
+
+    .card-link:hover i {
+      transform: translateX(3px);
+    }
+
+    /* Featured Section */
+    .featured-section {
+      margin-bottom: 60px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      color: var(--primary-dark);
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-medium);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* About Section */
+    .about-section {
+      background-color: var(--white);
+      padding: 80px 0;
+      margin-bottom: 60px;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .about-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about-content h2 {
+      color: var(--primary-dark);
+      font-size: 2rem;
       margin-bottom: 20px;
     }
 
-    /* Share Bar Styles */
-    .share-bar {
-      position: fixed;
-      top: 50%;
-      left: 10px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 100;
+    .about-content p {
+      margin-bottom: 20px;
+      color: var(--text-medium);
     }
 
-    .share-bar a {
-      width: 36px;
-      height: 36px;
-      background: #43A047; /* Medium Green */
-      color: #fff;
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--bg-light);
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      font-size: 16px;
-      text-decoration: none;
-      transition: background 0.3s ease;
+      color: var(--primary-color);
+      font-size: 1.2rem;
     }
 
-    .share-bar a:hover {
-      background: #2E7D32; /* Darker Green */
+    .feature-text {
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    /* Mission & Vision */
+    .mission-vision {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .mission-box, .vision-box {
+      background-color: var(--white);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .mission-box h3, .vision-box h3 {
+      color: var(--primary-dark);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .mission-box h3 i, .vision-box h3 i {
+      margin-right: 10px;
+      color: var(--primary-color);
     }
 
     /* Subscribe & Support Boxes */
+    .subscribe-support-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
     .subscribe-box, .support-box {
-      background: #F1F8E9; /* Lightest Green */
-      padding: 30px 20px;
-      margin: 40px auto;
-      border-radius: 8px;
-      max-width: 400px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+
+    .subscribe-box:hover, .support-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .subscribe-box h2, .support-box h2 {
+      color: var(--primary-dark);
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .subscribe-box p, .support-box p {
+      font-size: 1rem;
+      color: var(--text-medium);
+      margin-bottom: 25px;
+    }
+
+    .subscribe-box form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
     .subscribe-box input[type="email"] {
-      width: 80%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #A5D6A7; /* Pastel Green */
-      border-radius: 5px;
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--primary-light);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: var(--transition);
     }
 
-    .subscribe-box button, .support-box button {
-      padding: 10px 20px;
-      background-color: #43A047; /* Medium Green */
+    .subscribe-box input[type="email"]:focus {
+      border-color: var(--primary-color);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(104, 159, 56, 0.15);
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background-color: var(--primary-color);
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
+      font-weight: 600;
+      transition: var(--transition);
+      display: inline-block;
+      text-align: center;
     }
 
-    .subscribe-box button:hover, .support-box button:hover {
-      background-color: #2E7D32; /* Darker Green */
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
     }
 
     .small-note {
       font-size: 0.9rem;
-      color: #777;
-      margin-top: 10px;
+      color: var(--text-light);
+      margin-top: 15px;
     }
 
-    /* Footer Styles */
-    footer {
-      background: #689F38; /* Olive Green */
-      color: #F1F8E9; /* Lightest Green */
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.85rem;
-      margin-top: 100px;
+    /* Social Share */
+    .share-bar {
+      position: fixed;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 90;
     }
 
-    footer a {
-      color: #F1F8E9; /* Lightest Green */
+    .share-bar a {
+      width: 45px;
+      height: 45px;
+      background: var(--white);
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 18px;
       text-decoration: none;
-      margin: 0 10px;
-      font-weight: 500;
-      transition: color 0.3s ease;
+      transition: var(--transition);
+      box-shadow: var(--card-shadow);
     }
 
-    footer a:hover {
-      text-decoration: underline;
-      color: #A5D6A7; /* Pastel Green */
+    .share-bar a:hover {
+      color: var(--white);
+      background: var(--primary-color);
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 60px 0 20px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    .footer-column h3 {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      color: var(--white);
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul a {
+      color: var(--bg-light);
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .footer-column ul a:hover {
+      color: var(--primary-light);
+      transform: translateX(3px);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 18px;
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      color: var(--primary-light);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.85rem;
+      color: var(--bg-light);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .footer-bottom a {
+      color: var(--primary-light);
+      text-decoration: none;
     }
 
     /* Media Queries */
-    @media (max-width: 700px) {
+    @media (max-width: 992px) {
+      .mission-vision,
+      .subscribe-support-section {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero p {
+        font-size: 1.1rem;
+      }
+      
       .share-bar {
         position: static;
         flex-direction: row;
         justify-content: center;
         margin: 20px 0;
+        transform: none;
+        left: auto;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
       }
     }
 
-    /* Animation */
+    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -184,64 +615,248 @@
 <body>
 
 <header>
-  <div class="logo" onclick="window.location.href='/'" style="cursor: pointer;">
-    <img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow Logo">
+  <div class="header-container">
+    <div class="logo" onclick="window.location.href='/'" style="cursor: pointer;">
+      <img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow Logo">
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/research.html">Research</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/quotes/">Quotes</a>
+      <a href="/notes/">Notes</a>
+      <a href="/efficiency/">Efficiency</a>
+    </nav>
+    <button class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </button>
   </div>
-  <nav>
-    <a href="/about.html">About</a>
-    <a href="/research.html">Research</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/quotes/">Quotes</a>
-    <a href="/notes/">Notes</a>
-    <a href="/efficiency/">Efficiency</a>
-  </nav>
-</header>  
+</header>
+
+<!-- Social Sharing Bar -->
+<div class="share-bar">
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai" target="_blank" aria-label="Share on LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai" target="_blank" aria-label="Share on Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai" target="_blank" aria-label="Share on Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="mailto:?subject=Check out NeuralGlow.ai&body=I thought you might be interested in this website: https://neuralglow.ai" aria-label="Share via Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
 
 <main>
-  <div class="share-bar">
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://neuralglow.ai" target="_blank" aria-label="Share on LinkedIn">in</a>
-    <a href="https://twitter.com/intent/tweet?url=https://neuralglow.ai" target="_blank" aria-label="Share on Twitter">X</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://neuralglow.ai" target="_blank" aria-label="Share on Facebook">f</a>
-  </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to NeuralGlow.ai</h1>
+      <p>Stay calm, grow wiser, and plant curiosity like seeds. Explore thoughts, forests, and the occasional silent victory with us.</p>
+      <a href="#about" class="hero-btn">Learn More</a>
+    </div>
+  </section>
 
-  <h2>Welcome to NeuralGlow.ai!</h2>
-  <p>Stay calm, grow wiser, and plant curiosity like seeds. Explore thoughts, forests, and the occasional silent victory with us. (We promise, it's more exciting than it sounds.)</p>
+  <!-- Featured Content Section -->
+  <section class="featured-section container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Insights</h2>
+      <p class="section-subtitle">Discover our latest thoughts and explorations into neural connections, cognitive patterns, and natural wisdom.</p>
+    </div>
+    
+    <div class="card-grid">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1508921340878-ba53e1f016ec?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Forest Path">
+        </div>
+        <div class="card-content">
+          <span class="card-category">Research</span>
+          <h3 class="card-title">The Neural Pathways of Calmness</h3>
+          <p class="card-text">Exploring how quiet moments in nature affect our neural activity and cognitive performance.</p>
+          <a href="#" class="card-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1581088683112-9007ddc944d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mindfulness Practice">
+        </div>
+        <div class="card-content">
+          <span class="card-category">Mindfulness</span>
+          <h3 class="card-title">Silent Victories: Small Wins Matter</h3>
+          <p class="card-text">How celebrating micro-achievements can rewire your brain for sustained motivation and growth.</p>
+          <a href="#" class="card-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-img">
+          <img src="https://images.unsplash.com/photo-1603468620905-8de7d86b781e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Notes and Planning">
+        </div>
+        <div class="card-content">
+          <span class="card-category">Efficiency</span>
+          <h3 class="card-title">Cognitive Frameworks for Deep Work</h3>
+          <p class="card-text">Building systems that leverage your natural thinking patterns for maximum creative output.</p>
+          <a href="#" class="card-link">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Subscribe Box -->
-  <div class="subscribe-box">
-    <h2>Stay Quietly Updated</h2>
-    <p style="font-size:1rem; color:#333;">No noise, no circus. Just rare glimpses of clarity delivered straight to your inbox. Think of it as a cognitive spa day.</p>
-    <form action="#" method="POST">
-      <input type="email" name="email" placeholder="Your email address" required><br>
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Nature and Technology">
+        </div>
+        <div class="about-content">
+          <h2>About NeuralGlow</h2>
+          <p>NeuralGlow.ai is a free stubborn project built from 10 years of patience, calm observation, and graceful rebellion against the noise of modern digital life.</p>
+          <p>We explore the intersection of neural science, natural wisdom, and quiet productivity—finding signals in silence and clarity amid chaos.</p>
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <span class="feature-text">Neural Science</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-tree"></i>
+              </div>
+              <span class="feature-text">Natural Wisdom</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <span class="feature-text">Quiet Innovation</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-peace"></i>
+              </div>
+              <span class="feature-text">Mindful Growth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Support Forest Box -->
-  <div class="support-box">
-    <h2>Support NeuralGlow</h2>
-    <p style="font-size:1rem; color:#333;">If this forest of thoughts has sparked something in you, consider fueling our next expedition. Help us plant new roots, explore new signals, and cultivate new blooms. No noise—just quiet gratitude.</p>
-    <p class="small-note">Just be patient. My leg is short, and as they say—I move in turtle mode. 🐢 Slow and steady wins the race, especially when there's cognitive gold at the finish line.</p>
-    <form action="#" method="POST">
-      <button type="submit">Explore Nature with Me</button>
-    </form>
-  </div>
+  <!-- Mission and Vision -->
+  <section class="container mission-vision">
+    <div class="mission-box">
+      <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+      <p>To create a refuge of clarity and insight in the digital wilderness. We cultivate deep understanding through patient observation and thoughtful exploration, rather than reactive consumption.</p>
+      <p>NeuralGlow strives to reconnect neural pathways with nature's wisdom, helping you find balance between technology and tranquility.</p>
+    </div>
+    <div class="vision-box">
+      <h3><i class="fas fa-eye"></i> Our Vision</h3>
+      <p>A world where technology enhances our connection to natural rhythms rather than disrupting them. Where insights emerge from quiet contemplation and genuine curiosity.</p>
+      <p>We envision communities of thoughtful explorers who value depth over distraction and quality over quantity.</p>
+    </div>
+  </section>
+
+  <!-- Subscribe and Support Section -->
+  <section class="container subscribe-support-section">
+    <!-- Subscribe Box -->
+    <div class="subscribe-box">
+      <h2>Stay Quietly Updated</h2>
+      <p>No noise, no circus. Just rare glimpses of clarity delivered straight to your inbox. Think of it as a cognitive spa day.</p>
+      <form action="#" method="POST">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <p class="small-note">We respect your attention. Emails are rare and valuable.</p>
+    </div>
+
+    <!-- Support Box -->
+    <div class="support-box">
+      <h2>Support NeuralGlow</h2>
+      <p>If this forest of thoughts has sparked something in you, consider fueling our next expedition. Help us plant new roots, explore new signals, and cultivate new blooms.</p>
+      <p class="small-note">Just be patient. My leg is short, and as they say—I move in turtle mode. 🐢 Slow and steady wins the race, especially when there's cognitive gold at the finish line.</p>
+      <a href="#" class="btn">Explore Nature with Me</a>
+    </div>
+  </section>
 </main>
 
 <footer>
-  &copy; 2025 NeuralGlow.ai | Calm. Curious. Silent.
-
-  <div style="margin-top: 10px; font-size: 0.7rem; color: #bbbbbb;">
-    <a href="https://uptimerobot.com/" target="_blank" style="color: #bbbbbb; text-decoration: none;">
-      🌲 Monitored quietly by UptimeRobot
-    </a>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>NeuralGlow</h3>
+      <p style="color: #F1F8E9; margin-bottom: 20px;">Calm. Curious. Silent.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    
+    <div class="footer-column">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/research.html">Research</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-column">
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="/quotes/">Quotes</a></li>
+        <li><a href="/notes/">Notes</a></li>
+        <li><a href="/efficiency/">Efficiency</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-column">
+      <h3>Newsletter</h3>
+      <p style="color: #F1F8E9; margin-bottom: 20px;">Join our quiet revolution. Receive thoughtful insights directly to your inbox.</p>
+      <form action="#" method="POST">
+        <input type="email" name="email" placeholder="Your email" required style="width: 100%; padding: 10px; border-radius: 4px; border: none; margin-bottom: 10px;">
+        <button type="submit" style="background: var(--primary-light); color: var(--primary-dark); border: none; padding: 10px; border-radius: 4px; width: 100%; cursor: pointer; font-weight: 600;">Subscribe</button>
+      </form>
+    </div>
   </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2025 NeuralGlow.ai | All rights reserved</p>
+    
+    <div style="margin-top: 15px;">
+      <a href="https://uptimerobot.com/" target="_blank" style="color: #A5D6A7; text-decoration: none; font-size: 0.8rem;">
+        🌲 Monitored quietly by UptimeRobot
+      </a>
+    </div>
 
-  <div style="text-align: center; margin-top: 30px;">
-    <script type="text/javascript" src="https://rf.revolvermaps.com/0/0/8.js?i=5s4ozquzh7s&m=0&c=00ffcc&cr1=ffffff&f=arial&l=0" async="async"></script>
+    <div style="text-align: center; margin-top: 20px;">
+      <script type="text/javascript" src="https://rf.revolvermaps.com/0/0/8.js?i=5s4ozquzh7s&m=0&c=00ffcc&cr1=ffffff&f=arial&l=0" async="async"></script>
+    </div>
   </div>
 </footer>
+
+<script>
+  document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+    const nav = document.querySelector('nav');
+    if (nav.style.display === 'flex') {
+      nav.style.display = 'none';
+    } else {
+      nav.style.display = 'flex';
+    }
+  });
+</script>
 
 </body>
 </html>
