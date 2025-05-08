@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources & Tools — NeuralGlow.ai</title>
+  <meta name="description" content="NeuralGlow's efficiency resources: Tools, templates and guides for implementing silent productivity systems.">
+  <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Color Variables */
+    :root {
+      --primary: #034f21;
+      --primary-light: #0a6d31;
+      --secondary: #eef8f1;
+      --accent: #ff6b6b;
+      --text-dark: #333;
+      --text-light: #666;
+      --white: #fff;
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+    }
+
+    /* General Styles */
+    body {
+      font-family: 'Inter', 'Poppins', sans-serif;
+      background: var(--secondary);
+      color: var(--text-dark);
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header Styles */
+    header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 600;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      padding: 0.5rem 0;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a.active {
+      border-bottom: 2px solid var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: var(--white);
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Main Styles */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--primary);
+    }
+
+    /* Resource Categories */
+    .resource-categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .category-btn {
+      background: var(--white);
+      border: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .category-btn:hover, .category-btn.active {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    /* Resource Cards */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .resource-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .resource-header {
+      padding: 1.5rem;
+      background: rgba(3, 79, 33, 0.05);
+      border-bottom: 1px solid rgba(3, 79, 33, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .resource-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 1.2rem;
+    }
+
+    .resource-card h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+    }
+
+    .resource-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-type {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .resource-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .resource-meta {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .resource-size {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .resource-format {
+      padding: 0.2rem 0.5rem;
+      background: #f0f0f0;
+      border-radius: 3px;
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding: 0.6rem 1rem;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .download-btn:hover {
+      background: var(--primary-light);
+    }
+
+    /* Featured Resource */
+    .featured-resource {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      margin: 3rem 0;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .featured-resource {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .featured-resource-image {
+      height: 100%;
+      min-height: 250px;
+      background: url('/assets/images/efficiency-toolkit.jpg') center/cover no-repeat;
+      position: relative;
+    }
+
+    .featured-resource-image::after {
+      content: "Premium";
+      position: absolute;
+      top: 20px;
+      left: 0;
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .featured-resource-content {
+      padding: 2rem;
+    }
+
+    .featured-resource h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .featured-resource p {
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-resource-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-resource-meta div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Collections Section */
+    .collection {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .collection-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .collection h3 {
+      font-size: 1.4rem;
+      color: var(--text-dark);
+    }
+
+    .view-all {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .view-all:hover {
+      color: var(--primary-light);
+    }
+
+    .resource-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .resource-item {
+      background: rgba(3, 79, 33, 0.05);
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: var(--transition);
+    }
+
+    .resource-item:hover {
+      background: rgba(3, 79, 33, 0.1);
+    }
+
+    .resource-item-icon {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    .resource-item-details {
+      flex-grow: 1;
+    }
+
+    .resource-item h4 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .resource-item-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* Newsletter Section */
+    .newsletter {
+      background: var(--white);
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin: 4rem 0;
+      box-shadow: var(--card-shadow);
+    }
+
+    .newsletter h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .newsletter p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: var(--text-light);
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .newsletter-btn {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter-btn:hover {
+      background: var(--primary-light);
+    }
+
+    /* Footer Styles */
+    footer {
+      background: var(--primary);
+      color: var(--white);
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-section a:hover {
+      color: var(--white);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .copyright small {
+      display: block;
+      margin-top: 0.5rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .resource-list {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow.ai Logo">
+      <span>NeuralGlow.ai</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="resources.html" class="active">Resources</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Efficiency Resources</h1>
+  <p>Practical tools, templates, and frameworks to implement silent productivity systems in your work and life.</p>
+</section>
+
+<main>
+  <section class="featured-resource">
+    <div class="featured-resource-image"></div>
+    <div class="featured-resource-content">
+      <div class="featured-resource-meta">
+        <div><i class="fas fa-star"></i> Premium Resource</div>
+        <div><i class="fas fa-download"></i> 2,450+ Downloads</div>
+      </div>
+      <h2>The Complete Efficiency Forest Toolkit</h2>
+      <p>Our comprehensive collection of productivity frameworks, silent workflow templates, and decision matrices designed to eliminate noise and maximize meaningful output.</p>
+      <p>This toolkit includes 15+ customizable templates, a 45-page implementation guide, and exclusive access to our digital calibration tool.</p>
+      <a href="#" class="download-btn">
+        <i class="fas fa-crown"></i> Get Premium Access
+      </a>
+    </div>
+  </section>
+  
+  <div class="resource-categories">
+    <button class="category-btn active">All Resources</button>
+    <button class="category-btn">Templates</button>
+    <button class="category-btn">Guides</button>
+    <button class="category-btn">Tools</button>
+    <button class="category-btn">Frameworks</button>
+    <button class="category-btn">Courses</button>
+  </div>
+
+  <h2 class="section-title">Popular Resources</h2>
+  
+  <div class="resource-grid">
+    <div class="resource-card">
+      <div class="resource-header">
+        <div class="resource-icon"><i class="fas fa-file-alt"></i></div>
+        <h3>Silent Work Planning Template</h3>
+      </div>
+      <div class="resource-content">
+        <span class="resource-type">Template</span>
+        <p>A minimalist weekly planning system designed to eliminate noise and focus exclusively on meaningful actions and outcomes.</p>
+        <div class="resource-meta">
+          <span class="resource-size"><i class="far fa-file"></i> 842 KB</span>
+          <span class="resource-format">PDF + XLSX</span>
+        </div>
+        <a href="#" class="download-btn">
+          <i class="fas fa-download"></i> Download Free
+        </a>
+      </div>
+    </div>
+    
+    <div class="resource-card">
+      <div class="resource-header">
+        <div class="resource-icon"><i class="fas fa-book"></i></div>
+        <h3>The Efficiency Guide</h3>
+      </div>
+      <div class="resource-content">
+        <span class="resource-type">Guide</span>
+        <p>Our definitive guide to implementing the efficiency forest principles in organizational contexts, featuring case studies and step-by-step protocols.</p>
+        <div class="resource-meta">
+          <span class="resource-size"><i class="far fa-file"></i> 3.2 MB</span>
+          <span class="resource-format">PDF</span>
+        </div>
+        <a href="#" class="download-btn">
+          <i class="fas fa-download"></i> Download Free
+        </a>
+      </div>
+    </div>
+    
+    <div class="resource-card">
+      <div class="resource-header">
+        <div class="resource-icon"><i class="fas fa-th"></i></div>
+        <h3>Decision Matrix Framework</h3>
+      </div>
+      <div class="resource-content">
+        <span class="resource-type">Framework</span>
+        <p>A systematic approach to making high-impact decisions with minimal deliberation, using our proprietary precision-weighted matrix.</p>
+        <div class="resource-meta">
+          <span class="resource-size"><i class="far fa-file"></i> 1.1 MB</span>
+          <span class="resource-format">PDF + XLSX</span>
+        </div>
+        <a href="#" class="download-btn">
+          <i class="fas fa-download"></i> Download Free
+        </a>
+      </div>
+    </div>
+    
+    <div class="resource-card">
+      <div class="resource-header">
+        <div class="resource-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Noise Elimination Toolbox</h3>
+      </div>
+      <div class="resource-content">
+        <span class="resource-type">Tool</span>
+        <p>A digital suite of browser extensions, desktop applications, and configuration profiles designed to create distraction-free work environments.</p>
+        <div class="resource-meta">
+          <span class="resource-size"><i class="fas fa-code"></i> Multiple Files</span>
+          <span class="resource-format">ZIP</span>
+        </div>
+        <a href="#" class="download-btn">
+          <i class="fas fa-download"></i> Download Free
+        </a>
+      </div>
+    </div>
+    
+    <div class="resource-card">
+      <div class="resource-header">
+        <div class="resource-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <h3>Efficient Systems Masterclass</h3>
+      </div>
+      <div class="resource-content">
+        <span class="resource-type">Course</span>
+        <p>A self-paced online course covering the design and implementation of efficient personal and organizational systems that operate silently.</p>
+        <div class="resource-meta">
+          <span class="resource-size"><i class="fas fa-video"></i> 12 Modules</span>
+          <span class="resource-format">ONLINE</span>
+        </div>
+        <a href="#" class="download-btn">
+          <i class="fas fa-external-link-alt"></i> Access Course
+        </a>
+      </div>
+    </div>
+    
+    <div class="resource-card">
+      <div class="resource-header">
+        <div class="resource-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Silent Progress Tracker</h3>
+      </div>
+      <div class="resource-content">
+        <span class="resource-type">Tool</span>
+        <p>An elegant data visualization tool that tracks meaningful progress metrics without creating additional noise or administrative overhead.</p>
+        <div class="resource-meta">
+          <span class="resource-size"><i class="far fa-file"></i> 1.5 MB</span>
+          <span class="resource-format">XLSX</span>
+        </div>
+        <a href="#" class="download-btn">
+          <i class="fas fa-download"></i> Download Free
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <h2 class="section-title">Resource Collections</h2>
+  
+  <section class="collection">
+    <div class="collection-header">
+      <h3>Organizational Efficiency</h3>
+      <a href="#" class="view-all">View all <i class="fas fa-chevron-right"></i></a>
+    </div>
+    <div class="resource-list">
+      <div class="resource-item">
+        <div class="resource-item-icon">
+          <i class="fas fa-sitemap"></i>
+        </div>
+        <div class="resource-item-details">
+          <h4>Silent Organizational Structure</h4>
+          <div class="resource-item-meta">
+            <span>Framework</span>
+            <span>PDF</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="resource-item">
+        <div class="resource-item-icon">
+          <i class="fas fa-comments-alt-dollar"></i>
+        </div>
+        <div class="resource-item-details">
+          <h4>Meeting Cost Calculator</h4>
+          <div class="resource-item-meta">
+            <span>Tool</span>
+            <span>XLSX</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="resource-item">
+        <div class="resource-item-icon">
+          <i class="fas fa-project-diagram"></i>
+        </div>
+        <div class="resource-item-details">
+          <h4>Low-Noise Project Template</h4>
+          <div class="resource-item-meta">
+            <span>Template</span>
+            <span>DOCX</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="resource-item">
+        <div class="resource-item-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="resource-item-details">
+          <h4>Team Efficiency Protocol</h4>
+          <div class="resource-item-meta">
+            <span>Guide</span>
+            <span>PDF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="collection">
+    <div class="collection-header">
+      <h3>Personal Productivity</h3>
+      <a href="#" class="view-all">View all <i class="fas fa-chevron-right"></i></a>
+    </div>
+    <div class="resource-list">
+      <div class="resource-item">
+        <div class="resource-item-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="resource-item-details">
+          <h4>Deep Work Configuration</h4>
+          <div class="resource-item-meta">
+            <span>Guide</span>
+            <span>PDF</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="resource-item">
+        <div class="resource-item-icon">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <div class="resource-item-details">
+          <h4>Minimum Viable Calendar</h4>
+          <div class="resource-item-meta">
+            <span>Template</span>
+            <span>ICS + PDF</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="resource-item">
+        <div class="resource-item-icon">
+          <i class="fas fa-tasks"></i>
+        </div>
+        <div class="resource-item-details">
+          <h4>Silent Task Management</h4>
+          <div class="resource-item-meta">
+            <span>Framework</span>
+            <span>PDF</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="resource-item">
+        <div class="resource-item-icon">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <div class="resource-item-details">
+          <h4>Digital Minimalism Setup</h4>
+          <div class="resource-item-meta">
+            <span>Tool</span>
+            <span>HTML</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="newsletter">
+    <h3>Get New Resources First</h3>
+    <p>Subscribe to receive notifications when we release new tools, templates, and guides. We send focused announcements without unnecessary noise.</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Your email address" class="newsletter-input" required>
+      <button type="submit" class="newsletter-btn">Subscribe</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>NeuralGlow.ai</h3>
+      <p>Calm. Curious. Silent.</p>
+      <p>🌿 Rooted in efficiency. Powered by clarity.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="#">Efficiency Principles</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Connect</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="copyright">
+    &copy; 2025 NeuralGlow.ai | All Rights Reserved
+    <small>Efficiency Forest — Where Actions Speak Louder</small>
+  </div>
+</footer>
+
+<script>
+  // JavaScript for animation and interactivity
+  document.addEventListener('DOMContentLoaded', () => {
+    // Category filter functionality
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        categoryButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Here you would normally filter the actual content
+        // This is just a UI demonstration
+      });
+    });
+    
+    // Resource card animation with intersection observer
+    const resourceCards = document.querySelectorAll('.resource-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }, index * 100);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    
+    // Set initial styles and observe resource cards
+    resourceCards.forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(card);
+    });
+    
+    // Collection items animation
+    const resourceItems = document.querySelectorAll('.resource-item');
+    
+    const itemObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = 1;
+            itemObserver.unobserve(entry.target);
+          }, index * 100);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    
+    // Set initial styles and observe resource items
+    resourceItems.forEach(item => {
+      item.style.opacity = 0;
+      item.style.transition = 'opacity 0.5s ease';
+      itemObserver.observe(item);
+    });
+  });
+</script>
+
+</body>
+</html>
