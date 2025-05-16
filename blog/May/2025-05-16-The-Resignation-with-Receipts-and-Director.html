@@ -3,127 +3,445 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Resignation They Won’t Approve</title>
-  <meta name="description" content="When the system won’t let you leave, your spirit resigns anyway. A sharp piece for those forced to witness clown-level incompetence.">
+  <title>The Resignation They Won't Approve</title>
+  <meta name="description" content="When the system won't let you leave, your spirit resigns anyway. A sharp piece for those forced to witness clown-level incompetence.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #b30059;
+      --primary-light: #ffe6f0;
+      --dark: #1e1e1e;
+      --light: #fff8fb;
+      --gray: #777;
+      --accent: #ff2d88;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff8fb;
-      color: #1e1e1e;
-      padding: 2rem;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.8;
+      font-size: 1.05rem;
+      overflow-x: hidden;
+    }
+    
+    .container {
       max-width: 850px;
-      margin: auto;
-      line-height: 1.7;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
+    
+    header {
+      padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(179, 0, 89, 0.1);
+    }
+    
+    .header-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-light), #fff);
+      opacity: 0.7;
+      z-index: -1;
+    }
+    
     h1 {
-      color: #b30059;
+      color: var(--primary);
+      font-size: 2.5rem;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      position: relative;
+      font-weight: 800;
     }
+    
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background-color: var(--primary);
+    }
+    
     h2 {
-      margin-top: 2rem;
-      color: #b30059;
-    }
-    blockquote {
-      border-left: 4px solid #b30059;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      font-size: 1.8rem;
+      position: relative;
       padding-left: 1rem;
-      color: #555;
-      font-style: italic;
     }
+    
+    h2::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background-color: var(--primary);
+    }
+    
+    p {
+      margin-bottom: 1.2rem;
+    }
+    
+    .content {
+      padding: 2rem 0;
+    }
+    
+    blockquote {
+      border-left: 4px solid var(--primary);
+      padding: 1rem 0 1rem 1.5rem;
+      color: #444;
+      font-style: italic;
+      margin: 2rem 0;
+      background-color: rgba(179, 0, 89, 0.05);
+      border-radius: 0 8px 8px 0;
+    }
+    
     .highlight {
-      background-color: #ffe6f0;
-      padding: 1rem;
-      border-left: 4px solid #b30059;
+      background-color: var(--primary-light);
+      padding: 1.5rem;
+      border-left: 4px solid var(--primary);
       margin: 2rem 0;
       font-weight: bold;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 4px 10px rgba(179, 0, 89, 0.1);
+      transition: transform 0.3s ease;
     }
+    
+    .highlight:hover {
+      transform: translateY(-5px);
+    }
+    
     footer {
-      margin-top: 3rem;
+      margin-top: 4rem;
+      padding: 2rem 0;
+      color: var(--gray);
+      border-top: 1px solid rgba(179, 0, 89, 0.2);
       font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #ccc;
-      padding-top: 1rem;
+    }
+    
+    strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    
+    .tag {
+      background: rgba(179, 0, 89, 0.1);
+      color: var(--primary);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    
+    .tag:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .evidence-section {
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .evidence-item {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: white;
+      border-radius: 5px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .evidence-item:hover {
+      box-shadow: 0 5px 15px rgba(179, 0, 89, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .evidence-icon {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+    
+    .evidence-text {
+      flex-grow: 1;
+    }
+    
+    .evidence-amount {
+      font-weight: bold;
+      color: var(--primary);
+    }
+    
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background-color: var(--accent);
+      z-index: 1000;
+      transition: width 0.1s ease;
+    }
+    
+    .share-section {
+      margin: 2rem 0;
+      padding: 1rem 0;
+      border-top: 1px dashed rgba(179, 0, 89, 0.2);
+      border-bottom: 1px dashed rgba(179, 0, 89, 0.2);
+    }
+    
+    .share-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    
+    .share-button {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+    
+    .twitter {
+      background-color: #1DA1F2;
+    }
+    
+    .facebook {
+      background-color: #4267B2;
+    }
+    
+    .linkedin {
+      background-color: #0077B5;
+    }
+    
+    .share-button:hover {
+      transform: scale(1.1);
+    }
+    
+    .meta-info {
+      font-style: italic;
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    
+    .drop-cap::first-letter {
+      color: var(--primary);
+      float: left;
+      font-size: 3.5rem;
+      line-height: 0.8;
+      margin-right: 0.1em;
+      font-weight: bold;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .container {
+        padding: 0 1rem;
+      }
+    }
+    
+    /* Animation for highlights */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.01); }
+      100% { transform: scale(1); }
+    }
+    
+    .highlight {
+      animation: pulse 5s infinite;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin: 1rem 0;
+    }
+    
+    .btn:hover {
+      background-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(179, 0, 89, 0.3);
     }
   </style>
 </head>
 <body>
 
-<h1>The Resignation They Won’t Approve, but I Already Signed in My Soul</h1>
+<div class="reading-progress" id="reading-progress"></div>
 
-<p>They tried to control me with doctrines. Again. And again. And again.</p>
+<header>
+  <div class="container">
+    <div class="header-bg"></div>
+    <h1>The Resignation They Won't Approve, but I Already Signed in My Soul</h1>
+    <div class="meta-info">Published May 16, 2025 • 7 min read</div>
+  </div>
+</header>
 
-<p>Since <strong>2021</strong>, they’ve run the same old script: manipulate me, control my time, inject headaches to force “obedience.”  
-And when that didn’t work? I gave them my resignation.</p>
+<div class="content">
+  <div class="container">
+    <p class="drop-cap">They tried to control me with doctrines. Again. And again. And again.</p>
 
-<p><strong>Paid every damn penalty they demanded—without negotiation.</strong></p>
+    <p>Since <strong>2021</strong>, they've run the same old script: manipulate me, control my time, inject headaches to force "obedience."  
+    And when that didn't work? I gave them my resignation.</p>
 
-<p>But guess what? Now I’m in a different place… and they won’t let me resign again.</p>
+    <p><strong>Paid every damn penalty they demanded—without negotiation.</strong></p>
 
-<div class="highlight">
-They can block the paperwork. But they can’t block the truth.  
-I already left. Spiritually. Mentally. Energetically.  
-I’m gone.
-</div>
+    <p>But guess what? Now I'm in a different place… and they won't let me resign again.</p>
 
-<h2>What kind of clown logic is this?</h2>
-<p>They create the problem. Then force you to stay and watch it burn.  
-You ask to leave, they say <em>“no.”</em>  
-You ask for clarity, they give you chairs dragging at 3AM.</p>
+    <div class="highlight">
+      They can block the paperwork. But they can't block the truth.  
+      I already left. Spiritually. Mentally. Energetically.  
+      I'm gone.
+    </div>
 
-<p>I’ve said it once and I’ll say it louder for the ones in the back:</p>
+    <h2>What kind of clown logic is this?</h2>
+    <p>They create the problem. Then force you to stay and watch it burn.  
+    You ask to leave, they say <em>"no."</em>  
+    You ask for clarity, they give you chairs dragging at 3AM.</p>
 
-<blockquote>“I don’t care who the hell you are.  
-If you act like a bastar*, I will treat you like one.  
-I don’t give a damn.”</blockquote>
+    <p>I've said it once and I'll say it louder for the ones in the back:</p>
 
-<h2>And now?</h2>
-<p>Now I want to punch them in the face.  
-Not with hands—but with <strong>this blog</strong>. With clarity. With sarcasm.  
-Because I don’t need fists to leave bruises where truth hits harder.</p>
+    <blockquote>"I don't care who the hell you are.  
+    If you act like a bastar*, I will treat you like one.  
+    I don't give a damn."</blockquote>
 
-<h2>To the entire clown network:</h2>
-<p>You tried for years. You failed.  
-You couldn’t buy me. You couldn’t shape me.  
-And now you can’t even stop me from writing this.</p>
+    <h2>And now?</h2>
+    <p>Now I want to punch them in the face.  
+    Not with hands—but with <strong>this blog</strong>. With clarity. With sarcasm.  
+    Because I don't need fists to leave bruises where truth hits harder.</p>
 
-<div class="highlight">
-So here’s your punch.  
-It’s made of words.  
-And it hits where it hurts most:  
-your illusion of control.
-</div>
+    <h2>To the entire clown network:</h2>
+    <p>You tried for years. You failed.  
+    You couldn't buy me. You couldn't shape me.  
+    And now you can't even stop me from writing this.</p>
 
+    <div class="highlight">
+      So here's your punch.  
+      It's made of words.  
+      And it hits where it hurts most:  
+      your illusion of control.
+    </div>
 
+    <h2>Leadership in Clownland: A Director's Echo</h2>
+    <p>In 2021, I met a "director." And I say that with quotation marks, because his decisions were less about leadership and more about emotional weather patterns. Promised reimbursements? Vanished. Clear instructions? Rewritten mid-sentence.</p>
 
-<h2>Leadership in Clownland: A Director's Echo</h2>
-<p>In 2021, I met a “director.” And I say that with quotation marks, because his decisions were less about leadership and more about emotional weather patterns. Promised reimbursements? Vanished. Clear instructions? Rewritten mid-sentence.</p>
+    <p>Fast forward to 2025, and what do I see again? A new director. Different face, same syndrome: <strong>inconsistent words, unreliable action, and zero shame</strong>.</p>
 
-<p>Fast forward to 2025, and what do I see again? A new director. Different face, same syndrome: <strong>inconsistent words, unreliable action, and zero shame</strong>.</p>
+    <p>This isn't just about utilities or rent. It's about the very architecture of dysfunction—where people with titles operate like clowns in leadership robes. They speak with confidence and deliver with confusion. Their word isn't bond. It's noise.</p>
 
-<p>This isn’t just about utilities or rent. It’s about the very architecture of dysfunction—where people with titles operate like clowns in leadership robes. They speak with confidence and deliver with confusion. Their word isn’t bond. It’s noise.</p>
+    <div class="highlight">
+      A director who can't commit to his own sentence structure should never be allowed to direct anyone's future.
+    </div>
 
-<div class="highlight">
-A director who can't commit to his own sentence structure should never be allowed to direct anyone's future.
-</div>
+    <h2>Receipts They'd Prefer You Ignore</h2>
+    <p>Let the math speak. Below are the full electricity bills I paid—<strong>just for 2 months</strong>—in a place where the system was designed to confuse, inflate, and deceive. You be the judge.</p>
 
-<h2>Receipts They’d Prefer You Ignore</h2>
-<p>Let the math speak. Below are the full electricity bills I paid—<strong>just for 2 months</strong>—in a place where the system was designed to confuse, inflate, and deceive. You be the judge.</p>
+    <div class="evidence-section">
+      <a href="Pisa fattura_0000005232006083_04_05_2025_19_49_27.pdf" download class="evidence-item">
+        <i class="fas fa-file-pdf evidence-icon"></i>
+        <div class="evidence-text">Electricity Bill (Feb–Mar 2025)</div>
+        <div class="evidence-amount">€421.06</div>
+      </a>
+      <a href="fattura_0000005213436979_18_03_2025_16_05_22.pdf" download class="evidence-item">
+        <i class="fas fa-file-pdf evidence-icon"></i>
+        <div class="evidence-text">Electricity Bill (Dec–Jan 2025)</div>
+        <div class="evidence-amount">€431.52</div>
+      </a>
+    </div>
 
-<ul>
-  <li><a href="Pisa fattura_0000005232006083_04_05_2025_19_49_27.pdf" download>PDF: Electricity Bill (Feb–Mar 2025) – €421.06</a></li>
-  <li><a href="fattura_0000005213436979_18_03_2025_16_05_22.pdf" download>PDF: Electricity Bill (Dec–Jan 2025) – €431.52</a></li>
-</ul>
+    <div class="highlight">
+      Two months. Two bills. Over €850.  
+      Not for a factory. Not for Bitcoin mining. Just a shared apartment and a rice cooker.  
+      Tell me again how this isn't a circus.
+    </div>
 
-<div class="highlight">
-Two months. Two bills. Over €850.  
-Not for a factory. Not for Bitcoin mining. Just a shared apartment and a rice cooker.  
-Tell me again how this isn’t a circus.
+    <div class="share-section">
+      <p><strong>Share this story</strong> if you've ever witnessed corporate clownery:</p>
+      <div class="share-buttons">
+        <a href="https://twitter.com/intent/tweet?text=The%20Resignation%20They%20Won%27t%20Approve&url=https://yourdomain.com/resignation" class="share-button twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourdomain.com/resignation" class="share-button facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourdomain.com/resignation" class="share-button linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    
+    <a href="#" class="btn">Read more stories like this</a>
+    
+    <div class="tags">
+      <a href="#" class="tag">#identity-core</a>
+      <a href="#" class="tag">#clown-network</a>
+      <a href="#" class="tag">#rebellion</a>
+      <a href="#" class="tag">#corporate-absurdity</a>
+    </div>
+  </div>
 </div>
 
 <footer>
-Published: May 16, 2025<br>
-Filed under: identity-core, clown-network, rebellion<br>
-Logged to: /clown-network/chronicles/<br>
-Section: “The I-Don’t-Give-a-Damn Files”
+  <div class="container">
+    <p>Published: May 16, 2025<br>
+    Filed under: identity-core, clown-network, rebellion<br>
+    Logged to: /clown-network/chronicles/<br>
+    Section: "The I-Don't-Give-a-Damn Files"</p>
+    <p style="margin-top: 1rem;">&copy; 2025. All rights reserved.</p>
+  </div>
 </footer>
+
+<script>
+  // Reading progress bar
+  window.addEventListener('scroll', function() {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight - windowHeight;
+    const scrolled = window.scrollY / documentHeight * 100;
+    document.getElementById('reading-progress').style.width = scrolled + '%';
+  });
+</script>
 
 </body>
 </html>
