@@ -36,8 +36,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">  <style>
     :root {
       --primary: #b30059;
       --primary-light: #ffe6f0;
@@ -51,6 +50,24 @@
       --warning: #ff9500;
       --info: #5ac8fa;
       --background-gradient: linear-gradient(to right, #f9f9fc, #f0f0fa);
+    }
+    
+    /* Topic tags styling */
+    .topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+    
+    .topic {
+      background-color: rgba(179, 0, 89, 0.08);
+      color: var(--primary-dark);
+      padding: 0.25rem 0.75rem;
+      border-radius: 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid rgba(179, 0, 89, 0.15);
     }
     
     * {
@@ -913,9 +930,15 @@
 
 <header>
   <div class="container">
-    <div class="header-bg"></div>
-    <span class="neural-glow-badge">WORKPLACE PSYCHOLOGY</span>
+    <div class="header-bg"></div>    <span class="neural-glow-badge">WORKPLACE PSYCHOLOGY</span>
     <h1>The Gaslighting Manager: 7 Psychological Manipulation Techniques Used in Toxic Workplaces</h1>
+    <div class="topics">
+      <span class="topic">Reality Distortion</span>
+      <span class="topic">Psychological Control</span>
+      <span class="topic">Workplace Boundaries</span>
+      <span class="topic">Sleep Interference</span>
+      <span class="topic">Post-Resignation Manipulation</span>
+    </div>
     <div class="meta-info">
       <div class="meta-item">
         <i class="far fa-calendar-alt"></i> May 16, 2025
