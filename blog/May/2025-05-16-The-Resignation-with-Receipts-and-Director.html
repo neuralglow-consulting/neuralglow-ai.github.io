@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Systemic Rejection of Resignation: When Organizations Refuse to Let Go | Neural Glow</title>
+  <title>Organizational Captivity: The Systemic Refusal to Process Resignation | Neural Glow</title>
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="An analysis of corporate control mechanisms and systemic resistance to resignation, featuring evidence-based insights on organizational dysfunction and leadership pathologies.">
+  <meta name="description" content="An evidence-based analysis of how dysfunctional organizations maintain control by systematically preventing employee departures through administrative obstruction.">
   <meta name="keywords" content="organizational ethics, corporate accountability, toxic workplace, systemic dysfunction, leadership pathology, resignation, workplace manipulation">
   <meta name="author" content="Neural Glow Research">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://neuralglow.ai/articles/systemic-rejection-resignation">
-  <meta property="og:title" content="The Systemic Rejection of Resignation: When Organizations Refuse to Let Go">
-  <meta property="og:description" content="An evidence-based analysis of how dysfunctional organizations maintain control by blocking exit attempts.">
+  <meta property="og:title" content="Organizational Captivity: The Systemic Refusal to Process Resignation">
+  <meta property="og:description" content="An evidence-based analysis of how dysfunctional organizations maintain control by systematically preventing employee departures through administrative obstruction.">
   <meta property="og:image" content="https://neuralglow.ai/images/systemic-rejection-cover.jpg">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://neuralglow.ai/articles/systemic-rejection-resignation">
-  <meta property="twitter:title" content="The Systemic Rejection of Resignation: When Organizations Refuse to Let Go">
-  <meta property="twitter:description" content="An evidence-based analysis of how dysfunctional organizations maintain control by blocking exit attempts.">
+  <meta property="twitter:title" content="Organizational Captivity: The Systemic Refusal to Process Resignation">
+  <meta property="twitter:description" content="An evidence-based analysis of how dysfunctional organizations maintain control by systematically preventing employee departures through administrative obstruction.">
   <meta property="twitter:image" content="https://neuralglow.ai/images/systemic-rejection-cover.jpg">
   
   <!-- Canonical URL -->
@@ -37,13 +37,14 @@
       --primary-light: #ffe6f0;
       --primary-dark: #800040;
       --dark: #1e1e1e;
-      --light: #fff8fb;
+      --light: #f9f9fc; /* Updated background color for more professional look */
       --gray: #777;
       --gray-light: #f0f0f0;
       --accent: #ff2d88;
       --success: #34c759;
       --warning: #ff9500;
       --info: #5ac8fa;
+      --background-gradient: linear-gradient(to right, #f9f9fc, #f0f0fa); /* Subtle gradient for background */
     }
     
     * {
@@ -54,7 +55,7 @@
     
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background-color: var(--light);
+      background: var(--background-gradient);
       color: var(--dark);
       line-height: 1.8;
       font-size: 1.05rem;
@@ -65,6 +66,8 @@
       max-width: 850px;
       margin: 0 auto;
       padding: 0 1.5rem;
+      background-color: white;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.03); /* Subtle shadow for container */
     }
     
     header {
@@ -72,6 +75,7 @@
       position: relative;
       overflow: hidden;
       border-bottom: 1px solid rgba(179, 0, 89, 0.1);
+      background: white; /* Ensure header has white background */
     }
     
     .header-bg {
@@ -80,7 +84,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, var(--primary-light), #fff);
+      background: linear-gradient(135deg, rgba(179, 0, 89, 0.05), rgba(255, 45, 136, 0.02)); /* Subtle gradient */
       opacity: 0.7;
       z-index: -1;
     }
@@ -146,12 +150,16 @@
     
     .content {
       padding: 2rem 0;
+      background-color: white;
     }
     
     .article-content p {
       font-family: 'Merriweather', Georgia, serif;
       font-size: 1.05rem;
       line-height: 1.9;
+      text-align: justify; /* Justify all paragraph text */
+      text-justify: inter-word; /* Better spacing between words */
+      hyphens: auto; /* Enable hyphenation */
     }
     
     blockquote {
@@ -162,6 +170,18 @@
       margin: 2rem 0;
       background-color: rgba(179, 0, 89, 0.05);
       border-radius: 0 8px 8px 0;
+      text-align: justify; /* Justify blockquote text */
+      font-size: 1.1rem;
+      position: relative;
+    }
+    
+    blockquote::before {
+      content: '"';
+      font-size: 3rem;
+      color: rgba(179, 0, 89, 0.2);
+      position: absolute;
+      left: 0.5rem;
+      top: -0.5rem;
     }
     
     .highlight {
@@ -173,6 +193,7 @@
       border-radius: 0 8px 8px 0;
       box-shadow: 0 4px 10px rgba(179, 0, 89, 0.1);
       transition: transform 0.3s ease;
+      text-align: justify;
     }
     
     .highlight:hover {
@@ -185,6 +206,7 @@
       color: var(--gray);
       border-top: 1px solid rgba(179, 0, 89, 0.2);
       font-size: 0.9rem;
+      background-color: #fbfbfd; /* Slightly different background for footer */
     }
     
     strong {
@@ -432,6 +454,7 @@
     
     .author-bio {
       font-size: 0.9rem;
+      text-align: justify;
     }
     
     .author-name {
@@ -534,6 +557,7 @@
     .related-post-excerpt {
       font-size: 0.9rem;
       color: var(--gray);
+      text-align: justify;
     }
     
     .reactions-section {
@@ -569,149 +593,48 @@
       justify-content: space-between;
       padding: 1rem 0;
       border-bottom: 1px solid rgba(0,0,0,0.05);
+      background-color: white;
     }
     
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
+    footer {
+      margin-top: 4rem;
+      padding: 2rem 0;
+      color: var(--gray);
+      border-top: 1px solid rgba(179, 0, 89, 0.2);
+      font-size: 0.9rem;
+      background-color: #fbfbfd; /* Slightly different background for footer */
     }
     
-    .nav-link {
-      color: var(--dark);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-    
-    .nav-link:hover {
-      color: var(--primary);
-    }
-    
-    .newsletter-form {
-      background: linear-gradient(135deg, var(--primary-light), #fff);
-      padding: 2rem;
-      border-radius: 8px;
-      margin: 3rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .newsletter-title {
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-    
-    .newsletter-desc {
-      margin-bottom: 1.5rem;
-      max-width: 600px;
-    }
-    
-    .form-group {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .form-input {
-      padding: 0.7rem 1rem;
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 5px;
-      font-family: 'Inter', sans-serif;
-      flex-grow: 1;
-    }
-    
-    .form-submit {
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 0 1.5rem;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    
-    .form-submit:hover {
-      background-color: var(--primary-dark);
-    }
-    
-    .newsletter-decoration {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      font-size: 8rem;
-      opacity: 0.1;
-      color: var(--primary);
-    }
-    
-    .sticky-share {
-      position: fixed;
-      left: 2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    @media (max-width: 1200px) {
-      .sticky-share {
-        display: none;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-      
-      h2 {
-        font-size: 1.5rem;
+    /* Add professional container effect */
+    @media (min-width: 992px) {
+      body {
+        padding: 2rem 0;
       }
       
       .container {
-        padding: 0 1rem;
+        border-radius: 8px;
+        overflow: hidden;
       }
       
-      .related-posts-grid {
-        grid-template-columns: 1fr;
+      .site-nav {
+        border-radius: 8px 8px 0 0;
       }
       
-      .form-group {
-        flex-direction: column;
+      footer .container {
+        border-radius: 0 0 8px 8px;
       }
     }
     
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      border-bottom: 1px dotted var(--primary);
-      cursor: help;
+    /* Improved styling for collapsible content */
+    .collapsible-content ul {
+      text-align: left; /* Keep lists left-aligned for better readability */
     }
-
-    .tooltip .tooltip-text {
-      visibility: hidden;
-      width: 200px;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 0.5rem;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
+    
+    /* Ensure highlight blocks are justified */
+    .highlight {
+      text-align: justify;
     }
-
-    .tooltip:hover .tooltip-text {
-      visibility: visible;
-      opacity: 1;
-    }
-
+    
     /* Financial visualization */
     .data-comparison {
       display: flex;
@@ -856,6 +779,7 @@
     .comment-text {
       font-size: 0.95rem;
       line-height: 1.6;
+      text-align: justify;
     }
 
     .comment-meta {
@@ -864,6 +788,66 @@
       margin-top: 0.5rem;
       font-size: 0.8rem;
       color: var(--gray);
+    }
+    
+    /* Image styling */
+    .featured-image-container {
+      width: 100%;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .featured-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .image-caption {
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 0.8rem;
+      font-size: 0.9rem;
+      font-style: italic;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .section-image-container {
+      width: 100%;
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .section-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .section-image-caption {
+      font-size: 0.9rem;
+      color: var(--gray);
+      padding: 0.8rem;
+      font-style: italic;
+      text-align: center;
+      background-color: #f9f9f9;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+    
+    .image-attribution {
+      font-size: 0.75rem;
+      color: var(--gray);
+      text-align: right;
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -897,7 +881,7 @@
   <div class="container">
     <div class="header-bg"></div>
     <span class="neural-glow-badge">ORGANIZATIONAL ANALYSIS</span>
-    <h1>The Systemic Rejection of Resignation: When Organizations Refuse to Let Go</h1>
+    <h1>Organizational Captivity: The Systemic Refusal to Process Resignation</h1>
     <div class="meta-info">
       <div class="meta-item">
         <i class="far fa-calendar-alt"></i> May 16, 2025
@@ -914,6 +898,13 @@
 
 <div class="content">
   <div class="container">
+    <!-- Featured Image -->
+    <div class="featured-image-container">
+      <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Person trapped in organizational maze" class="featured-image">
+      <div class="image-caption">Organizational labyrinths create administrative traps designed to prevent clean departures.</div>
+    </div>
+    <div class="image-attribution">Image by Clint Patterson on Unsplash</div>
+
     <!-- Table of Contents -->
     <div class="table-of-contents">
       <div class="toc-title"><i class="fas fa-list"></i> Contents</div>
@@ -956,6 +947,13 @@
       <p>These systems create the very problems they later refuse to resolve.  
       When exit requests receive denial responses, and requests for clarity meet with deliberate disruption tactics, the dysfunction reveals itself.</p>
 
+      <!-- Section Image 1 -->
+      <div class="section-image-container">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Corporate contradiction concept" class="section-image">
+        <div class="section-image-caption">The contradiction at the heart of toxic organizations: creating problems while preventing solutions.</div>
+      </div>
+      <div class="image-attribution">Image by Volkan Olmez on Unsplash</div>
+
       <p>Professional boundaries require clear articulation in such environments:</p>
 
       <blockquote>"Professional standards must be maintained regardless of hierarchy.  
@@ -973,6 +971,13 @@
       <p>The most effective response to organizational dysfunction isn't confrontation.  
       It's <strong>documentation</strong>. Comprehensive records. Objective analysis.  
       Words become the instruments that expose systems dependent on silence and confusion.</p>
+
+      <!-- Section Image 2 -->
+      <div class="section-image-container">
+        <img src="https://images.unsplash.com/photo-1568027762272-e4da8b8dde3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Documentation as power" class="section-image">
+        <div class="section-image-caption">Meticulous record-keeping becomes a powerful form of resistance against organizational gaslighting.</div>
+      </div>
+      <div class="image-attribution">Image by Markus Winkler on Unsplash</div>
 
       <!-- Interactive element - expandable section -->
       <div class="collapsible">
@@ -1008,6 +1013,13 @@
 
       <p>By 2025, the pattern reproduces with remarkable similarity: a different director exhibiting identical behavioral markers: <strong>inconsistent communication, unreliable commitment fulfillment, and absence of accountability mechanisms</strong>.</p>
 
+      <!-- Section Image 3 -->
+      <div class="section-image-container">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Leadership failures concept" class="section-image">
+        <div class="section-image-caption">The Director Syndrome: leadership characterized by contradictory instructions, vanishing commitments, and strategic amnesia.</div>
+      </div>
+      <div class="image-attribution">Image by Campaign Creators on Unsplash</div>
+
       <p>This represents more than isolated incidents concerning utilities or housing. It demonstrates the structural architecture of organizational dysfunction—where titled authority figures operate with profound disconnection between verbal commitments and subsequent actions. Their communications function not as reliable information but as tactical maneuvers.</p>
 
       <div class="highlight">
@@ -1025,6 +1037,13 @@
 
       <div class="evidence-section">
         <h3 style="margin-bottom: 1rem; color: var(--primary);">Financial Evidence Visualization</h3>
+        
+        <!-- Data Visualization Image -->
+        <div class="section-image-container" style="margin: 1rem 0 2rem 0;">
+          <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Financial data visualization concept" class="section-image">
+          <div class="section-image-caption">Visual representation of systematic financial exploitation through utility billing irregularities.</div>
+        </div>
+        <div class="image-attribution">Image by Luke Chesser on Unsplash</div>
         
         <!-- Interactive data visualization -->
         <div class="data-comparison">
@@ -1049,12 +1068,12 @@
         </div>
         
         <div style="margin-top: 1.5rem;">
-          <a href="/assets/PDF/Pisa fattura_0000005232006083_04_05_2025_19_49_27.pdf" download class="evidence-item">
+          <a href="Pisa fattura_0000005232006083_04_05_2025_19_49_27.pdf" download class="evidence-item">
             <i class="fas fa-file-pdf evidence-icon"></i>
             <div class="evidence-text">Electricity Statement (February–March 2025)</div>
             <div class="evidence-amount">€421.06</div>
           </a>
-          <a href="/assets/PDF/fattura_0000005213436979_18_03_2025_16_05_22.pdf" download class="evidence-item">
+          <a href="fattura_0000005213436979_18_03_2025_16_05_22.pdf" download class="evidence-item">
             <i class="fas fa-file-pdf evidence-icon"></i>
             <div class="evidence-text">Electricity Statement (December–January 2025)</div>
             <div class="evidence-amount">€431.52</div>
