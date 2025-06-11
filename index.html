@@ -10,6 +10,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- EmailJS for subscription functionality -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+        // Initialize EmailJS with your user ID
+        emailjs.init("NeuralGlow.AI"); // Your EmailJS User ID
+    })();
+  </script>
   <style>
     /* General Styles */
     :root {
@@ -420,6 +428,49 @@
       outline: none;
       box-shadow: 0 0 0 3px rgba(104, 159, 56, 0.15);
     }
+    
+    .subscription-form input[type="email"]:valid {
+      border-left: 4px solid #2ecc71;
+    }
+    
+    .subscription-form input[type="email"]:invalid:not(:placeholder-shown) {
+      border-left: 4px solid #e74c3c;
+    }
+    
+    .input-feedback {
+      font-size: 0.8rem;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      color: #e74c3c;
+      display: none;
+    }
+    
+    .subscription-form input[type="email"]:invalid:not(:placeholder-shown) + .input-feedback {
+      display: block;
+    }
+    
+    .subscription-loading, .subscription-success, .subscription-error {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .subscription-success i {
+      color: #2ecc71;
+    }
+    
+    .subscription-error i {
+      color: #e74c3c;
+    }
+    
+    .try-again-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
 
     .btn {
       padding: 12px 24px;
@@ -772,8 +823,9 @@
     <div class="subscribe-box">
       <h2>Stay Quietly Updated</h2>
       <p>No noise, no circus. Just rare glimpses of clarity delivered straight to your inbox. Think of it as a cognitive spa day.</p>
-      <form action="#" method="POST">
+      <form id="subscription-form" class="subscription-form">
         <input type="email" name="email" placeholder="Your email address" required>
+        <div class="input-feedback">Please enter a valid email address</div>
         <button type="submit" class="btn">Subscribe</button>
       </form>
       <p class="small-note">We respect your attention. Emails are rare and valuable.</p>
@@ -825,8 +877,9 @@
     <div class="footer-column">
       <h3>Newsletter</h3>
       <p style="color: #F1F8E9; margin-bottom: 20px;">Join our quiet revolution. Receive thoughtful insights directly to your inbox.</p>
-      <form action="#" method="POST">
+      <form id="footer-subscription-form" class="subscription-form">
         <input type="email" name="email" placeholder="Your email" required style="width: 100%; padding: 10px; border-radius: 4px; border: none; margin-bottom: 10px;">
+        <div class="input-feedback" style="color: #F1F8E9; font-size: 0.8rem; margin-bottom: 10px; display: none;">Please enter a valid email address</div>
         <button type="submit" style="background: var(--primary-light); color: var(--primary-dark); border: none; padding: 10px; border-radius: 4px; width: 100%; cursor: pointer; font-weight: 600;">Subscribe</button>
       </form>
     </div>
@@ -855,6 +908,89 @@
     } else {
       nav.style.display = 'flex';
     }
+  });
+  
+  // Email validation
+  function isValidEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+  
+  // Generic form handler for subscription forms
+  const handleSubscriptionForm = (form) => {
+    if (!form) return;
+    
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const emailInput = this.querySelector('input[type="email"]');
+      const email = emailInput.value.trim();
+      
+      if (email && isValidEmail(email)) {
+        // Show loading state
+        const originalContent = form.innerHTML;
+        form.innerHTML = `
+          <div class="subscription-loading">
+            <i class="fas fa-circle-notch fa-spin" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;"></i>
+            <p>Processing your subscription...</p>
+          </div>
+        `;
+        
+        // EmailJS implementation
+        emailjs.send(
+          "NeuralGlow", // EmailJS Service ID
+          "NeuralGlow_AI", // EmailJS Template ID
+          {
+            subscriber_email: email,
+            to_name: "NeuralGlow",
+            from_name: "NeuralGlow.ai",
+            from_email: "notifications@neuralglow.ai",
+            reply_to: email,
+            subscription_date: new Date().toLocaleString(),
+            source: "NeuralGlow.ai Website"
+          }
+        ).then(function(response) {
+          console.log("SUCCESS", response);
+          form.innerHTML = `
+            <div class="subscription-success">
+              <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 10px;"></i>
+              <p>Thank you for subscribing! We'll send updates directly to your inbox.</p>
+            </div>
+          `;
+          
+          // Store in localStorage as backup
+          const subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]');
+          subscribers.push({
+            email: email,
+            date: new Date().toISOString()
+          });
+          localStorage.setItem('subscribers', JSON.stringify(subscribers));
+        }, function(error) {
+          console.error("FAILED", error);
+          // Show error message but don't expose technical details to user
+          form.innerHTML = `
+            <div class="subscription-error">
+              <i class="fas fa-exclamation-circle" style="font-size: 2rem; margin-bottom: 10px;"></i>
+              <p>Something went wrong. Please try again later or contact us directly.</p>
+              <button class="try-again-btn">Try Again</button>
+            </div>
+          `;
+          
+          // Add event listener to the Try Again button
+          const tryAgainBtn = form.querySelector('.try-again-btn');
+          if (tryAgainBtn) {
+            tryAgainBtn.addEventListener('click', () => {
+              form.innerHTML = originalContent;
+            });
+          }
+        });
+      }
+    });
+  };
+  
+  // Initialize both subscription forms
+  document.addEventListener('DOMContentLoaded', function() {
+    handleSubscriptionForm(document.getElementById('subscription-form'));
+    handleSubscriptionForm(document.getElementById('footer-subscription-form'));
   });
 </script>
 
