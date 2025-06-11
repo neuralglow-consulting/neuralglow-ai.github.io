@@ -17,6 +17,15 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- EmailJS for subscription functionality -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+        // Initialize EmailJS with your user ID
+        emailjs.init("NeuralGlow.AI"); // Your EmailJS User ID
+    })();
+  </script>
+
 <style>
     /* Base Styles */
     :root {
@@ -649,6 +658,49 @@
     <button class="filter-btn" data-filter="technology">Technology</button>
   </div>
   
+  <!-- June 2025 Section -->
+  <section class="month-section">
+    <div class="month-header">
+      <h2>June 2025</h2>
+      <div class="month-divider"></div>
+    </div>
+    
+    <div class="blog-grid">
+      <!-- NEW BLOG ENTRY - Why Be a Researcher -->
+      <article class="blog-card" data-categories="technology resilience productivity">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Researcher in Digital Age" class="blog-img">
+        <div class="blog-content">
+          <div class="blog-date">June 11, 2025</div>
+          <div class="blog-tags">
+            <span class="blog-tag">Research</span>
+            <span class="blog-tag">AI</span>
+            <span class="blog-tag">Future of Work</span>
+          </div>
+          <h3 class="blog-title">
+            <a href="http://neuralglow.ai/blog/June/2025-06-11-why_be_a_researcher.html">🧠 Why Be a Researcher in a World Where Machines Can Do Everything in a Second?</a>
+          </h3>
+          <p class="blog-excerpt">Exploring the enduring value of human research in an age of machine efficiency. Discover why critical thinking, creativity, and ethical judgment remain irreplaceable human contributions.</p>
+          <div class="blog-meta">
+            <div class="read-time">
+              <i class="far fa-clock"></i> 9 min read
+            </div>
+            <div class="social-buttons">
+              <a href="https://twitter.com/intent/tweet?url=http://neuralglow.ai/blog/June/2025-06-11-why_be_a_researcher.html" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://neuralglow.ai/blog/June/2025-06-11-why_be_a_researcher.html" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://neuralglow.ai/blog/June/2025-06-11-why_be_a_researcher.html" class="social-icon" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  
   <!-- May 2025 Section -->
   <section class="month-section">
     <div class="month-header">
@@ -955,6 +1007,7 @@
     <p class="newsletter-description">Join over 5,000 professionals who've redefined their relationship with work. No spam, just weekly actionable advice.</p>
     <form class="newsletter-form" id="newsletter-form">
       <input type="email" class="newsletter-input" placeholder="Your email address" required>
+      <div class="input-feedback" style="color: #e74c3c; font-size: 0.9rem; margin-top: 10px; display: none;">Please enter a valid email address</div>
       <button type="submit" class="newsletter-btn">Subscribe</button>
     </form>
   </div>
@@ -1028,11 +1081,76 @@
     if (newsletterForm) {
       newsletterForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Thank you for subscribing! In a live implementation, you would receive a confirmation email.');
-        this.reset();
+        const emailInput = this.querySelector('input[type="email"]');
+        const email = emailInput.value.trim();
+        
+        if (email && isValidEmail(email)) {
+          // Show loading state
+          const originalContent = this.innerHTML;
+          this.innerHTML = `
+            <div style="text-align: center;">
+              <i class="fas fa-circle-notch fa-spin" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
+              <p>Processing your subscription...</p>
+            </div>
+          `;
+          
+          // EmailJS implementation
+          emailjs.send(
+            "NeuralGlow", // EmailJS Service ID
+            "NeuralGlow_AI", // EmailJS Template ID
+            {
+              subscriber_email: email,
+              to_name: "NeuralGlow",
+              from_name: "NeuralGlow.ai",
+              from_email: "notifications@neuralglow.ai",
+              reply_to: email,
+              subscription_date: new Date().toLocaleString(),
+              source: "NeuralGlow.ai Blog"
+            }
+          ).then(function(response) {
+            console.log("SUCCESS", response);
+            newsletterForm.innerHTML = `
+              <div style="text-align: center;">
+                <i class="fas fa-check-circle" style="font-size: 2rem; color: var(--success); margin-bottom: 10px;"></i>
+                <p>Thank you for subscribing! We'll send updates directly to your inbox.</p>
+              </div>
+            `;
+            
+            // Store in localStorage as backup
+            const subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]');
+            subscribers.push({
+              email: email,
+              date: new Date().toISOString()
+            });
+            localStorage.setItem('subscribers', JSON.stringify(subscribers));
+          }, function(error) {
+            console.error("FAILED", error);
+            newsletterForm.innerHTML = `
+              <div style="text-align: center;">
+                <i class="fas fa-exclamation-circle" style="font-size: 2rem; color: #e74c3c; margin-bottom: 10px;"></i>
+                <p>Something went wrong. Please try again later or contact us directly.</p>
+                <button style="background: var(--primary); color: white; border: none; padding: 8px 16px; border-radius: 4px; margin-top: 15px; cursor: pointer;">Try Again</button>
+              </div>
+            `;
+            
+            // Add event listener to the Try Again button
+            const tryAgainBtn = newsletterForm.querySelector('button');
+            if (tryAgainBtn) {
+              tryAgainBtn.addEventListener('click', () => {
+                newsletterForm.innerHTML = originalContent;
+              });
+            }
+          });
+        }
       });
     }
   });
+  
+  // Email validation function
+  function isValidEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
 </script>
 </body>
 </html>
