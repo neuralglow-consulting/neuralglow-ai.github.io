@@ -18,6 +18,8 @@
         emailjs.init("NeuralGlow.AI"); // Your EmailJS User ID
     })();
   </script>
+  <!-- Subscription functionality -->
+  <script src="/assets/js/subscription.js" defer></script>
   <style>
     /* General Styles */
     :root {
@@ -879,7 +881,6 @@
       <p style="color: #F1F8E9; margin-bottom: 20px;">Join our quiet revolution. Receive thoughtful insights directly to your inbox.</p>
       <form id="footer-subscription-form" class="subscription-form">
         <input type="email" name="email" placeholder="Your email" required style="width: 100%; padding: 10px; border-radius: 4px; border: none; margin-bottom: 10px;">
-        <div class="input-feedback" style="color: #F1F8E9; font-size: 0.8rem; margin-bottom: 10px; display: none;">Please enter a valid email address</div>
         <button type="submit" style="background: var(--primary-light); color: var(--primary-dark); border: none; padding: 10px; border-radius: 4px; width: 100%; cursor: pointer; font-weight: 600;">Subscribe</button>
       </form>
     </div>
@@ -908,89 +909,6 @@
     } else {
       nav.style.display = 'flex';
     }
-  });
-  
-  // Email validation
-  function isValidEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  }
-  
-  // Generic form handler for subscription forms
-  const handleSubscriptionForm = (form) => {
-    if (!form) return;
-    
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const emailInput = this.querySelector('input[type="email"]');
-      const email = emailInput.value.trim();
-      
-      if (email && isValidEmail(email)) {
-        // Show loading state
-        const originalContent = form.innerHTML;
-        form.innerHTML = `
-          <div class="subscription-loading">
-            <i class="fas fa-circle-notch fa-spin" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;"></i>
-            <p>Processing your subscription...</p>
-          </div>
-        `;
-        
-        // EmailJS implementation
-        emailjs.send(
-          "NeuralGlow", // EmailJS Service ID
-          "NeuralGlow_AI", // EmailJS Template ID
-          {
-            subscriber_email: email,
-            to_name: "NeuralGlow",
-            from_name: "NeuralGlow.ai",
-            from_email: "notifications@neuralglow.ai",
-            reply_to: email,
-            subscription_date: new Date().toLocaleString(),
-            source: "NeuralGlow.ai Website"
-          }
-        ).then(function(response) {
-          console.log("SUCCESS", response);
-          form.innerHTML = `
-            <div class="subscription-success">
-              <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 10px;"></i>
-              <p>Thank you for subscribing! We'll send updates directly to your inbox.</p>
-            </div>
-          `;
-          
-          // Store in localStorage as backup
-          const subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]');
-          subscribers.push({
-            email: email,
-            date: new Date().toISOString()
-          });
-          localStorage.setItem('subscribers', JSON.stringify(subscribers));
-        }, function(error) {
-          console.error("FAILED", error);
-          // Show error message but don't expose technical details to user
-          form.innerHTML = `
-            <div class="subscription-error">
-              <i class="fas fa-exclamation-circle" style="font-size: 2rem; margin-bottom: 10px;"></i>
-              <p>Something went wrong. Please try again later or contact us directly.</p>
-              <button class="try-again-btn">Try Again</button>
-            </div>
-          `;
-          
-          // Add event listener to the Try Again button
-          const tryAgainBtn = form.querySelector('.try-again-btn');
-          if (tryAgainBtn) {
-            tryAgainBtn.addEventListener('click', () => {
-              form.innerHTML = originalContent;
-            });
-          }
-        });
-      }
-    });
-  };
-  
-  // Initialize both subscription forms
-  document.addEventListener('DOMContentLoaded', function() {
-    handleSubscriptionForm(document.getElementById('subscription-form'));
-    handleSubscriptionForm(document.getElementById('footer-subscription-form'));
   });
 </script>
 
