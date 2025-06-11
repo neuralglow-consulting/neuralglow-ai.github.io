@@ -25,6 +25,8 @@
         emailjs.init("NeuralGlow.AI"); // Your EmailJS User ID
     })();
   </script>
+  <!-- Subscription functionality -->
+  <script src="/assets/js/subscription.js" defer></script>
 
 <style>
     /* Base Styles */
@@ -1076,81 +1078,7 @@
       });
     });
     
-    // Newsletter form
-    const newsletterForm = document.getElementById('newsletter-form');
-    if (newsletterForm) {
-      newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const emailInput = this.querySelector('input[type="email"]');
-        const email = emailInput.value.trim();
-        
-        if (email && isValidEmail(email)) {
-          // Show loading state
-          const originalContent = this.innerHTML;
-          this.innerHTML = `
-            <div style="text-align: center;">
-              <i class="fas fa-circle-notch fa-spin" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
-              <p>Processing your subscription...</p>
-            </div>
-          `;
-          
-          // EmailJS implementation
-          emailjs.send(
-            "NeuralGlow", // EmailJS Service ID
-            "NeuralGlow_AI", // EmailJS Template ID
-            {
-              subscriber_email: email,
-              to_name: "NeuralGlow",
-              from_name: "NeuralGlow.ai",
-              from_email: "notifications@neuralglow.ai",
-              reply_to: email,
-              subscription_date: new Date().toLocaleString(),
-              source: "NeuralGlow.ai Blog"
-            }
-          ).then(function(response) {
-            console.log("SUCCESS", response);
-            newsletterForm.innerHTML = `
-              <div style="text-align: center;">
-                <i class="fas fa-check-circle" style="font-size: 2rem; color: var(--success); margin-bottom: 10px;"></i>
-                <p>Thank you for subscribing! We'll send updates directly to your inbox.</p>
-              </div>
-            `;
-            
-            // Store in localStorage as backup
-            const subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]');
-            subscribers.push({
-              email: email,
-              date: new Date().toISOString()
-            });
-            localStorage.setItem('subscribers', JSON.stringify(subscribers));
-          }, function(error) {
-            console.error("FAILED", error);
-            newsletterForm.innerHTML = `
-              <div style="text-align: center;">
-                <i class="fas fa-exclamation-circle" style="font-size: 2rem; color: #e74c3c; margin-bottom: 10px;"></i>
-                <p>Something went wrong. Please try again later or contact us directly.</p>
-                <button style="background: var(--primary); color: white; border: none; padding: 8px 16px; border-radius: 4px; margin-top: 15px; cursor: pointer;">Try Again</button>
-              </div>
-            `;
-            
-            // Add event listener to the Try Again button
-            const tryAgainBtn = newsletterForm.querySelector('button');
-            if (tryAgainBtn) {
-              tryAgainBtn.addEventListener('click', () => {
-                newsletterForm.innerHTML = originalContent;
-              });
-            }
-          });
-        }
-      });
-    }
   });
-  
-  // Email validation function
-  function isValidEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  }
 </script>
 </body>
 </html>
