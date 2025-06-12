@@ -10,21 +10,54 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
     /* General Styles */
+    :root {
+        /* Light mode (default) */
+        --bg-color: #f5f7f0;
+        --text-color: #2c3e50;
+        --header-gradient-start: #558b2f;
+        --header-gradient-end: #689f38;
+        --header-text: #ffffff;
+        --card-bg: #ffffff;
+        --card-border: rgba(0,0,0,0.1);
+        --link-color: #558B2F;
+        --hover-color: #33691E;
+        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --quote-bg: #ffffff;
+        --quote-border: #e0e0e0;
+    }
+    
+    /* Dark mode */
+    [data-theme="dark"] {
+        --bg-color: #1A1A1A;
+        --text-color: #E0E0E0;
+        --header-gradient-start: #33691E;
+        --header-gradient-end: #558B2F;
+        --header-text: #ffffff;
+        --card-bg: #2D2D2D;
+        --card-border: rgba(255,255,255,0.1);
+        --link-color: #8BC34A;
+        --hover-color: #AED581;
+        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        --quote-bg: #2D2D2D;
+        --quote-border: #444444;
+    }
+    
     html { scroll-behavior: smooth; }
     body {
         margin: 0;
         padding: 0;
         font-family: 'Inter', 'Poppins', sans-serif;
-        background: #f5f7f0; /* Subtle light green/cream background */
-        color: #2c3e50;
+        background: var(--bg-color);
+        color: var(--text-color);
         line-height: 1.8;
         overflow-x: hidden;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
     
     /* Header Styling */
     header {
-        background: linear-gradient(135deg, #558b2f, #689f38);
-        color: #fff;
+        background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+        color: var(--header-text);
         padding: 15px 40px;
         display: flex;
         justify-content: space-between;
@@ -33,6 +66,7 @@
         top: 0;
         z-index: 100;
         box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        transition: background 0.3s ease;
     }
     header .logo {
         display: flex;
@@ -72,6 +106,84 @@
     }
     header nav a.active {
         background: rgba(255,255,255,0.25);
+    }
+    
+    /* Theme Toggle Styles */
+    .theme-switch-wrapper {
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+    }
+    
+    .theme-switch {
+        display: inline-block;
+        position: relative;
+        width: 50px;
+        height: 25px;
+    }
+    
+    .theme-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255,255,255,0.3);
+        transition: .4s;
+        border-radius: 25px;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 19px;
+        width: 19px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
+    
+    input:checked + .slider {
+        background-color: rgba(0,0,0,0.3);
+    }
+    
+    input:checked + .slider:before {
+        transform: translateX(25px);
+    }
+    
+    .slider .icon {
+        position: absolute;
+        top: 5px;
+        font-size: 13px;
+        transition: .4s;
+        color: white;
+    }
+    
+    .slider .sun {
+        left: 7px;
+        opacity: 1;
+    }
+    
+    .slider .moon {
+        right: 7px;
+        opacity: 0;
+    }
+    
+    input:checked + .slider .sun {
+        opacity: 0;
+    }
+    
+    input:checked + .slider .moon {
+        opacity: 1;
     }
     
     /* Main Content Area */
@@ -388,6 +500,10 @@
         }
     }
 </style>
+<!-- Dark Mode functionality -->
+<script src="/assets/js/dark-mode.js" defer></script>
+<!-- Theme color meta tag for browser UI -->
+<meta name="color-scheme" content="light dark">
 </head>
 <body>
 
@@ -402,6 +518,15 @@
     <a href="/blog.html">Blog</a>
     <a href="/contact.html">Contact</a>
     <a href="/quotes/" class="active">Notes</a>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="theme-toggle">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider">
+          <i class="fas fa-sun icon sun"></i>
+          <i class="fas fa-moon icon moon"></i>
+        </span>
+      </label>
+    </div>
   </nav>
 </header>
 

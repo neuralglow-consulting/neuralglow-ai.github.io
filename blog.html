@@ -27,10 +27,15 @@
   </script>
   <!-- Subscription functionality -->
   <script src="/assets/js/subscription.js" defer></script>
+  <!-- Dark Mode functionality -->
+  <script src="/assets/js/dark-mode.js" defer></script>
+  <!-- Theme color meta tag for browser UI -->
+  <meta name="color-scheme" content="light dark">
 
 <style>
     /* Base Styles */
     :root {
+      /* Light mode (default) */
       --primary: #512DA8; /* Deep Purple */
       --primary-light: #D1C4E9; /* Light Purple */
       --secondary: #b30059; /* Deep Pink */
@@ -41,6 +46,30 @@
       --success: #4CAF50;
       --link: #7E57C2;
       --tag-bg: #EDE7F6;
+      --bg-color: #ffffff;
+      --header-bg: var(--light);
+      --border-color: #e0e0e0;
+      --text-color: #333333;
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    
+    /* Dark mode */
+    [data-theme="dark"] {
+      --primary: #673AB7;
+      --primary-light: #9575CD;
+      --secondary: #E91E63;
+      --dark: #f5f5f5;
+      --light: #121212;
+      --gray: #bbbbbb;
+      --card-bg: #1E1E1E;
+      --success: #66BB6A;
+      --link: #B39DDB;
+      --tag-bg: #4527A0;
+      --bg-color: #121212;
+      --header-bg: #1A1A1A;
+      --border-color: #444444;
+      --text-color: #f5f5f5;
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
     
     * {
@@ -57,9 +86,10 @@
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
+      background-color: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     /* Typography */
@@ -103,8 +133,8 @@
 
     /* Header Styles */
     header {
-      background: #ffffff;
-      color: var(--dark);
+      background: var(--header-bg);
+      color: var(--text-color);
       padding: 1.2rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -113,6 +143,7 @@
       top: 0;
       z-index: 100;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     header .logo img {
@@ -146,6 +177,84 @@
     
     header nav a:hover::after {
       width: 100%;
+    }
+    
+    /* Theme Toggle Styles */
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+    }
+    
+    .theme-switch {
+      display: inline-block;
+      position: relative;
+      width: 50px;
+      height: 25px;
+    }
+    
+    .theme-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 25px;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 19px;
+      width: 19px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    
+    input:checked + .slider {
+      background-color: var(--primary);
+    }
+    
+    input:checked + .slider:before {
+      transform: translateX(25px);
+    }
+    
+    .slider .icon {
+      position: absolute;
+      top: 5px;
+      font-size: 13px;
+      transition: .4s;
+      color: var(--white);
+    }
+    
+    .slider .sun {
+      left: 7px;
+      opacity: 1;
+    }
+    
+    .slider .moon {
+      right: 7px;
+      opacity: 0;
+    }
+    
+    input:checked + .slider .sun {
+      opacity: 0;
+    }
+    
+    input:checked + .slider .moon {
+      opacity: 1;
     }
 
     /* Hero Section */
@@ -622,6 +731,15 @@
     <a href="/research.html">Research</a>
     <a href="/blog.html">Blog</a>
     <a href="/contact.html">Contact</a>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="theme-toggle">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider">
+          <i class="fas fa-sun icon sun"></i>
+          <i class="fas fa-moon icon moon"></i>
+        </span>
+      </label>
+    </div>
   </nav>
 </header>
 

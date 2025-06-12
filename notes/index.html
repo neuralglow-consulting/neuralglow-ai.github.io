@@ -10,15 +10,52 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
     /* General Styles */
+    :root {
+        /* Light mode (default) */
+        --bg-gradient-start: #E8F5E9;
+        --bg-gradient-mid: #F1F8E9;
+        --bg-gradient-end: #F9FBE7;
+        --text-color: #2E3B2F;
+        --header-gradient-start: #558B2F;
+        --header-gradient-end: #689F38;
+        --header-text: #ffffff;
+        --card-bg: #ffffff;
+        --card-border: rgba(0,0,0,0.1);
+        --link-color: #558B2F;
+        --hover-color: #33691E;
+        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --tag-bg: #E8F5E9;
+        --tag-text: #33691E;
+    }
+    
+    /* Dark mode */
+    [data-theme="dark"] {
+        --bg-gradient-start: #1A1A1A;
+        --bg-gradient-mid: #222222;
+        --bg-gradient-end: #2A2A2A;
+        --text-color: #E0E0E0;
+        --header-gradient-start: #33691E;
+        --header-gradient-end: #558B2F;
+        --header-text: #ffffff;
+        --card-bg: #2D2D2D;
+        --card-border: rgba(255,255,255,0.1);
+        --link-color: #8BC34A;
+        --hover-color: #AED581;
+        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        --tag-bg: #33691E;
+        --tag-text: #E8F5E9;
+    }
+    
     html { scroll-behavior: smooth; }
     body {
         margin: 0;
         padding: 0;
         font-family: 'Inter', sans-serif;
-        background: linear-gradient(135deg, #E8F5E9, #F1F8E9, #F9FBE7); /* Enhanced Light Green Gradient */
-        color: #2E3B2F;
+        background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-end));
+        color: var(--text-color);
         line-height: 1.8;
         overflow-x: hidden;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
     
     /* Typography */
@@ -29,8 +66,8 @@
     
     /* Header Styles */
     header {
-        background: linear-gradient(to right, #558B2F, #689F38); /* Gradient Green */
-        color: #fff;
+        background: linear-gradient(to right, var(--header-gradient-start), var(--header-gradient-end));
+        color: var(--header-text);
         padding: 15px 40px;
         display: flex;
         justify-content: space-between;
@@ -39,6 +76,7 @@
         top: 0;
         z-index: 100;
         box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        transition: background 0.3s ease;
     }
     
     header .logo {
@@ -88,6 +126,84 @@
     
     header nav a.active {
         background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Theme Toggle Styles */
+    .theme-switch-wrapper {
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+    }
+    
+    .theme-switch {
+        display: inline-block;
+        position: relative;
+        width: 50px;
+        height: 25px;
+    }
+    
+    .theme-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255,255,255,0.3);
+        transition: .4s;
+        border-radius: 25px;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 19px;
+        width: 19px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
+    
+    input:checked + .slider {
+        background-color: rgba(0,0,0,0.3);
+    }
+    
+    input:checked + .slider:before {
+        transform: translateX(25px);
+    }
+    
+    .slider .icon {
+        position: absolute;
+        top: 5px;
+        font-size: 13px;
+        transition: .4s;
+        color: white;
+    }
+    
+    .slider .sun {
+        left: 7px;
+        opacity: 1;
+    }
+    
+    .slider .moon {
+        right: 7px;
+        opacity: 0;
+    }
+    
+    input:checked + .slider .sun {
+        opacity: 0;
+    }
+    
+    input:checked + .slider .moon {
+        opacity: 1;
     }
     
     /* Main Content Area */
@@ -546,6 +662,10 @@
         pointer-events: none;
     }
 </style>
+<!-- Dark Mode functionality -->
+<script src="/assets/js/dark-mode.js" defer></script>
+<!-- Theme color meta tag for browser UI -->
+<meta name="color-scheme" content="light dark">
 </head>
 <body>
 
@@ -564,6 +684,15 @@
     <a href="/contact.html">Contact</a>
     <a href="/quotes/">Quotes</a>
     <a href="/notes/">Notes</a>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="theme-toggle">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider">
+          <i class="fas fa-sun icon sun"></i>
+          <i class="fas fa-moon icon moon"></i>
+        </span>
+      </label>
+    </div>
   </nav>
 </header>  
     
