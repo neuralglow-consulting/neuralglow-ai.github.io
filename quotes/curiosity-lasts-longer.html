@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Curiosity Is Quieter Than Love | NeuralGlow.ai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="While passion burns bright and fast, the gentle ember of curiosity continues to illuminate our path through life's darkest forests. Discover why curiosity outlasts love.">
+    <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="/assets/js/dark-mode.js" defer></script>
+    
+    <style>
+        :root {
+            /* Colors */
+            --primary-color: #2e5cb8;
+            --secondary-color: #45b6fe;
+            --accent-color: #64ffda;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --header-color: #1a1a1a;
+            --quote-bg: rgba(46, 92, 184, 0.1);
+            
+            /* Font families */
+            --header-font: 'Playfair Display', serif;
+            --body-font: 'Inter', sans-serif;
+            --nav-font: 'Poppins', sans-serif;
+
+            /* Spacing */
+            --section-spacing: 4rem;
+            --content-width: 1200px;
+            
+            /* Transitions */
+            --transition-speed: 0.3s;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --header-color: #ffffff;
+            --quote-bg: rgba(46, 92, 184, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--body-font);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        .container {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-family: var(--header-font);
+            font-size: 3.5rem;
+            color: var(--header-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-family: var(--nav-font);
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: var(--nav-font);
+            font-size: 1.1rem;
+            transition: color var(--transition-speed);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: var(--section-spacing) 0;
+        }
+
+        .quote-container {
+            background: var(--quote-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+
+        .quote-text {
+            font-family: var(--header-font);
+            font-size: 2rem;
+            color: var(--header-color);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .quote-author {
+            font-family: var(--nav-font);
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        /* Share Buttons */
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .share-button {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color var(--transition-speed);
+        }
+
+        .share-button:hover {
+            color: var(--primary-color);
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 100;
+            transition: color var(--transition-speed);
+        }
+
+        .dark-mode-toggle:hover {
+            color: var(--primary-color);
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-speed);
+        }
+
+        .image-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            font-family: var(--nav-font);
+            transform: translateY(100%);
+            transition: transform var(--transition-speed);
+        }
+
+        .image-card:hover .image-caption {
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .quote-text {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <main>
+        <section class="hero">
+            <img src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&q=80&w=2066" alt="Curious child looking through a magnifying glass" class="hero-image">
+            <div class="hero-content">
+                <h1 class="hero-title">Curiosity Lasts Longer</h1>
+                <p class="hero-subtitle">Exploring the endless journey of lifelong learning and growth</p>
+                <nav class="nav-links">
+                    <a href="rain-teaches-forests.html" class="nav-link">Rain Teaches Forests</a>
+                    <a href="patience-grows-faster.html" class="nav-link">Patience Grows Faster</a>
+                    <a href="index.html" class="nav-link">More Quotes</a>
+                </nav>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="container">
+                <div class="quote-container">
+                    <p class="quote-text">"Curiosity lasts longer than any burst of motivation. It's the steady flame that keeps you learning and growing, day after day."</p>
+                    <p class="quote-author">- NeuralGlow.ai</p>
+                </div>
+
+                <div class="share-buttons">
+                    <button class="share-button" onclick="shareOnTwitter()" aria-label="Share on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </button>
+                    <button class="share-button" onclick="shareOnFacebook()" aria-label="Share on Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </button>
+                    <button class="share-button" onclick="shareOnLinkedIn()" aria-label="Share on LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div style="max-width: 800px; margin: 0 auto; padding: 2rem 0;">
+                <h2 style="font-family: var(--header-font); color: var(--header-color); font-size: 2rem; margin-bottom: 1.5rem;">
+                    The Endless Journey of Curiosity
+                </h2>
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    While motivation comes and goes like waves on a shore, curiosity is the deep current that keeps us moving forward. 
+                    It's the gentle whisper that asks "what if?" and the quiet persistence that leads us to turn just one more page, 
+                    try just one more experiment, or ask just one more question.
+                </p>
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    Unlike the fierce but fleeting flames of passion or motivation, curiosity burns steadily. It's the patient explorer 
+                    that keeps us engaged long after the initial excitement has faded. It transforms mundane moments into opportunities 
+                    for discovery and ordinary questions into pathways to wisdom.
+                </p>
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    Consider how children learn - not through structured motivation, but through their natural curiosity. They don't 
+                    need external rewards to explore their world; their questions and wonderment guide them naturally. This same 
+                    childlike curiosity, when cultivated in our adult lives, becomes our most reliable companion in lifelong learning.
+                </p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="image-grid">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&q=80&w=2066" 
+                         alt="Curious child looking through a magnifying glass"
+                         loading="lazy">
+                    <div class="image-caption">Curiosity: The Beginning of Knowledge</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&q=80&w=2066" 
+                         alt="Curious child looking through a magnifying glass"
+                         loading="lazy">
+                    <div class="image-caption">Curiosity: The Beginning of Knowledge</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1522163182402-834f871fd851?auto=format&fit=crop&q=80&w=2066" 
+                         alt="Person climbing a steep mountain face"
+                         loading="lazy">
+                    <div class="image-caption">Growth: The Journey is the Goal</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&q=80&w=2066" 
+                         alt="Nature and mountains"
+                         loading="lazy">
+                    <div class="image-caption">Nature: The Ultimate Teacher</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Share functionality
+        function shareOnTwitter() {
+            const text = encodeURIComponent('"Curiosity lasts longer than any burst of motivation." - NeuralGlow.ai');
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+        }
+
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+
+        function shareOnLinkedIn() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent('Curiosity Lasts Longer - NeuralGlow.ai');
+            window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`, '_blank');
+        }
+    </script>
+</body>
+</html>
