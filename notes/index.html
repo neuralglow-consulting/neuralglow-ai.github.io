@@ -581,7 +581,7 @@
         </div>
         
         <div class="notes-count">
-            <i class="fas fa-leaf"></i> 10 seeds growing
+            <i class="fas fa-leaf"></i> 15 seeds growing
         </div>
     </div>
     
@@ -590,14 +590,14 @@
         <div class="featured-note">
             <div class="featured-label">Featured</div>
             <div class="note-header">
-                <div class="note-date"><i class="far fa-calendar-alt"></i> May 3, 2025</div>
+                <div class="note-date"><i class="far fa-calendar-alt"></i> June 10, 2025</div>
                 <div class="note-categories">
-                    <span class="note-category">Growth</span>
-                    <span class="note-category">Wisdom</span>
+                    <span class="note-category">Mindfulness</span>
+                    <span class="note-category">Technology</span>
                 </div>
             </div>
             <div class="featured-note-content">
-                "The best view comes after the hardest climb. (Or, you know, after a really good cup of tea.)"
+                "Technology should function like a good forest guide: present when needed, invisible when not, and always leaving you feeling more connected to yourself rather than to a screen."
             </div>
             <div class="note-footer">
                 <div class="note-author">
@@ -711,7 +711,13 @@
     
     // Dates with notes (for demonstration)
     const datesWithNotes = [
-      new Date(2025, 4, 3), // May 3, 2025
+      new Date(2025, 5, 1), // June 1
+      new Date(2025, 5, 5), // June 5
+      new Date(2025, 5, 8), // June 8
+      new Date(2025, 5, 10), // June 10
+      new Date(2025, 5, 12), // June 12
+      new Date(2025, 6, 1), // July 1 (upcoming)
+      new Date(2025, 6, 5), // July 5 (upcoming)
       new Date(2025, 4, 2), // May 2, 2025
       new Date(2025, 4, 1), // May 1, 2025
       new Date(2025, 3, 30), // April 30, 2025
@@ -723,7 +729,7 @@
       new Date(2025, 3, 24), // April 24, 2025
     ];
 
-    function hasNotes(year, month, day) {
+    const hasNotes = function(year, month, day) {
       return datesWithNotes.some(date => 
         date.getFullYear() === year && 
         date.getMonth() === month && 
@@ -835,6 +841,60 @@
   // JavaScript to display notes with enhanced data
   document.addEventListener('DOMContentLoaded', () => {
     const notes = [
+      // JULY 2025 (UPCOMING)
+      { 
+        date: "July 5, 2025", 
+        content: "Coming Soon: Nature doesn't rush, yet everything gets accomplished. A reminder for the impatient among us.", 
+        categories: ["Upcoming", "Nature"],
+        author: "Forest Guide",
+        authorImg: "/assets/images/author2-avatar.jpg"
+      },
+      { 
+        date: "July 1, 2025", 
+        content: "Coming Soon: The most sustainable technology is the one that knows when to turn itself off.", 
+        categories: ["Upcoming", "Technology"],
+        author: "Digital Minimalist",
+        authorImg: "/assets/images/author4-avatar.jpg"
+      },
+      
+      // JUNE 2025
+      { 
+        date: "June 12, 2025", 
+        content: "The true measure of AI isn't how human it can appear, but how well it can preserve what makes us uniquely human.", 
+        categories: ["Technology", "Humanity"],
+        author: "Glow Keeper",
+        authorImg: "/assets/images/author-avatar.jpg"
+      },
+      { 
+        date: "June 10, 2025", 
+        content: "Technology should function like a good forest guide: present when needed, invisible when not, and always leaving you feeling more connected to yourself rather than to a screen.", 
+        categories: ["Mindfulness", "Technology"],
+        author: "Glow Keeper",
+        authorImg: "/assets/images/author-avatar.jpg"
+      },
+      { 
+        date: "June 8, 2025", 
+        content: "In the age of information overwhelm, the most revolutionary act is to sit quietly and think one complete thought.", 
+        categories: ["Focus", "Digital Wellness"],
+        author: "Silent Observer",
+        authorImg: "/assets/images/author4-avatar.jpg"
+      },
+      { 
+        date: "June 5, 2025", 
+        content: "The difference between a garden and a wilderness is not control, but conversation.", 
+        categories: ["Nature", "Wisdom"],
+        author: "Forest Guide",
+        authorImg: "/assets/images/author2-avatar.jpg"
+      },
+      { 
+        date: "June 1, 2025", 
+        content: "Your attention is the most valuable currency you possess. Spend it wisely, invest it carefully, and never give it away for free entertainment.", 
+        categories: ["Attention", "Mindfulness"],
+        author: "Digital Minimalist",
+        authorImg: "/assets/images/author4-avatar.jpg"
+      },
+      
+      // MAY 2025
       { 
         date: "May 2, 2025", 
         content: "Silence isn't empty; it's full of answers waiting to be heard.", 
