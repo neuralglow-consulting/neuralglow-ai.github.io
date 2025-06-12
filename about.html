@@ -571,64 +571,64 @@
   
   <!-- Timeline Section -->
   <div class="content-card">
-    <div class="category-tag">History</div>
+    <div class="category-tag">Recent Progress</div>
     <div class="section-header">
       <i class="fas fa-history"></i>
-      <h2>Our Journey</h2>
+      <h2>Our Journey in 2025</h2>
     </div>
     
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">2015</div>
+        <div class="timeline-date">March 5, 2025</div>
         <div class="timeline-content">
-          <h3>The Seeds</h3>
-          <p>NeuralGlow begins as a personal notebook documenting patterns of digital overwhelm and moments of clarity.</p>
+          <h3>New Beginnings</h3>
+          <p>Launch of our redesigned platform with improved accessibility features and a more intuitive knowledge navigation system.</p>
         </div>
       </div>
       
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">2017</div>
+        <div class="timeline-date">March 18, 2025</div>
         <div class="timeline-content">
-          <h3>First Sprouts</h3>
-          <p>Our initial collection of essays on "Cognitive Breathing Room" attracts a small but dedicated following.</p>
+          <h3>Community Expansion</h3>
+          <p>Welcomed our 10,000th member to the NeuralGlow community with a special virtual gathering focused on digital mindfulness.</p>
         </div>
       </div>
       
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">2019</div>
+        <div class="timeline-date">April 7, 2025</div>
         <div class="timeline-content">
-          <h3>Growing Together</h3>
-          <p>Launch of collaborative research projects with contributors from 12 countries and diverse disciplines.</p>
+          <h3>Research Milestone</h3>
+          <p>Published our groundbreaking study on "Attention Reclamation in Digital Environments" with contributions from 25 independent researchers.</p>
         </div>
       </div>
       
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">2021</div>
+        <div class="timeline-date">April 22, 2025</div>
         <div class="timeline-content">
-          <h3>Deeper Roots</h3>
-          <p>Publication of "Quiet Resilience: Digital Mindfulness Beyond Buzzwords" – our first comprehensive research collection.</p>
+          <h3>Educational Outreach</h3>
+          <p>Launched our "Digital Ecology" workshop series for educators, helping teachers create more balanced technology integration in classrooms.</p>
         </div>
       </div>
       
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">2023</div>
+        <div class="timeline-date">May 11, 2025</div>
         <div class="timeline-content">
-          <h3>Forest of Ideas</h3>
-          <p>Evolution into a full wiki-style platform with over 500 interconnected articles, studies, and observations.</p>
+          <h3>New Partnerships</h3>
+          <p>Formed collaborative relationships with three leading universities to study the long-term effects of mindful technology use on creative thinking.</p>
         </div>
       </div>
       
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">2025</div>
+        <div class="timeline-date">June 1, 2025</div>
         <div class="timeline-content">
-          <h3>Continuing Growth</h3>
-          <p>Expanding our research into practical applications for educational settings and digital wellbeing.</p>
+          <h3>Current Initiative</h3>
+          <p>Developing new frameworks for "Cognitive Sustainability" in workplace environments, with initial pilot programs launching in select organizations.</p>
         </div>
       </div>
     </div>
@@ -636,7 +636,7 @@
   
   <div class="quote-section">
     <span class="quote-mark left">"</span>
-    <p>They said impatience was our weakness. Yet here we are, still glowing after ten years of planting tiny roots. Turns out, slow-burn curiosity is a superpower.</p>
+    <p>It's not about how fast we move, but how mindfully we progress. This spring has shown us that focused intention creates more impact than scattered ambition.</p>
     <span class="quote-mark right">"</span>
   </div>
   
@@ -914,22 +914,30 @@
   .timeline::before {
     content: '';
     position: absolute;
-    width: 2px;
-    background: var(--primary-light);
+    width: 3px;
+    background: linear-gradient(to bottom, var(--primary-light), var(--accent));
     top: 0;
     bottom: 0;
     left: 50px;
+    border-radius: 3px;
   }
   
   .timeline-item {
     padding: 10px 40px 10px 70px;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    transition: transform 0.3s ease;
+    animation: fadeInRight 0.5s ease forwards;
+    opacity: 0;
+  }
+  
+  .timeline-item:hover {
+    transform: translateX(5px);
   }
   
   .timeline-dot {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background: var(--accent);
     position: absolute;
@@ -937,26 +945,65 @@
     top: 15px;
     transform: translateX(-50%);
     box-shadow: 0 0 0 4px rgba(255, 215, 64, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-item:hover .timeline-dot {
+    background: var(--primary);
+    box-shadow: 0 0 0 6px rgba(104, 159, 56, 0.3);
   }
   
   .timeline-date {
     font-weight: 600;
     color: var(--primary);
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: rgba(104, 159, 56, 0.1);
+    border-radius: 4px;
   }
   
   .timeline-content {
-    background: #f7f7f7;
-    padding: 15px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    background: #f9f9f9;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    border-left: 3px solid var(--accent);
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-item:hover .timeline-content {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    border-left-color: var(--primary);
+    background: linear-gradient(to right, #f9f9f9, #f0f7e6);
   }
   
   .timeline-content h3 {
     margin-top: 0;
     font-size: 1.2rem;
     color: var(--primary-dark);
+    font-weight: 600;
   }
+  
+  /* Animation for timeline items */
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+  .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+  .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+  .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+  .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+  .timeline-item:nth-child(6) { animation-delay: 0.6s; }
   
   /* FAQ Styles */
   .faq-container {
