@@ -5,11 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research & Analysis — NeuralGlow.ai</title>
 <meta name="description" content="Explore NeuralGlow's research on workplace psychology, productivity, and organizational behavior. Evidence-based insights for modern professionals.">
-<meta name="keywords" content="NeuralGlow, research, workplace psychology, productivity, deep work, organizational behavior, satire">
-<meta name="author" content="NeuralGlow Research Division">
-<link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
+<meta name="keywords" content="NeuralGlow, research, workplace psychology, productivity, deep work, organizational behavior, satire">  <meta name="author" content="NeuralGlow Research Division">
+  <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
 
-<!-- Google Fonts -->
+  <!-- EmailJS for subscription functionality -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+        // Initialize EmailJS with your user ID
+        emailjs.init("NeuralGlow.AI"); // Your EmailJS User ID
+    })();
+  </script>
+  <!-- Subscription functionality -->
+  <script src="/assets/js/subscription.js" defer></script>
+
+  <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -365,23 +375,27 @@
       display: flex;
       max-width: 500px;
       margin: 0 auto;
+      position: relative;
+      flex-direction: column;
     }
     
     .cta-input {
       flex-grow: 1;
       padding: 1rem 1.5rem;
       border: none;
-      border-radius: 5px 0 0 5px;
+      border-radius: 5px;
       font-size: 1rem;
       font-family: 'Inter', sans-serif;
+      width: 100%;
+      margin-bottom: 10px;
     }
     
     .cta-button {
-      padding: 0 1.8rem;
+      padding: 1rem 1.8rem;
       background-color: var(--primary);
       color: white;
       border: none;
-      border-radius: 0 5px 5px 0;
+      border-radius: 5px;
       font-weight: 600;
       cursor: pointer;
       transition: background-color 0.2s ease;
@@ -389,6 +403,55 @@
     
     .cta-button:hover {
       background-color: var(--secondary);
+    }
+    
+    .input-feedback {
+      font-size: 0.8rem;
+      color: #e74c3c;
+      margin-bottom: 10px;
+      display: none;
+    }
+    
+    .subscription-form input[type="email"]:valid {
+      border-left: 4px solid var(--success);
+    }
+    
+    .subscription-form input[type="email"]:invalid:not(:placeholder-shown) {
+      border-left: 4px solid #e74c3c;
+    }
+    
+    .subscription-form input[type="email"]:invalid:not(:placeholder-shown) + .input-feedback {
+      display: block;
+    }
+    
+    .subscription-loading, .subscription-success, .subscription-error {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .subscription-success i {
+      color: var(--success);
+    }
+    
+    .subscription-error i {
+      color: #e74c3c;
+    }
+    
+    .try-again-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    
+    .small-note {
+      font-size: 0.9rem;
+      color: var(--text-light, #777777);
+      margin-top: 15px;
+      text-align: center;
     }
 
     /* Footer */
@@ -477,11 +540,6 @@
       
       .cta-section {
         padding: 2.5rem 1.5rem;
-      }
-      
-      .cta-form {
-        flex-direction: column;
-        gap: 1rem;
       }
       
       .cta-input, .cta-button {
@@ -628,10 +686,12 @@
   <div class="cta-section">
     <h2 class="cta-title">Join Our Research Community</h2>
     <p class="cta-description">Get early access to our upcoming research papers, participate in studies, and receive exclusive insights not published on the blog.</p>
-    <form class="cta-form" id="newsletter-form">
-      <input type="email" class="cta-input" placeholder="Your email address" required>
+    <form class="cta-form subscription-form" id="newsletter-form">
+      <input type="email" class="cta-input" name="email" placeholder="Your email address" required>
+      <div class="input-feedback">Please enter a valid email address</div>
       <button type="submit" class="cta-button">Subscribe</button>
     </form>
+    <p class="small-note">We respect your attention. Our research updates are rare and valuable.</p>
   </div>
 </div>
 
@@ -678,16 +738,6 @@
         });
       });
     });
-    
-    // Form submission
-    const form = document.getElementById('newsletter-form');
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for subscribing! In a live implementation, you would receive a confirmation email.');
-        form.reset();
-      });
-    }
   });
 </script>
 </body>
