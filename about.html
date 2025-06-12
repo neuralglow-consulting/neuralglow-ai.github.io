@@ -330,15 +330,18 @@
     
     /* Image Styles */
     .featured-image {
-      width: 100%;
+      max-width: 70%;
+      height: auto;
+      display: block;
+      margin: 30px auto;
       border-radius: var(--border-radius);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      margin: 30px 0;
     }
     
     .featured-image:hover {
       transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     /* Social Sharing */
