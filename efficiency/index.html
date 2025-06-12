@@ -20,15 +20,20 @@
 
     /* Color Variables */
     :root {
-      --primary: #034f21;
-      --primary-light: #0a6d31;
+      --primary: #8E24AA;
+      --primary-light: #AB47BC;
+      --primary-dark: #6A1B9A;
       --secondary: #eef8f1;
-      --accent: #ff6b6b;
+      --accent: #FFD740;
+      --accent-light: #FFECB3;
       --text-dark: #333;
       --text-light: #666;
       --white: #fff;
       --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       --transition: all 0.3s ease;
+      --background: #f9f9f9;
+      --header-bg: var(--primary);
+      --header-text: #ffffff;
     }
 
     /* General Styles */
@@ -43,8 +48,8 @@
 
     /* Header Styles */
     header {
-      background: var(--primary);
-      color: var(--white);
+      background: var(--header-bg);
+      color: var(--header-text);
       padding: 1rem;
       position: sticky;
       top: 0;
@@ -91,7 +96,7 @@
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      background: var(--primary);
       color: var(--white);
       padding: 4rem 1rem;
       text-align: center;
@@ -268,7 +273,7 @@
     /* Footer Styles */
     footer {
       background: var(--primary);
-      color: var(--white);
+      color: #eee;
       padding: 3rem 1rem;
       font-size: 0.9rem;
     }
