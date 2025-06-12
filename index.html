@@ -725,8 +725,13 @@
     }
 
     .footer-bottom a {
-      color: var(--primary-light);
+      color: #E1BEE7;
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-bottom a:hover {
+      color: var(--accent);
     }
 
     /* Media Queries */
@@ -1018,8 +1023,8 @@
     <p>&copy; 2025 NeuralGlow.ai | All rights reserved</p>
     
     <div style="margin-top: 15px;">
-      <a href="https://uptimerobot.com/" target="_blank" style="color: #E1BEE7; text-decoration: none; font-size: 0.8rem;">
-        🌲 Monitored quietly by UptimeRobot
+      <a href="https://uptimerobot.com/" target="_blank">
+        <i class="fas fa-leaf"></i> Monitored quietly by UptimeRobot
       </a>
     </div>
 
