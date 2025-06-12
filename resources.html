@@ -527,10 +527,14 @@
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .copyright small {
-      display: block;
-      margin-top: 0.5rem;
-      color: rgba(255, 255, 255, 0.6);
+    .copyright a {
+      color: #E1BEE7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .copyright a:hover {
+      color: var(--accent);
     }
 
     /* Media Queries */
@@ -886,8 +890,12 @@
   </div>
   
   <div class="copyright">
-    &copy; 2025 NeuralGlow.ai | All Rights Reserved
-    <small>Efficiency Forest — Where Actions Speak Louder</small>
+    &copy; 2025 NeuralGlow.ai — All rights reserved
+    <div style="margin-top: 10px; font-size: 0.8rem;">
+      <a href="https://uptimerobot.com/" target="_blank" style="color: #E1BEE7; text-decoration: none;">
+        <i class="fas fa-leaf"></i> Monitored quietly by UptimeRobot
+      </a>
+    </div>
   </div>
 </footer>
 
