@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research & Analysis — NeuralGlow.ai</title>
+<title>Res    header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: background-color 0.3s ease, color 0.3s ease;ysis — NeuralGlow.ai</title>
 <meta name="description" content="Explore NeuralGlow's research on workplace psychology, productivity, and organizational behavior. Evidence-based insights for modern professionals.">
 <meta name="keywords" content="NeuralGlow, research, workplace psychology, productivity, deep work, organizational behavior, satire">  <meta name="author" content="NeuralGlow Research Division">
   <link rel="icon" href="/assets/images/neuralglow_logo_darkpink_left.png" type="image/png">
@@ -35,8 +46,9 @@
     /* Base Styles */
     :root {
       /* Light mode (default) */
-      --primary: #512DA8; /* Deep Purple */
-      --primary-light: #D1C4E9; /* Light Purple */
+      --primary: #8E24AA; /* Deep Purple */
+      --primary-light: #AB47BC; /* Light Purple */
+      --primary-dark: #6A1B9A;
       --secondary: #b30059; /* Deep Pink */
       --dark: #333333;
       --light: #fafafa;
@@ -50,12 +62,16 @@
       --border-color: #e0e0e0;
       --text-color: #333333;
       --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --accent: #FFD740;
+      --accent-light: #FFECB3;
+      --header-text: #ffffff;
     }
     
     /* Dark mode */
     [data-theme="dark"] {
-      --primary: #673AB7;
-      --primary-light: #9575CD;
+      --primary: #9C27B0;
+      --primary-light: #BA68C8;
+      --primary-dark: #7B1FA2;
       --secondary: #E91E63;
       --dark: #f5f5f5;
       --light: #121212;
@@ -65,10 +81,13 @@
       --link: #B39DDB;
       --tag-bg: #4527A0;
       --bg-color: #121212;
-      --header-bg: #311B92;
+      --header-bg: var(--primary);
       --border-color: #444444;
       --text-color: #f5f5f5;
       --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      --accent: #FFD740;
+      --accent-light: #FFECB3;
+      --header-text: #ffffff;
     }
     
     * {
@@ -569,8 +588,8 @@
 
     /* Footer */
     footer {
-      background-color: var(--dark);
-      color: white;
+      background: var(--primary);
+      color: #eee;
       padding: 3rem 0 1.5rem;
       margin-top: 5rem;
     }
@@ -598,7 +617,7 @@
     }
     
     .footer-links a {
-      color: #bbdefb;
+      color: #E1BEE7;
       transition: color 0.2s ease;
     }
     
@@ -629,7 +648,7 @@
     }
     
     .footer-meta a:hover {
-      color: #bbdefb;
+      color: #E1BEE7;
     }
 
     /* Responsive Adjustments */
