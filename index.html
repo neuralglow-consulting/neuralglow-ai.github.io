@@ -109,39 +109,41 @@
     /* General Styles */
     :root {
       /* Light mode (default) */
-      --primary-color: #689F38;
-      --primary-dark: #2E7D32;
-      --primary-light: #A5D6A7;
-      --bg-light: #F1F8E9;
-      --bg-gradient-start: #E8F5E9;
-      --bg-gradient-end: #F1F8E9;
+      --primary-color: #8E24AA;
+      --primary-dark: #6A1B9A;
+      --primary-light: #AB47BC;
+      --bg-light: #F9F9F9;
       --text-dark: #333333;
       --text-medium: #555555;
       --text-light: #777777;
       --white: #ffffff;
       --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       --transition: all 0.3s ease;
-      --bg-color: #ffffff;
-      --header-bg: #ffffff;
+      --bg-color: #f9f9f9;
+      --header-bg: #8E24AA;
       --border-color: #e0e0e0;
+      --background: #f9f9f9;
+      --accent: #FFD740;
+      --accent-light: #FFECB3;
     }
     
     /* Dark mode */
     [data-theme="dark"] {
-      --primary-color: #8BC34A;
-      --primary-dark: #689F38;
-      --primary-light: #C5E1A5;
+      --primary-color: #9C27B0;
+      --primary-dark: #7B1FA2;
+      --primary-light: #BA68C8;
       --bg-light: #2D2D2D;
-      --bg-gradient-start: #1A1A1A;
-      --bg-gradient-end: #2D2D2D;
       --text-dark: #E0E0E0;
       --text-medium: #B0B0B0;
       --text-light: #909090;
       --white: #2D2D2D;
       --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      --bg-color: #1A1A1A;
-      --header-bg: #2D2D2D;
+      --bg-color: #121212;
+      --header-bg: #7B1FA2;
       --border-color: #444444;
+      --background: #121212;
+      --accent: #FFD740;
+      --accent-light: #FFECB3;
     }
     
     html { scroll-behavior: smooth; }
@@ -150,7 +152,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Inter', 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+      background: var(--background);
       color: var(--text-dark);
       line-height: 1.8;
       transition: background-color 0.3s ease, color 0.3s ease;
@@ -165,7 +167,7 @@
     /* Header Styles */
     header {
       background: var(--header-bg);
-      color: var(--text-dark);
+      color: var(--white);
       padding: 15px 0;
       position: sticky;
       top: 0;
@@ -198,7 +200,7 @@
     }
 
     header nav a {
-      color: var(--text-dark);
+      color: var(--white);
       text-decoration: none;
       margin-left: 20px;
       font-weight: 500;
@@ -209,8 +211,8 @@
     }
 
     header nav a:hover {
-      background-color: var(--bg-light);
-      color: var(--primary-dark);
+      background: rgba(255,255,255,0.15);
+      color: var(--accent-light);
     }
 
     .mobile-menu-btn {
@@ -218,7 +220,7 @@
       background: none;
       border: none;
       font-size: 1.5rem;
-      color: var(--text-dark);
+      color: var(--white);
       cursor: pointer;
     }
 
