@@ -134,6 +134,7 @@
       color: var(--text-light);
       max-width: 700px;
       margin: 0 auto;
+      text-align: center; /* Override the justified text for subtitle */
     }
     
     .hero-image {
@@ -209,6 +210,7 @@
       line-height: 1.7;
       margin-bottom: 20px;
       color: var(--text-main);
+      text-align: justify;
     }
     
     .category-tag {
@@ -299,6 +301,7 @@
       margin: 0 auto;
       position: relative;
       z-index: 1;
+      text-align: center; /* Override the justified text for quotes */
     }
     
     .quote-mark {
@@ -1051,6 +1054,10 @@
     background: linear-gradient(to right, #f9f9f9, #f0f7e6);
   }
   
+  .timeline-content p {
+    text-align: justify;
+  }
+  
   .timeline-content h3 {
     margin-top: 0;
     font-size: 1.2rem;
@@ -1238,6 +1245,10 @@
     transition: max-height 0.3s ease;
   }
   
+  .faq-answer p {
+    text-align: justify;
+  }
+  
   /* Testimonials */
   .testimonials {
     display: grid;
@@ -1273,6 +1284,7 @@
     margin: 0;
     position: relative;
     z-index: 1;
+    text-align: justify;
   }
   
   .testimonial-content::before {
@@ -1313,6 +1325,10 @@
     padding: 25px;
     text-align: center;
     transition: all 0.3s ease;
+  }
+  
+  .connect-option p {
+    text-align: justify;
   }
   
   .connect-option:hover {
