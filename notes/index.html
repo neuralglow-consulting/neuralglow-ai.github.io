@@ -715,14 +715,16 @@
         
         <div class="filter-section">
             <button class="filter-btn active">All</button>
-            <button class="filter-btn">Insights</button>
-            <button class="filter-btn">Reflections</button>
-            <button class="filter-btn">Curiosities</button>
-            <button class="filter-btn">Wonderings</button>
+            <button class="filter-btn">Inspiration</button>
+            <button class="filter-btn">Motivation</button>
+            <button class="filter-btn">Gratitude</button>
+            <button class="filter-btn">Blessings</button>
+            <button class="filter-btn">Ambition</button>
+            <button class="filter-btn">Mindfulness</button>
         </div>
         
         <div class="notes-count">
-            <i class="fas fa-leaf"></i> 15 seeds growing
+            <i class="fas fa-leaf"></i> 27 seeds growing
         </div>
     </div>
     
@@ -731,14 +733,14 @@
         <div class="featured-note">
             <div class="featured-label">Featured</div>
             <div class="note-header">
-                <div class="note-date"><i class="far fa-calendar-alt"></i> June 10, 2025</div>
+                <div class="note-date"><i class="far fa-calendar-alt"></i> August 14, 2025</div>
                 <div class="note-categories">
-                    <span class="note-category">Mindfulness</span>
-                    <span class="note-category">Technology</span>
+                    <span class="note-category">Ambition</span>
+                    <span class="note-category">Gratitude</span>
                 </div>
             </div>
             <div class="featured-note-content">
-                "Technology should function like a good forest guide: present when needed, invisible when not, and always leaving you feeling more connected to yourself rather than to a screen."
+                "August whispers of harvest time—not just for fields, but for dreams cultivated with quiet persistence. Every small step forward is a blessing worthy of celebration."
             </div>
             <div class="note-footer">
                 <div class="note-author">
@@ -852,22 +854,28 @@
     
     // Dates with notes (for demonstration)
     const datesWithNotes = [
+      // August 2025 - New vibrant entries
+      new Date(2025, 7, 14), // August 14
+      new Date(2025, 7, 12), // August 12
+      new Date(2025, 7, 10), // August 10
+      new Date(2025, 7, 8), // August 8
+      new Date(2025, 7, 5), // August 5
+      new Date(2025, 7, 3), // August 3
+      new Date(2025, 7, 1), // August 1
+      // July 2025
+      new Date(2025, 6, 28), // July 28
+      new Date(2025, 6, 25), // July 25
+      new Date(2025, 6, 20), // July 20
+      new Date(2025, 6, 15), // July 15
+      new Date(2025, 6, 10), // July 10
+      new Date(2025, 6, 5), // July 5
+      new Date(2025, 6, 1), // July 1
+      // June 2025
       new Date(2025, 5, 1), // June 1
       new Date(2025, 5, 5), // June 5
       new Date(2025, 5, 8), // June 8
       new Date(2025, 5, 10), // June 10
       new Date(2025, 5, 12), // June 12
-      new Date(2025, 6, 1), // July 1 (upcoming)
-      new Date(2025, 6, 5), // July 5 (upcoming)
-      new Date(2025, 4, 2), // May 2, 2025
-      new Date(2025, 4, 1), // May 1, 2025
-      new Date(2025, 3, 30), // April 30, 2025
-      new Date(2025, 3, 29), // April 29, 2025
-      new Date(2025, 3, 28), // April 28, 2025
-      new Date(2025, 3, 27), // April 27, 2025
-      new Date(2025, 3, 26), // April 26, 2025
-      new Date(2025, 3, 25), // April 25, 2025
-      new Date(2025, 3, 24), // April 24, 2025
     ];
 
     const hasNotes = function(year, month, day) {
@@ -982,23 +990,109 @@
   // JavaScript to display notes with enhanced data
   document.addEventListener('DOMContentLoaded', () => {
     const notes = [
-      // JULY 2025 (UPCOMING)
+      // AUGUST 2025 - VIBRANT EDITION
+      { 
+        date: "August 14, 2025", 
+        content: "August whispers of harvest time—not just for fields, but for dreams cultivated with quiet persistence. Every small step forward is a blessing worthy of celebration.", 
+        categories: ["Ambition", "Gratitude"],
+        author: "Glow Keeper",
+        authorImg: "/assets/images/author-avatar.jpg"
+      },
+      { 
+        date: "August 12, 2025", 
+        content: "Your ambition is not a burden to carry—it's a light to follow. Let it illuminate the path, not blind you to the beauty along the way.", 
+        categories: ["Ambition", "Inspiration"],
+        author: "Dream Weaver",
+        authorImg: "/assets/images/author3-avatar.jpg"
+      },
+      { 
+        date: "August 10, 2025", 
+        content: "Gratitude is the secret alchemy that transforms ordinary moments into golden memories. Practice it daily, and watch your world shimmer.", 
+        categories: ["Gratitude", "Mindfulness"],
+        author: "Light Gatherer",
+        authorImg: "/assets/images/author2-avatar.jpg"
+      },
+      { 
+        date: "August 8, 2025", 
+        content: "The universe conspires in favor of those who dare to dream with their eyes wide open. Your vision is a prayer the cosmos is eager to answer.", 
+        categories: ["Inspiration", "Blessings"],
+        author: "Star Watcher",
+        authorImg: "/assets/images/author3-avatar.jpg"
+      },
+      { 
+        date: "August 5, 2025", 
+        content: "Motivation isn't a lightning bolt—it's the steady flame you kindle each morning by choosing to show up for your own story.", 
+        categories: ["Motivation", "Resilience"],
+        author: "Flame Keeper",
+        authorImg: "/assets/images/author4-avatar.jpg"
+      },
+      { 
+        date: "August 3, 2025", 
+        content: "Count your blessings like stars in the night sky—the more you notice, the brighter your world becomes. Even the smallest light matters.", 
+        categories: ["Blessings", "Gratitude"],
+        author: "Sky Observer",
+        authorImg: "/assets/images/author-avatar.jpg"
+      },
+      { 
+        date: "August 1, 2025", 
+        content: "August arrives like a friend who believes in your dreams even when you've forgotten them yourself. Welcome this month with open arms and wild hope.", 
+        categories: ["New Beginnings", "Hope"],
+        author: "Hope Cultivator",
+        authorImg: "/assets/images/author2-avatar.jpg"
+      },
+      
+      // JULY 2025 - RECENT GEMS
+      { 
+        date: "July 28, 2025", 
+        content: "Success is not the absence of obstacles—it's the art of dancing gracefully around them while keeping your eyes on the horizon.", 
+        categories: ["Success", "Perseverance"],
+        author: "Path Walker",
+        authorImg: "/assets/images/author3-avatar.jpg"
+      },
+      { 
+        date: "July 25, 2025", 
+        content: "Your potential is not a destination—it's a renewable resource that grows stronger with every act of courage you take.", 
+        categories: ["Potential", "Courage"],
+        author: "Growth Guardian",
+        authorImg: "/assets/images/author4-avatar.jpg"
+      },
+      { 
+        date: "July 20, 2025", 
+        content: "The most beautiful gardens are tended by hands that understand both patience and purpose. Your life is your masterpiece in progress.", 
+        categories: ["Purpose", "Patience"],
+        author: "Garden Tender",
+        authorImg: "/assets/images/author-avatar.jpg"
+      },
+      { 
+        date: "July 15, 2025", 
+        content: "Abundance isn't about having everything—it's about recognizing the richness that already surrounds you in disguise.", 
+        categories: ["Abundance", "Recognition"],
+        author: "Treasure Hunter",
+        authorImg: "/assets/images/author2-avatar.jpg"
+      },
+      { 
+        date: "July 10, 2025", 
+        content: "Innovation blooms where curiosity meets courage. Plant questions, tend them with wonder, and harvest breakthrough moments.", 
+        categories: ["Innovation", "Curiosity"],
+        author: "Breakthrough Artist",
+        authorImg: "/assets/images/author3-avatar.jpg"
+      },
       { 
         date: "July 5, 2025", 
-        content: "Coming Soon: Nature doesn't rush, yet everything gets accomplished. A reminder for the impatient among us.", 
-        categories: ["Upcoming", "Nature"],
+        content: "Nature doesn't rush, yet everything gets accomplished. A reminder for the impatient among us to trust the rhythm of our own becoming.", 
+        categories: ["Patience", "Natural Wisdom"],
         author: "Forest Guide",
         authorImg: "/assets/images/author2-avatar.jpg"
       },
       { 
         date: "July 1, 2025", 
-        content: "Coming Soon: The most sustainable technology is the one that knows when to turn itself off.", 
-        categories: ["Upcoming", "Technology"],
+        content: "The most sustainable technology is the one that knows when to turn itself off, leaving space for human connection to flourish.", 
+        categories: ["Balance", "Technology"],
         author: "Digital Minimalist",
         authorImg: "/assets/images/author4-avatar.jpg"
       },
       
-      // JUNE 2025
+      // JUNE 2025 - FOUNDATIONS
       { 
         date: "June 12, 2025", 
         content: "The true measure of AI isn't how human it can appear, but how well it can preserve what makes us uniquely human.", 
@@ -1033,71 +1127,6 @@
         categories: ["Attention", "Mindfulness"],
         author: "Digital Minimalist",
         authorImg: "/assets/images/author4-avatar.jpg"
-      },
-      
-      // MAY 2025
-      { 
-        date: "May 2, 2025", 
-        content: "Silence isn't empty; it's full of answers waiting to be heard.", 
-        categories: ["Reflection", "Wisdom"],
-        author: "Glow Keeper",
-        authorImg: "/assets/images/author-avatar.jpg"
-      },
-      { 
-        date: "May 1, 2025", 
-        content: "Curiosity didn't kill the cat; it just made it wiser. And slightly more eccentric.", 
-        categories: ["Humor", "Curiosity"],
-        author: "Forest Guide",
-        authorImg: "/assets/images/author2-avatar.jpg"
-      },
-      { 
-        date: "April 30, 2025", 
-        content: "Sometimes, the most productive thing you can do is wander aimlessly in a forest of thoughts.", 
-        categories: ["Mindfulness", "Growth"],
-        author: "Glow Keeper",
-        authorImg: "/assets/images/author-avatar.jpg"
-      },
-      { 
-        date: "April 29, 2025", 
-        content: "Resilience is the art of laughing when you want to scream. (Or, at least, quietly chuckling.)", 
-        categories: ["Resilience", "Humor"],
-        author: "Forest Guide",
-        authorImg: "/assets/images/author2-avatar.jpg"
-      },
-      { 
-        date: "April 28, 2025", 
-        content: "The universe is under no obligation to make sense to you. But it's fun to try anyway.", 
-        categories: ["Curiosity", "Wonder"],
-        author: "Star Watcher",
-        authorImg: "/assets/images/author3-avatar.jpg"
-      },
-      { 
-        date: "April 27, 2025", 
-        content: "Embrace the glorious mess that you are. (Just try to keep the mess contained.)", 
-        categories: ["Acceptance", "Humor"],
-        author: "Glow Keeper",
-        authorImg: "/assets/images/author-avatar.jpg"
-      },
-      { 
-        date: "April 26, 2025", 
-        content: "The quietest minds often have the loudest thoughts.", 
-        categories: ["Reflection", "Wisdom"],
-        author: "Silent Observer",
-        authorImg: "/assets/images/author4-avatar.jpg"
-      },
-      { 
-        date: "April 25, 2025", 
-        content: "Plant kindness like seeds, and watch the world bloom.", 
-        categories: ["Kindness", "Growth"],
-        author: "Forest Guide",
-        authorImg: "/assets/images/author2-avatar.jpg"
-      },
-      { 
-        date: "April 24, 2025", 
-        content: "Even the longest journey begins with a single, slightly hesitant step.", 
-        categories: ["Courage", "Growth"],
-        author: "Glow Keeper",
-        authorImg: "/assets/images/author-avatar.jpg"
       }
     ];
 
