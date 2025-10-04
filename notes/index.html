@@ -646,35 +646,6 @@
         </div>
     </div>
     
-    <section class="featured-note-section">
-        <h2 class="section-title"><i class="fas fa-star"></i> Featured Observation</h2>
-        <div class="featured-note">
-            <div class="featured-label">Featured</div>
-            <div class="note-header">
-                <div class="note-date"><i class="far fa-calendar-alt"></i> October 1, 2025</div>
-                <div class="note-categories">
-                    <span class="note-category">Inspiration</span>
-                    <span class="note-category">Nature</span>
-                </div>
-            </div>
-            <div class="featured-note-content">
-                “Happiness is like a butterfly which, when pursued, is always beyond our grasp, but, if you will sit down quietly, may alight upon you.”<br />
-                – Nathaniel Hawthorne
-            </div>
-            <div class="note-footer">
-                <div class="note-author">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Nathaniel_Hawthorne_by_Brady%2C_1860-64.jpg" alt="V V Brown" />
-                    <span>Nathaniel Hawthorne</span>
-                </div>
-                <div class="social-share">
-                    <a href="https://x.com/NeuralGlowAI" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <div id="note-container" class="notes-container">
       <!-- Notes will be dynamically inserted here by JavaScript -->
     </div>
@@ -762,31 +733,31 @@
     let currentDate = new Date();
     const today = new Date(); // Store today's date for marking
 
-    // Dates with notes for October 2025 only (adjust as needed for days with notes)
+    // Dates with notes for September 2025 only (adjust as needed for days with notes)
     const datesWithNotes = [
-      new Date(2025, 10, 1),
-      new Date(2025, 10, 2),
-      new Date(2025, 10, 3),
-      new Date(2025, 10, 4),
-      new Date(2025, 10, 5),
-      new Date(2025, 10, 6),
-      new Date(2025, 10, 7),
-      new Date(2025, 10, 8),
-      new Date(2025, 10, 9),
-      new Date(2025, 10, 10),
-      new Date(2025, 10, 11),
-      new Date(2025, 10, 12),
-      new Date(2025, 10, 13),
-      new Date(2025, 10, 14),
-      new Date(2025, 10, 15),
-      new Date(2025, 10, 16),
-      new Date(2025, 10, 17),
-      new Date(2025, 10, 18),
-      new Date(2025, 10, 19),
-      new Date(2025, 10, 20),
-      new Date(2025, 10, 21),
-      new Date(2025, 10, 22),
-      new Date(2025, 10, 23)
+      new Date(2025, 8, 1),
+      new Date(2025, 8, 2),
+      new Date(2025, 8, 3),
+      new Date(2025, 8, 4),
+      new Date(2025, 8, 5),
+      new Date(2025, 8, 6),
+      new Date(2025, 8, 7),
+      new Date(2025, 8, 8),
+      new Date(2025, 8, 9),
+      new Date(2025, 8, 10),
+      new Date(2025, 8, 11),
+      new Date(2025, 8, 12),
+      new Date(2025, 8, 13),
+      new Date(2025, 8, 14),
+      new Date(2025, 8, 15),
+      new Date(2025, 8, 16),
+      new Date(2025, 8, 17),
+      new Date(2025, 8, 18),
+      new Date(2025, 8, 19),
+      new Date(2025, 8, 20),
+      new Date(2025, 8, 21),
+      new Date(2025, 8, 22),
+      new Date(2025, 8, 23)
     ];
     const hasNotes = function(year, month, day) {
       return datesWithNotes.some(date =>
@@ -872,29 +843,29 @@
   // JavaScript to display notes with your September quotes
   document.addEventListener('DOMContentLoaded', () => {
     const notes = [
-      { date: "October 1, 2025", content: "“Happiness is like a butterfly which, when pursued, is always beyond our grasp, but, if you will sit down quietly, may alight upon you.””, categories: ["Reflection", "Change"], author: "Nathaniel Hawthorne", authorImg: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Nathaniel_Hawthorne_by_Brady%2C_1860-64.jpg” },
-      { date: "October 2, 2025", content: "“October is a symphony of permanence and change.”", categories: ["Gratitude", "Inspiration"], author: "Bonaro W. Overstreet", authorImg: “https://tse2.mm.bing.net/th/id/OIP.utbYeHUow4NGQqVHVvKrOgHaKq?dpr=3&pid=ImgDetMain” },
-      { date: "October 3, 2025", content: "“Autumn carries more gold in its pocket than all the other seasons.”", categories: ["Inspiration", "Nature"], author: "Jim Bishop", authorImg: "https://bloximages.newyork1.vip.townnews.com/denvergazette.com/content/tncms/assets/v3/editorial/c/bf/cbfe2a87-0085-59c8-b031-8e7047e04b0d/673fcace0121c.image.jpg?crop=996%2C523%2C121%2C714" },
-      { date: "October 4, 2025", content: "“Autumn is a second spring when every leaf is a flower.”", categories: ["Reflection", "Nature"], author: "Albert Camus", authorImg: "https://hips.hearstapps.com/hmg-prod/images/gettyimages-154571070sq.jpg?resize=1200:*" },
-      { date: "October 5, 2025", content: "“September: it was the most beautiful of words, he’d always felt, evoking orange-flowers, swallows, and regret.”", categories: ["Poetry", "Nostalgia"], author: "Alexander Theroux", authorImg: "https://tse1.mm.bing.net/th/id/OIP.VYc8c1Vc4M81ScNnbExhKwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { date: "October 6, 2025", content: "“Live in each season as it passes: breathe the air, drink the drink, taste the fruit.”", categories: ["Mindfulness", "Gratitude"], author: "Henry David Thoreau", kl authorImg: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Henry_David_Thoreau.jpg" },
-      { date: "October 7, 2025", content: "“All the months are crude experiments, out of which the perfect September is made.”", categories: ["Reflection"], author: "Virginia Woolf", authorImg: "https://upload.wikimedia.org/wikipedia/commons/0/0b/George_Charles_Beresford_-_Virginia_Woolf_in_1902_-_Restoration.jpg" },
-      { date: "October 8, 2025", content: "“Life starts all over again when it gets crisp in the fall.”", categories: ["New Beginnings", "Change"], author: "F. Scott Fitzgerald", authorImg: "https://upload.wikimedia.org/wikipedia/commons/5/5c/F_Scott_Fitzgerald_1921.jpg" },
-      { date: "October 9, 2025", content: "“And then the sun took a step back, the leaves lulled themselves to sleep, and autumn awakened.”", categories: ["Nature", "Reflection"], author: "Raquel Franco", authorImg: "https://images.squarespace-cdn.com/content/v1/661f15ed11d9a46ef93a2972/b42fc081-24e5-4c36-8a0b-93b725529b8f/RaquelFrancoAuthorHeadshot.jpg" },
-      { date: "October 10, 2025", content: "“Fallen leaves on the ground are the golden song of immortal creativity.”", categories: ["Inspiration", "Nature"], author: "Amit Ray", authorImg: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Amit_Ray.jpg" },
-      { date: "October 11, 2025", content: "“Anyone who thinks fallen leaves are dead has never watched them dancing on a windy day.”", categories: ["Nature", "Joy"], author: "Shira Tamir", authorImg: "https://tse3.mm.bing.net/th/id/OIP.GGTj5nwL97AY0zcSZwFG9wAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { date: "October 12, 2025", content: "“The leaves are all falling, and they’re falling like they’re falling in love with the ground.”", categories: ["Poetry", "Nature"], author: "Andrea Gibson", authorImg: "https://tse1.mm.bing.net/th/id/OIP.mduGoL9xPeZ0_PzWgy8dVAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { date: "October 13, 2025", content: "“Every leaf speaks bliss to me, fluttering from the autumn tree.”", categories: ["Poetry", "Nature"], author: "Emily Brontë", authorImg: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Emilybronte_retouche.jpg" },
-      { date: "October 14, 2025", content: "“There is something incredibly nostalgic and significant about the annual cascade of autumn leaves.”", categories: ["Nostalgia", "Nature"], author: "Joe. L. Wheeler", authorImg: "https://images.gr-assets.com/authors/1318804930p8/25620.jpg" },
-      { date: "October 15, 2025", content: "“Is this not a true autumn day? Just the still melancholy that I love – that makes life and nature harmonize.”", categories: ["Reflection", "Nature"], author: "George Eliot", authorImg: "https://upload.wikimedia.org/wikipedia/commons/4/48/George_Eliot%2C_por_Fran%C3%A7ois_D%27Albert_Durade.jpg" },
-      { date: "October 16, 2025", content: "“If a year was tucked inside of a clock, then autumn would be the magic hour.”", categories: ["Poetry", "Reflection"], author: "Victoria Erickson", authorImg: "https://th.bing.com/th/id/R.c694517e6d3ed6059feb5db62c5ca6a6?rik=JZGVrJYk44je6Q&riu=http%3a%2f%2fspicyopera.com%2fwp-content%2fuploads%2f2015%2f06%2fVictoriaErickson-200x300.png&ehk=W4vH60kO26ywEUrBnvnkhPnK7HgpnaG%2b0yyRyodmaPY%3d&risl=&pid=ImgRaw&r=0" },
-      { date: "October 17, 2025", content: "“Winter is an etching, spring a watercolor, summer an oil painting, and autumn a mosaic of them all.”", categories: ["Reflection", "Nature"], author: "Stanley Horowitz", authorImg: "https://www.pacw.org/wp-content/uploads/2023/05/News-04_Figure-01.jpg" },
-      { date: "October 18, 2025", content: "“It looked like the world was covered in a cobbler crust of brown sugar and cinnamon.”", categories: ["Sensory", "Autumn"], author: "Sarah Addison Allen", authorImg: "https://tse4.mm.bing.net/th/id/OIP.4z4P_2dIiq7gPqui5v8hYgHaGy?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { date: "October 19, 2025", content: "“Notice that autumn is more the season of the soul than of nature.”", categories: ["Philosophy", "Reflection"], author: "Friedrich Nietzsche", authorImg: "https://upload.wikimedia.org/wikipedia/commons/2/23/Nietzsche1882.jpg" },
-      { date: "October 20, 2025", content: "“And suddenly, you just know it’s time to start something new and trust the magic of beginnings.”", categories: ["Motivation", "Change"], author: "Meister Eckhart", authorImg: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Meister_Eckhart_base_copie.jpg" },
-      { date: "October 21, 2025", content: "“I am most radiant and full of energy when the leaves are falling and there is a ghost of change in the air.”", categories: ["Energy", "Change"], author: "Anna Madsen", authorImg: "https://th.bing.com/th/id/R.6786ac90fed162360613f2f546dfdd3f?rik=2M58WJvKrWrLlA&riu=http%3a%2f%2fwww.musicaldiscoveries.com%2fimages%2fannamadsen%2fam2016c.jpg&ehk=NkGw6l9vxUGNq1qOz0izJzR9O6Udeu1AJ%2bTrrobvLuc%3d&risl=&pid=ImgRaw&r=0" },
-      { date: "October 22, 2025", content: "“Let’s strive to be better in September!”", categories: ["Motivation", "Ambition"], author: "Charmaine J. Forde", authorImg: "https://tse2.mm.bing.net/th/id/OIP.O47Z30RsXy6Q83BUD_HTcAHaK8?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { date: "October 23, 2025", content: "“Come September, children return to school, grownups to work, and the brain to the head.”", categories: ["Reflection", "September"], author: "Roger Rosenblatt", authorImg: "https://th.bing.com/th/id/R.90186b1b85a3ddc16352fa6d154b20b1?rik=jUbBAhvy3AWX7g&pid=ImgRaw&r=0" }
+      { date: "October 4, 2025", content: "“When you are reluctant to change, think of the beauty of autumn.”", categories: ["Reflection", "Change"], author: "V V Brown", authorImg: "https://tse3.mm.bing.net/th/id/OIP.qfgopcRSfMLJDAmZRsPH-QHaEs?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { date: "October 5, 2025", content: "“Happily we bask in this warm September sun, which illuminates all creatures.”", categories: ["Gratitude", "Inspiration"], author: "Henry David Thoreau", authorImg: "https://poemanalysis.com/wp-content/uploads/2023/10/Henry-David-Thoreau-Portrait.jpg" },
+      { date: "October 6, 2025", content: "“Autumn carries more gold in its pocket than all the other seasons.”", categories: ["Inspiration", "Nature"], author: "Jim Bishop", authorImg: "https://bloximages.newyork1.vip.townnews.com/denvergazette.com/content/tncms/assets/v3/editorial/c/bf/cbfe2a87-0085-59c8-b031-8e7047e04b0d/673fcace0121c.image.jpg?crop=996%2C523%2C121%2C714" },
+      { date: "October 7, 2025", content: "“Autumn is a second spring when every leaf is a flower.”", categories: ["Reflection", "Nature"], author: "Albert Camus", authorImg: "https://hips.hearstapps.com/hmg-prod/images/gettyimages-154571070sq.jpg?resize=1200:*" },
+      { date: "October 8, 2025", content: "“September: it was the most beautiful of words, he’d always felt, evoking orange-flowers, swallows, and regret.”", categories: ["Poetry", "Nostalgia"], author: "Alexander Theroux", authorImg: "https://tse1.mm.bing.net/th/id/OIP.VYc8c1Vc4M81ScNnbExhKwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { date: "October 9, 2025", content: "“Live in each season as it passes: breathe the air, drink the drink, taste the fruit.”", categories: ["Mindfulness", "Gratitude"], author: "Henry David Thoreau", authorImg: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Henry_David_Thoreau.jpg" },
+      { date: "October 10, 2025", content: "“All the months are crude experiments, out of which the perfect September is made.”", categories: ["Reflection"], author: "Virginia Woolf", authorImg: "https://upload.wikimedia.org/wikipedia/commons/0/0b/George_Charles_Beresford_-_Virginia_Woolf_in_1902_-_Restoration.jpg" },
+      { date: "October 11, 2025", content: "“Life starts all over again when it gets crisp in the fall.”", categories: ["New Beginnings", "Change"], author: "F. Scott Fitzgerald", authorImg: "https://upload.wikimedia.org/wikipedia/commons/5/5c/F_Scott_Fitzgerald_1921.jpg" },
+      { date: "October 12, 2025", content: "“And then the sun took a step back, the leaves lulled themselves to sleep, and autumn awakened.”", categories: ["Nature", "Reflection"], author: "Raquel Franco", authorImg: "https://images.squarespace-cdn.com/content/v1/661f15ed11d9a46ef93a2972/b42fc081-24e5-4c36-8a0b-93b725529b8f/RaquelFrancoAuthorHeadshot.jpg" },
+      { date: "October 13, 2025", content: "“Fallen leaves on the ground are the golden song of immortal creativity.”", categories: ["Inspiration", "Nature"], author: "Amit Ray", authorImg: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Amit_Ray.jpg" },
+      { date: "October 14, 2025", content: "“Anyone who thinks fallen leaves are dead has never watched them dancing on a windy day.”", categories: ["Nature", "Joy"], author: "Shira Tamir", authorImg: "https://tse3.mm.bing.net/th/id/OIP.GGTj5nwL97AY0zcSZwFG9wAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { date: "October 15, 2025", content: "“The leaves are all falling, and they’re falling like they’re falling in love with the ground.”", categories: ["Poetry", "Nature"], author: "Andrea Gibson", authorImg: "https://tse1.mm.bing.net/th/id/OIP.mduGoL9xPeZ0_PzWgy8dVAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { date: "October 16, 2025", content: "“Every leaf speaks bliss to me, fluttering from the autumn tree.”", categories: ["Poetry", "Nature"], author: "Emily Brontë", authorImg: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Emilybronte_retouche.jpg" },
+      { date: "October 17, 2025", content: "“There is something incredibly nostalgic and significant about the annual cascade of autumn leaves.”", categories: ["Nostalgia", "Nature"], author: "Joe. L. Wheeler", authorImg: "https://images.gr-assets.com/authors/1318804930p8/25620.jpg" },
+      { date: "October 18, 2025", content: "“Is this not a true autumn day? Just the still melancholy that I love – that makes life and nature harmonize.”", categories: ["Reflection", "Nature"], author: "George Eliot", authorImg: "https://upload.wikimedia.org/wikipedia/commons/4/48/George_Eliot%2C_por_Fran%C3%A7ois_D%27Albert_Durade.jpg" },
+      { date: "October 19, 2025", content: "“If a year was tucked inside of a clock, then autumn would be the magic hour.”", categories: ["Poetry", "Reflection"], author: "Victoria Erickson", authorImg: "https://th.bing.com/th/id/R.c694517e6d3ed6059feb5db62c5ca6a6?rik=JZGVrJYk44je6Q&riu=http%3a%2f%2fspicyopera.com%2fwp-content%2fuploads%2f2015%2f06%2fVictoriaErickson-200x300.png&ehk=W4vH60kO26ywEUrBnvnkhPnK7HgpnaG%2b0yyRyodmaPY%3d&risl=&pid=ImgRaw&r=0" },
+      { date: "October 20, 2025", content: "“Winter is an etching, spring a watercolor, summer an oil painting, and autumn a mosaic of them all.”", categories: ["Reflection", "Nature"], author: "Stanley Horowitz", authorImg: "https://www.pacw.org/wp-content/uploads/2023/05/News-04_Figure-01.jpg" },
+      { date: "October 21, 2025", content: "“It looked like the world was covered in a cobbler crust of brown sugar and cinnamon.”", categories: ["Sensory", "Autumn"], author: "Sarah Addison Allen", authorImg: "https://tse4.mm.bing.net/th/id/OIP.4z4P_2dIiq7gPqui5v8hYgHaGy?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { date: "October 22, 2025", content: "“Notice that autumn is more the season of the soul than of nature.”", categories: ["Philosophy", "Reflection"], author: "Friedrich Nietzsche", authorImg: "https://upload.wikimedia.org/wikipedia/commons/2/23/Nietzsche1882.jpg" },
+      { date: "October 23, 2025", content: "“And suddenly, you just know it’s time to start something new and trust the magic of beginnings.”", categories: ["Motivation", "Change"], author: "Meister Eckhart", authorImg: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Meister_Eckhart_base_copie.jpg" },
+      { date: "October 24, 2025", content: "“I am most radiant and full of energy when the leaves are falling and there is a ghost of change in the air.”", categories: ["Energy", "Change"], author: "Anna Madsen", authorImg: "https://th.bing.com/th/id/R.6786ac90fed162360613f2f546dfdd3f?rik=2M58WJvKrWrLlA&riu=http%3a%2f%2fwww.musicaldiscoveries.com%2fimages%2fannamadsen%2fam2016c.jpg&ehk=NkGw6l9vxUGNq1qOz0izJzR9O6Udeu1AJ%2bTrrobvLuc%3d&risl=&pid=ImgRaw&r=0" },
+      { date: "October 25, 2025", content: "“Let’s strive to be better in September!”", categories: ["Motivation", "Ambition"], author: "Charmaine J. Forde", authorImg: "https://tse2.mm.bing.net/th/id/OIP.O47Z30RsXy6Q83BUD_HTcAHaK8?rs=1&pid=ImgDetMain&o=7&rm=3" },
+      { date: "October 26, 2025", content: "“Come September, children return to school, grownups to work, and the brain to the head.”", categories: ["Reflection", "September"], author: "Roger Rosenblatt", authorImg: "https://th.bing.com/th/id/R.90186b1b85a3ddc16352fa6d154b20b1?rik=jUbBAhvy3AWX7g&pid=ImgRaw&r=0" }
     ];
     const noteContainer = document.getElementById('note-container');
     noteContainer.innerHTML = ''; // clear existing notes
