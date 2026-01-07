@@ -20,35 +20,37 @@
 
     /* Color Variables */
     :root {
-      --primary: #8E24AA;
-      --primary-light: #AB47BC;
-      --primary-dark: #6A1B9A;
-      --secondary: #f8f5ff;
-      --accent: #FFD740;
-      --accent-light: #FFECB3;
-      --gratitude-gold: #F57C00;
-      --blessing-purple: #7B1FA2;
-      --ambition-blue: #1565C0;
-      --focus-green: #2E7D32;
-      --text-dark: #333;
-      --text-light: #666;
+      --primary: #1E3A5F;
+      --primary-light: #2C5F8D;
+      --primary-dark: #0F2540;
+      --secondary: #F8FAFB;
+      --accent: #FF6B6B;
+      --accent-light: #FF8E8E;
+      --accent-soft: #FFB3B3;
+      --gratitude-coral: #FF6B6B;
+      --blessing-navy: #1E3A5F;
+      --ambition-blue: #2C5F8D;
+      --focus-teal: #10B981;
+      --text-dark: #1A2332;
+      --text-light: #64748B;
       --white: #fff;
-      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      --card-shadow-hover: 0 8px 25px rgba(142, 36, 170, 0.15);
+      --card-shadow: 0 4px 12px rgba(30, 58, 95, 0.1);
+      --card-shadow-hover: 0 8px 25px rgba(30, 58, 95, 0.15);
       --transition: all 0.3s ease;
-      --background: #f9f9f9;
-      --header-bg: linear-gradient(135deg, var(--primary) 0%, var(--blessing-purple) 100%);
+      --background: #F8FAFB;
+      --header-bg: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       --header-text: #ffffff;
     }
 
     /* General Styles */
     body {
       font-family: 'Inter', 'Poppins', sans-serif;
-      background: var(--secondary);
+      background: linear-gradient(135deg, #F0F4F8 0%, #E3F2FD 100%);
       color: var(--text-dark);
       line-height: 1.8;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
 
     /* Header Styles */
@@ -59,7 +61,8 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 3px 10px rgba(30, 58, 95, 0.15);
+      backdrop-filter: blur(10px);
     }
 
     .header-container {
@@ -96,7 +99,8 @@
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--accent-soft);
+      transform: translateY(-2px);
     }
 
     /* Hero Section */
@@ -116,9 +120,10 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(255,255,255,0);stop-opacity:1" /></radialGradient></defs><circle cx="20" cy="20" r="2" fill="rgba(255,215,64,0.3)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,215,64,0.2)"/><circle cx="60" cy="70" r="1" fill="rgba(255,215,64,0.4)"/><circle cx="30" cy="80" r="1.2" fill="rgba(255,215,64,0.3)"/></svg>') repeat;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="grad" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1);stop-opacity:1" /><stop offset="100%" style="stop-color:rgba(255,255,255,0);stop-opacity:1" /></radialGradient></defs><circle cx="20" cy="20" r="2" fill="rgba(255,107,107,0.3)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,142,142,0.2)"/><circle cx="60" cy="70" r="1" fill="rgba(255,179,179,0.4)"/><circle cx="30" cy="80" r="1.2" fill="rgba(255,107,107,0.3)"/></svg>') repeat;
       opacity: 0.3;
       z-index: 1;
+      animation: float 20s ease-in-out infinite;
     }
 
     .hero > * {
@@ -162,7 +167,8 @@
       transform: translateX(-50%);
       width: 80px;
       height: 3px;
-      background: var(--primary);
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+      border-radius: 2px;
     }
 
     /* Puzzle Card Layouts */
@@ -195,9 +201,11 @@
       right: 0;
       bottom: 0;
       background: linear-gradient(45deg, 
-        rgba(142, 36, 170, 0.02) 0%, 
-        rgba(245, 124, 0, 0.02) 50%, 
-        rgba(46, 125, 50, 0.02) 100%);
+        rgba(30, 58, 95, 0.02) 0%, 
+        rgba(255, 107, 107, 0.02) 50%, 
+        rgba(44, 95, 141, 0.02) 100%);
+      pointer-events: none;
+    }
       opacity: 0;
       transition: var(--transition);
       z-index: 1;
@@ -551,15 +559,15 @@
 </header>
 
 <section class="hero">
-  <h1>Serene Acceptance with Quiet Gratitude</h1>
-  <p>Embracing unbothered calm, we stay open and appreciative of whatever flows our way—even the chaos—allowing gratitude to root us in peace amid life's unpredictability.</p>
-</section>
+  <h1>In the Spirit of Gratitude-Driven Efficiency</h1>
+  <p> Where Serene Acceptance Meets Ambitious Growth. Discover how embracing gratitude fuels focused outcomes and purposeful action.</p>
+  </section>
 <main>
   <section class="featured-post">
     <div class="featured-content">
-      <h2>Grace in the Chaos: Appreciative, Yet Unshaken</h2>
-      <p>This period invites us to cultivate a calm center where we remain unbothered by turmoil or distractions, and yet hold gratitude for the lessons and blessings hidden within each moment, even the tumultuous ones.</p>
-      <p>By embracing life’s ups and downs with steady appreciation, we transform chaos into wisdom, challenges into growth, and presence into profound peace—honoring all that is without losing our composure or joy.</p>
+      <h2>Action Oriented </h2>
+      <p>Efficiency blossoms when we root our actions in serene acceptance and quiet gratitude. By embracing what is with a calm heart, we unlock focused intention that propels us forward without resistance. This mindset shift transforms challenges into opportunities, allowing us to navigate complexity with grace and purpose.</p>
+      <p>When we cultivate gratitude for our current circumstances, we create a stable foundation from which ambitious growth can arise. This appreciative perspective opens cognitive space, reducing overwhelm and enabling clear, deliberate action. As we align our efforts with a sense of thankfulness, we tap into deeper motivation and resilience, driving us toward meaningful outcomes.</p>
       <div class="tags">
         <span class="tag">Gratitude</span>
         <span class="tag">Calm</span>
@@ -620,12 +628,12 @@
         <div class="card-icon"><i class="fas fa-bullseye"></i></div>
         <h3>Intent</h3>
         <div class="card-surface">
-          <p class="surface-text">Respond with grace</p>
+          <p class="surface-text">Act with purposeful calm</p>
         </div>
         <div class="card-depth">
-          <p><strong>Steady Intent:</strong> When grounded in calm gratitude, our choices arise from inner balance rather than outside pressures. This poised intent channels our energy toward what matters most—acting deliberately without resistance to life’s flow.</p>
+          <p><strong>Purposeful Intent:</strong> Grounded in gratitude, our actions flow from a place of calm acceptance rather than reaction. This intentionality allows us to navigate complexity with grace, choosing responses that honor both our well-being and the unfolding circumstances.</p>
         </div>
-        <span class="tag">Grace</span>
+        <span class="tag">Purpose</span>
       </div>
     </div>
     
@@ -732,7 +740,7 @@
   </div>
 
   <blockquote>
-    "Calm hearts remain unshaken, finding gratitude even in the whirlwind, and grow strong through every moment." — NeuralGlow Wisdom
+    "New levels of efficiency arise when we root our actions in serene acceptance and quiet gratitude, allowing us to navigate complexity with grace and focused intention."
   </blockquote>
   
   <div class="social-share">
@@ -747,8 +755,8 @@
   <div class="footer-container">
     <div class="footer-section">
       <h3>NeuralGlow.ai</h3>
-      <p>Grateful. Ambitious. Focused.</p>
-      <p>🙏 Blessed foundations. Ambitious vision.</p>
+      <p>© 2026 NeuralGlow.ai</p>
+      <p>Empowering growth through gratitude-driven efficiency.</p>
     </div>
     
     <div class="footer-section">
@@ -772,8 +780,8 @@
   </div>
   
   <div class="copyright">
-    &copy; 2025 NeuralGlow.ai | All Rights Reserved
-    <small>Gratitude-Driven Efficiency — Where Appreciation Fuels Ambition</small>
+    &copy; 2026 NeuralGlow.ai | All rights reserved.
+    <small>Designed with gratitude and focus.</small>
   </div>
 </footer>
 
