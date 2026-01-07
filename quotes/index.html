@@ -12,36 +12,54 @@
     /* General Styles */
     :root {
         /* Light mode (default) */
-        --bg-color: #f5f7f0;
-        --text-color: #2c3e50;
-        --header-gradient-start: #8E24AA;
-        --header-gradient-end: #AB47BC;
+        --bg-color: #F8FAFB;
+        --bg-gradient: linear-gradient(135deg, #F0F4F8 0%, #E3F2FD 100%);
+        --text-color: #1A2332;
+        --header-gradient-start: #1E3A5F;
+        --header-gradient-end: #2C5F8D;
         --header-text: #ffffff;
         --card-bg: #ffffff;
-        --card-border: rgba(0,0,0,0.1);
-        --link-color: #8E24AA;
-        --hover-color: #6A1B9A;
-        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --card-border: rgba(30, 58, 95, 0.1);
+        --link-color: #FF6B6B;
+        --hover-color: #FF8E8E;
+        --box-shadow: 0 4px 12px rgba(30, 58, 95, 0.1);
+        --box-shadow-hover: 0 8px 20px rgba(30, 58, 95, 0.15);
         --quote-bg: #ffffff;
-        --quote-border: #e0e0e0;
-        --primary: #8E24AA;
+        --quote-border: #FFE0E0;
+        --quote-accent: #FF6B6B;
+        --primary: #1E3A5F;
+        --primary-light: #2C5F8D;
+        --primary-dark: #0F2540;
+        --accent: #FF6B6B;
+        --accent-light: #FFB3B3;
+        --tag-bg: #FFE0E0;
+        --tag-text: #C62828;
     }
     
     /* Dark mode */
     [data-theme="dark"] {
-        --bg-color: #1A1A1A;
-        --text-color: #E0E0E0;
-        --header-gradient-start: #7B1FA2;
-        --header-gradient-end: #9C27B0;
+        --bg-color: #0D1B2A;
+        --bg-gradient: linear-gradient(135deg, #0D1B2A 0%, #1B263B 100%);
+        --text-color: #E0E6ED;
+        --header-gradient-start: #0F2540;
+        --header-gradient-end: #1E3A5F;
         --header-text: #ffffff;
-        --card-bg: #2D2D2D;
+        --card-bg: #1B263B;
         --card-border: rgba(255,255,255,0.1);
-        --link-color: #BA68C8;
-        --hover-color: #CE93D8;
-        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        --quote-bg: #2D2D2D;
-        --quote-border: #444444;
-        --primary: #9C27B0;
+        --link-color: #FF8E8E;
+        --hover-color: #FFB3B3;
+        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        --box-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.5);
+        --quote-bg: #1B263B;
+        --quote-border: #3D1F1F;
+        --quote-accent: #FF8E8E;
+        --primary: #2C5F8D;
+        --primary-light: #4A7BA7;
+        --primary-dark: #0F2540;
+        --accent: #FF8E8E;
+        --accent-light: #FFB3B3;
+        --tag-bg: #3D1F1F;
+        --tag-text: #FFB3B3;
     }
     
     html { scroll-behavior: smooth; }
@@ -200,13 +218,13 @@
         text-align: center;
         margin-bottom: 60px;
         padding: 60px 20px;
-        background: linear-gradient(to right, rgba(224, 242, 194, 0.5), rgba(200, 230, 150, 0.6));
+        background: linear-gradient(to right, rgba(40, 87, 145, 0.5), rgba(72, 116, 209, 0.6));
         border-radius: 12px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
     .hero h1 {
         font-size: 3rem;
-        color: #33691e;
+        color: #4a7dbf;
         margin-bottom: 20px;
         animation: fadeIn 2s ease;
         font-weight: 700;
@@ -228,8 +246,8 @@
     }
     .category-btn {
         background: #e8f5e9;
-        border: 1px solid #aed581;
-        color: #33691e;
+        border: 1px solid #af9494;
+        color: #3c6498;
         padding: 8px 16px;
         border-radius: 20px;
         font-size: 0.9rem;
@@ -237,7 +255,7 @@
         transition: all 0.3s ease;
     }
     .category-btn:hover, .category-btn.active {
-        background: #8bc34a;
+        background: #3c6aa5;
         color: white;
     }
     
@@ -284,7 +302,7 @@
     .card-tag {
         display: inline-block;
         background: #e8f5e9;
-        color: #558b2f;
+        color: #5881b6;
         font-size: 0.8rem;
         padding: 4px 10px;
         border-radius: 12px;
@@ -294,7 +312,7 @@
         margin: 0 0 15px;
         font-size: 1.4rem;
         line-height: 1.4;
-        color: #33691e;
+        color: #4e72a1;
     }
     .card p {
         color: #607d8b;
@@ -332,13 +350,13 @@
         cursor: pointer;
     }
     .social-btn:hover {
-        background: #7cb342;
+        background: #2c4c77;
         color: white;
     }
     
     /* Featured Quote Section */
     .featured-quote {
-        background: linear-gradient(120deg, #c5e1a5, #dcedc8);
+        background: linear-gradient(120deg, #bf91b9, #dbb7e6);
         padding: 40px;
         border-radius: 12px;
         margin: 60px 0;
@@ -358,7 +376,7 @@
     .featured-quote blockquote {
         font-size: 1.8rem;
         font-style: italic;
-        color: #33691e;
+        color: #2f4a6e;
         margin: 0 0 20px;
         position: relative;
         z-index: 1;
@@ -366,7 +384,7 @@
     .featured-quote .author {
         text-align: right;
         font-weight: 500;
-        color: #558b2f;
+        color: #2a79e1;
     }
     
     /* Newsletter Section */
@@ -379,7 +397,7 @@
         margin: 60px 0;
     }
     .newsletter h3 {
-        color: #33691e;
+        color: #2e486b;
         margin-top: 0;
     }
     .newsletter-form {
@@ -396,7 +414,7 @@
         outline: none;
     }
     .newsletter-form button {
-        background: #7cb342;
+        background: #4374af;
         color: white;
         border: none;
         padding: 12px 20px;
@@ -405,15 +423,18 @@
         transition: background 0.3s;
     }
     .newsletter-form button:hover {
-        background: #6A1B9A;
+        background: var(--accent);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(255, 107, 107, 0.4);
     }
     
     /* Footer Styling */
     footer {
-        background: #8E24AA;
-        color: #e8f5e9;
+        background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+        color: #E0E6ED;
         padding: 50px 20px 30px;
         margin-top: 80px;
+        box-shadow: 0 -3px 10px rgba(30, 58, 95, 0.15);
     }
     .footer-content {
         max-width: 1200px;
@@ -423,10 +444,11 @@
         gap: 40px;
     }
     .footer-column h4 {
-        color: #c5e1a5;
+        color: var(--accent-light);
         margin-top: 0;
         font-size: 1.2rem;
         margin-bottom: 20px;
+        font-weight: 600;
     }
     .footer-column ul {
         list-style: none;
@@ -437,13 +459,14 @@
         margin-bottom: 10px;
     }
     .footer-column a {
-        color: #e8f5e9;
+        color: #E0E6ED;
         text-decoration: none;
-        transition: color 0.3s;
+        transition: all 0.3s ease;
     }
     .footer-column a:hover {
-        color: #aed581;
+        color: var(--accent-light);
         text-decoration: underline;
+        transform: translateX(3px);
     }
     .footer-social {
         display: flex;
@@ -461,8 +484,9 @@
         transition: all 0.3s;
     }
     .footer-social a:hover {
-        background: rgba(255,255,255,0.2);
+        background: var(--accent);
         transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
     }
     .footer-bottom {
         text-align: center;
@@ -750,7 +774,7 @@
   </div>
   
   <div class="footer-bottom">
-    &copy; 2025 NeuralGlow.ai — Calm. Curious. Quiet.<br>
+    &copy; 2026 NeuralGlow.ai | All rights reserved. <br>
     <a href="https://uptimerobot.com/" target="_blank" style="color: #aed581; text-decoration: none;">
       🌿 Monitored quietly by UptimeRobot
     </a>
