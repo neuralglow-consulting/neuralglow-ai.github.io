@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,583 +9,586 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
 <style>
-    /* General Styles */
-    :root {
-        /* Light mode (default) */
-        --bg-gradient-start: #E8F5E9;
-        --bg-gradient-mid: #F1F8E9;
-        --bg-gradient-end: #F9FBE7;
-        --text-color: #333333;
-        --header-gradient-start: #8E24AA;
-        --header-gradient-end: #AB47BC;
-        --header-text: #ffffff;
-        --card-bg: #ffffff;
-        --card-border: rgba(0,0,0,0.1);
-        --link-color: #8E24AA;
-        --hover-color: #6A1B9A;
-        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        --tag-bg: #F3E5F5;
-        --tag-text: #6A1B9A;
-        --background: #f9f9f9;
-        --primary: #8E24AA;
-        --primary-light: #AB47BC;
-        --primary-dark: #6A1B9A;
-        --accent: #FFD740;
-        --accent-light: #FFECB3;
-    }
-    /* Dark mode */
-    [data-theme="dark"] {
-        --bg-gradient-start: #1A1A1A;
-        --bg-gradient-mid: #222222;
-        --bg-gradient-end: #2A2A2A;
-        --text-color: #E0E0E0;
-        --header-gradient-start: #7B1FA2;
-        --header-gradient-end: #9C27B0;
-        --header-text: #ffffff;
-        --card-bg: #2D2D2D;
-        --card-border: rgba(255,255,255,0.1);
-        --link-color: #BA68C8;
-        --hover-color: #CE93D8;
-        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        --tag-bg: #4A148C;
-        --tag-text: #E1BEE7;
-        --background: #121212;
-        --primary: #9C27B0;
-        --primary-light: #BA68C8;
-        --primary-dark: #7B1FA2;
-        --accent: #FFD740;
-        --accent-light: #FFECB3;
-    }
-    html {
-        scroll-behavior: smooth;
-    }
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Inter', sans-serif;
-        background: var(--background);
-        color: var(--text-color);
-        line-height: 1.8;
-        overflow-x: hidden;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    /* Typography */
-    h1, h2, h3, h4, h5 {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-    }
-    /* Header Styles */
+  /* General Styles */
+  :root {
+    /* Light mode (default) */
+    --bg-gradient-start: #F0F4F8;
+    --bg-gradient-mid: #E3F2FD;
+    --bg-gradient-end: #FFF3E0;
+    --text-color: #1A2332;
+    --header-gradient-start: #1E3A5F;
+    --header-gradient-end: #2C5F8D;
+    --header-text: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: rgba(0,0,0,0.1);
+    --link-color: #FF6B6B;
+    --hover-color: #FF8E8E;
+    --box-shadow: 0 4px 12px rgba(30, 58, 95, 0.1);
+    --tag-bg: #FFE0E0;
+    --tag-text: #C62828;
+    --background: #F8FAFB;
+    --primary: #1E3A5F;
+    --primary-light: #2C5F8D;
+    --primary-dark: #0F2540;
+    --accent: #FF6B6B;
+    --accent-light: #FFB3B3;
+  }
+  /* Dark mode */
+  [data-theme="dark"] {
+    --bg-gradient-start: #0D1B2A;
+    --bg-gradient-mid: #1B263B;
+    --bg-gradient-end: #2A3847;
+    --text-color: #E0E6ED;
+    --header-gradient-start: #0F2540;
+    --header-gradient-end: #1E3A5F;
+    --header-text: #ffffff;
+    --card-bg: #1B263B;
+    --card-border: rgba(255,255,255,0.1);
+    --link-color: #FF8E8E;
+    --hover-color: #FFB3B3;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --tag-bg: #3D1F1F;
+    --tag-text: #FFB3B3;
+    --background: #0D1B2A;
+    --primary: #2C5F8D;
+    --primary-light: #4A7BA7;
+    --primary-dark: #0F2540;
+    --accent: #FF8E8E;
+    --accent-light: #FFB3B3;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text-color);
+    line-height: 1.8;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  /* Typography */
+  h1, h2, h3, h4, h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  /* Header Styles */
+  header {
+    background: var(--primary);
+    color: var(--header-text);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: background 0.3s ease;
+  }
+  header .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  header .logo img {
+    height: 45px;
+    transition: transform 0.3s ease;
+  }
+  header .logo img:hover {
+    transform: scale(1.1);
+  }
+  header .site-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    display: none;
+  }
+  header nav {
+    display: flex;
+    gap: 5px;
+  }
+  header nav a {
+    color: #FFF;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+  header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+  header nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  /* Theme Toggle Styles */
+  .theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+  }
+  .theme-switch {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 25px;
+  }
+  .theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.3);
+    transition: .4s;
+    border-radius: 25px;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  input:checked + .slider {
+    background-color: rgba(0,0,0,0.3);
+  }
+  input:checked + .slider:before {
+    transform: translateX(25px);
+  }
+  .slider .icon {
+    position: absolute;
+    top: 5px;
+    font-size: 13px;
+    transition: .4s;
+    color: white;
+  }
+  .slider .sun {
+    left: 7px;
+    opacity: 1;
+  }
+  .slider .moon {
+    right: 7px;
+    opacity: 0;
+  }
+  input:checked + .slider .sun {
+    opacity: 0;
+  }
+  input:checked + .slider .moon {
+    opacity: 1;
+  }
+  /* Main Content Area */
+  main {
+    max-width: 1200px;
+    margin: 50px auto 60px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  /* Page Title */
+  .page-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .page-title h1 {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    animation: fadeIn 1.2s ease;
+  }
+  .page-title .description {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+  }
+  /* Featured Note */
+  .featured-note-section {
+    margin-bottom: 50px;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title i {
+    color: var(--accent);
+  }
+  .featured-note {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    border-left: 5px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .featured-note:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  }
+  .featured-label {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 5px 30px;
+    transform: rotate(45deg);
+    font-weight: 600;
+  }
+  .featured-note-content {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin: 15px 0;
+    color: var(--text-color);
+  }
+  /* Categories and Filter */
+  .filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  .filter-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--accent-light);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-color);
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  /* Notes Grid */
+  .notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+  .note {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--accent);
+  }
+  .note:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  .note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .note-date {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .note-date i {
+    color: var(--accent);
+  }
+  .note-categories {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .note-category {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .note-content {
+    flex-grow: 1;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  .note-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--card-border);
+  }
+  .note-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+  .note-author img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+  .social-share {
+    display: flex;
+    gap: 10px;
+  }
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+  }
+  .social-icon:hover {
+    transform: scale(1.15);
+  }
+  .twitter {
+    background: #1DA1F2;
+  }
+  .facebook {
+    background: #4267B2;
+  }
+  .linkedin {
+    background: #0077B5;
+  }
+  /* Calendar Styles - Enhanced */
+  .calendar-section {
+    margin: 50px auto;
+    max-width: 500px;
+  }
+  .calendar {
+    margin: 20px auto;
+    max-width: 450px;
+    text-align: center;
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+  }
+  #calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    color: #fff;
+    font-weight: 600;
+  }
+  .calendar-nav {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .calendar-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  #calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  #calendar-table th,
+  #calendar-table td {
+    padding: 12px;
+    text-align: center;
+    border: none;
+  }
+  #calendar-table th {
+    background: var(--tag-bg);
+    font-weight: 600;
+    color: var(--primary);
+  }
+  #calendar-table td {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  #calendar-table td:hover {
+    background: var(--accent-light);
+  }
+  /* Notes Count Label */
+  .notes-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--tag-bg);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--tag-text);
+    margin-bottom: 20px;
+  }
+  /* Improved Footer */
+  footer {
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 40px 20px;
+    margin-top: 60px;
+  }
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+  }
+  .footer-section h4 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--accent-light);
+  }
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .footer-links a:hover {
+    color: #FFF;
+    text-decoration: underline;
+  }
+  .footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  .footer-social a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+  }
+  .footer-social a:hover {
+    color: #FFF;
+    transform: translateY(-3px);
+  }
+  .footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
     header {
-        background: var(--primary);
-        color: var(--header-text);
-        padding: 15px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-        transition: background 0.3s ease;
+      padding: 15px 20px;
+      flex-direction: column;
     }
     header .logo {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-    header .logo img {
-        height: 45px;
-        transition: transform 0.3s ease;
-    }
-    header .logo img:hover {
-        transform: scale(1.1);
-    }
-    header .site-title {
-        font-size: 1.2rem;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        display: none;
+      margin-bottom: 15px;
     }
     header nav {
-        display: flex;
-        gap: 5px;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     header nav a {
-        color: #FFF;
-        text-decoration: none;
-        margin-left: 20px;
-        font-weight: 500;
-        font-size: 0.95rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-        padding: 8px 12px;
-        border-radius: 4px;
+      margin: 5px;
     }
-    header nav a:hover {
-        background-color: rgba(255, 255, 255, 0.15);
-        transform: translateY(-2px);
-    }
-    header nav a.active {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-    /* Theme Toggle Styles */
-    .theme-switch-wrapper {
-        display: flex;
-        align-items: center;
-        margin-left: 15px;
-    }
-    .theme-switch {
-        display: inline-block;
-        position: relative;
-        width: 50px;
-        height: 25px;
-    }
-    .theme-switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(255,255,255,0.3);
-        transition: .4s;
-        border-radius: 25px;
-    }
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 19px;
-        width: 19px;
-        left: 3px;
-        bottom: 3px;
-        background-color: white;
-        transition: .4s;
-        border-radius: 50%;
-    }
-    input:checked + .slider {
-        background-color: rgba(0,0,0,0.3);
-    }
-    input:checked + .slider:before {
-        transform: translateX(25px);
-    }
-    .slider .icon {
-        position: absolute;
-        top: 5px;
-        font-size: 13px;
-        transition: .4s;
-        color: white;
-    }
-    .slider .sun {
-        left: 7px;
-        opacity: 1;
-    }
-    .slider .moon {
-        right: 7px;
-        opacity: 0;
-    }
-    input:checked + .slider .sun {
-        opacity: 0;
-    }
-    input:checked + .slider .moon {
-        opacity: 1;
-    }
-    /* Main Content Area */
-    main {
-        max-width: 1200px;
-        margin: 50px auto 60px;
-        padding: 0 20px;
-        position: relative;
-        z-index: 1;
-    }
-    /* Page Title */
-    .page-title {
-        text-align: center;
-        margin-bottom: 50px;
+    .notes-container {
+      grid-template-columns: 1fr;
     }
     .page-title h1 {
-        font-size: 3rem;
-        color: #2E7D32; /* Darker Green */
-        margin-bottom: 15px;
-        animation: fadeIn 1.2s ease;
-    }
-    .page-title .description {
-        font-size: 1.25rem;
-        color: #3E5641;
-        max-width: 700px;
-        margin: 0 auto 30px;
-        line-height: 1.6;
-    }
-    /* Featured Note */
-    .featured-note-section {
-        margin-bottom: 50px;
-    }
-    .section-title {
-        font-size: 1.5rem;
-        color: #33691E;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .section-title i {
-        color: #689F38;
-    }
-    .featured-note {
-        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
-        border-radius: 12px;
-        padding: 30px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        border-left: 5px solid #8BC34A;
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-    .featured-note:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-    }
-    .featured-label {
-        position: absolute;
-        top: 20px;
-        right: -30px;
-        background: #FFC107;
-        color: #333;
-        font-size: 0.8rem;
-        padding: 5px 30px;
-        transform: rotate(45deg);
-        font-weight: 600;
-    }
-    .featured-note-content {
-        font-size: 1.3rem;
-        line-height: 1.6;
-        margin: 15px 0;
-        color: #37474F;
-    }
-    /* Categories and Filter */
-    .filter-section {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-bottom: 30px;
-        justify-content: center;
-    }
-    .filter-btn {
-        background: rgba(255, 255, 255, 0.7);
-        border: 1px solid #AED581;
-        border-radius: 20px;
-        padding: 8px 16px;
-        font-size: 0.9rem;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    }
-    .filter-btn:hover, .filter-btn.active {
-        background: #AED581;
-        color: #33691E;
-    }
-    /* Notes Grid */
-    .notes-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 25px;
-        margin-top: 30px;
-    }
-    .note {
-        background: rgba(255, 255, 255, 0.85);
-        border-radius: 10px;
-        padding: 25px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        overflow: hidden;
-        border-top: 4px solid #8BC34A;
-    }
-    .note:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    .note-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-    .note-date {
-        font-size: 0.9rem;
-        color: #607D8B;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-    .note-date i {
-        color: #8BC34A;
-    }
-    .note-categories {
-        margin-top: 5px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-    }
-    .note-category {
-        background: #E8F5E9;
-        color: #33691E;
-        padding: 3px 8px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        font-weight: 500;
-    }
-    .note-content {
-        flex-grow: 1;
-        margin-bottom: 15px;
-        color: #37474F;
-        line-height: 1.6;
-    }
-    .note-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 15px;
-        padding-top: 15px;
-        border-top: 1px solid rgba(0,0,0,0.05);
-    }
-    .note-author {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.9rem;
-    }
-    .note-author img {
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-    }
-    .social-share {
-        display: flex;
-        gap: 10px;
-    }
-    .social-icon {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 0.9rem;
-        transition: transform 0.2s ease;
-    }
-    .social-icon:hover {
-        transform: scale(1.15);
-    }
-    .twitter {
-        background: #1DA1F2;
-    }
-    .facebook {
-        background: #4267B2;
-    }
-    .linkedin {
-        background: #0077B5;
-    }
-    /* Calendar Styles - Enhanced */
-    .calendar-section {
-        margin: 50px auto;
-        max-width: 500px;
-    }
-    .calendar {
-      margin: 20px auto;
-      max-width: 450px;
-      text-align: center;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      overflow: hidden;
-    }
-    #calendar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      background: linear-gradient(to right, #689F38, #8BC34A);
-      color: #fff;
-      font-weight: 600;
-    }
-    .calendar-nav {
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 1.2rem;
-      cursor: pointer;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-    }
-    .calendar-nav:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-    #calendar-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    #calendar-table th,
-    #calendar-table td {
-      padding: 12px;
-      text-align: center;
-      border: none;
-    }
-    #calendar-table th {
-      background: rgba(139, 195, 74, 0.1);
-      font-weight: 600;
-      color: #558B2F;
-    }
-    #calendar-table td {
-      cursor: pointer;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      transition: all 0.2s ease;
-      position: relative;
-    }
-    #calendar-table td:hover {
-      background: #DCEDC8;
-    }
-    /* Notes Count Label */
-    .notes-count {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: rgba(139, 195, 74, 0.2);
-        padding: 5px 10px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: #558B2F;
-        margin-bottom: 20px;
-    }
-    /* Improved Footer */
-    footer {
-        background: var(--primary);
-        color: rgba(255, 255, 255, 0.9);
-        padding: 40px 20px;
-        margin-top: 60px;
+      font-size: 2.2rem;
     }
     .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-    }
-    .footer-section h4 {
-        margin-top: 0;
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-        color: #DCEDC8;
-    }
-    .footer-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    .footer-links li {
-        margin-bottom: 8px;
-    }
-    .footer-links a {
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
-        transition: color 0.2s ease;
-    }
-    .footer-links a:hover {
-        color: #FFF;
-        text-decoration: underline;
+      grid-template-columns: 1fr;
+      text-align: center;
     }
     .footer-social {
-        display: flex;
-        gap: 15px;
-        margin-top: 15px;
+      justify-content: center;
     }
-    .footer-social a {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 1.2rem;
-        transition: all 0.2s ease;
+  }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .notes-container {
+      grid-template-columns: repeat(2, 1fr);
     }
-    .footer-social a:hover {
-        color: #FFF;
-        transform: translateY(-3px);
-    }
-    .footer-bottom {
-        text-align: center;
-        padding-top: 30px;
-        margin-top: 30px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.7);
-    }
-    /* Animations */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideIn {
-        from { opacity: 0; transform: translateX(-20px); }
-        to { opacity: 1; transform: translateX(0); }
-    }
-    /* Responsive Design */
-    @media screen and (max-width: 768px) {
-        header {
-            padding: 15px 20px;
-            flex-direction: column;
-        }
-        header .logo {
-            margin-bottom: 15px;
-        }
-        header nav {
-            width: 100%;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        header nav a {
-            margin: 5px;
-        }
-        .notes-container {
-            grid-template-columns: 1fr;
-        }
-        .page-title h1 {
-            font-size: 2.2rem;
-        }
-        .footer-content {
-            grid-template-columns: 1fr;
-            text-align: center;
-        }
-        .footer-social {
-            justify-content: center;
-        }
-    }
-    @media screen and (min-width: 769px) and (max-width: 1024px) {
-        .notes-container {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    .mist {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at center, rgba(174, 213, 129, 0.1) 0%, rgba(220, 237, 200, 0.15) 70%);
-        z-index: 0;
-        pointer-events: none;
-    }
+  }
+  .mist {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 107, 107, 0.05) 0%, rgba(30, 58, 95, 0.08) 70%);
+    z-index: 0;
+    pointer-events: none;
+  }
 </style>
 <meta name="color-scheme" content="light dark" />
 </head>
@@ -594,308 +596,319 @@
 <div class="mist"></div>
 <header>
   <div class="logo" onclick="window.location.href='/'" style="cursor: pointer;">
-    <img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow Logo" />
-    <span class="site-title">NeuralGlow.ai</span>
+  <img src="/assets/images/neuralglow_logo_darkpink_left.png" alt="NeuralGlow Logo" />
+  <span class="site-title">NeuralGlow.ai</span>
   </div>
   <nav>
-    <a href="/" class="active">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/research.html">Research</a>
-    <a href="/blog.html">Blog</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/quotes/">Quotes</a>
-    <a href="/notes/">Notes</a>
-    <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="theme-toggle">
-        <input type="checkbox" id="theme-toggle" />
-        <span class="slider">
-          <i class="fas fa-sun icon sun"></i>
-          <i class="fas fa-moon icon moon"></i>
-        </span>
-      </label>
-    </div>
+  <a href="/" class="active">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/research.html">Research</a>
+  <a href="/blog.html">Blog</a>
+  <a href="/contact.html">Contact</a>
+  <a href="/quotes/">Quotes</a>
+  <a href="/notes/">Notes</a>
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="theme-toggle">
+    <input type="checkbox" id="theme-toggle" />
+    <span class="slider">
+      <i class="fas fa-sun icon sun"></i>
+      <i class="fas fa-moon icon moon"></i>
+    </span>
+    </label>
+  </div>
   </nav>
 </header>  
-    
+  
 <main>
-    <div class="page-title">
-        <h1>Glow Seeds: Quiet Observations</h1>
-        <p class="description">Tiny thoughts, quietly growing in the Glow Forest. Handle with care—these notes may cause unexpected bursts of insight, wonder, and the occasional philosophical detour.</p>
-        
-        <div class="filter-section">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">Reflection</button>
-            <button class="filter-btn">Change</button>
-            <button class="filter-btn">Gratitude</button>
-            <button class="filter-btn">Inspiration</button>
-            <button class="filter-btn">Poetry</button>
-            <button class="filter-btn">Nostalgia</button>
-            <button class="filter-btn">Mindfulness</button>
-            <button class="filter-btn">New Beginnings</button>
-            <button class="filter-btn">Nature</button>
-            <button class="filter-btn">Motivation</button>
-            <button class="filter-btn">Ambition</button>
-            <button class="filter-btn">Joy</button>
-            <button class="filter-btn">Philosophy</button>
-            <button class="filter-btn">Sensory</button>
-            <button class="filter-btn">October</button>
-        </div>
-        
-        <div class="notes-count">
-            <i class="fas fa-leaf"></i> 23 seeds growing
-        </div>
+  <div class="page-title">
+    <h1>Glow Seeds: Quiet Observations</h1>
+    <p class="description">Tiny thoughts, quietly growing in the Glow Forest. Handle with care—these notes may cause unexpected bursts of insight, wonder, and the occasional philosophical detour.</p>
+    
+    <div class="filter-section">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Growth</button>
+      <button class="filter-btn">Creativity</button>
+      <button class="filter-btn">Mindfulness</button>
+      <button class="filter-btn">Change</button>
+      <button class="filter-btn">Connection</button>
+      <button class="filter-btn">Wisdom</button>
+      <button class="filter-btn">Purpose</button>
+      <button class="filter-btn">Joy</button>
+      <button class="filter-btn">Resilience</button>
     </div>
     
-    <div id="note-container" class="notes-container">
-      <!-- Notes will be dynamically inserted here by JavaScript -->
+    <div class="notes-count">
+      <i class="fas fa-leaf"></i> 20 seeds growing
     </div>
-    
-    <section class="calendar-section">
-        <h2 class="section-title"><i class="fas fa-calendar-day"></i> Observation Calendar</h2>
-        <div id="calendar-container" class="calendar">
-          <div id="calendar-header">
-            <button id="prev-month" class="calendar-nav"><i class="fas fa-chevron-left"></i></button>
-            <span id="calendar-month-year"></span>
-            <button id="next-month" class="calendar-nav"><i class="fas fa-chevron-right"></i></button>
-          </div>
-          <table id="calendar-table">
-            <thead>
-              <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-              </tr>
-            </thead>
-            <tbody id="calendar-body">
-              <!-- Calendar days will be dynamically inserted here -->
-            </tbody>
-          </table>
-        </div>
-    </section>
+  </div>
+  
+  <div id="note-container" class="notes-container">
+    <!-- Notes will be dynamically inserted here by JavaScript -->
+  </div>
+  
+  <section class="calendar-section">
+    <h2 class="section-title"><i class="fas fa-calendar-day"></i> Observation Calendar</h2>
+    <div id="calendar-container" class="calendar">
+      <div id="calendar-header">
+      <button id="prev-month" class="calendar-nav"><i class="fas fa-chevron-left"></i></button>
+      <span id="calendar-month-year"></span>
+      <button id="next-month" class="calendar-nav"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <table id="calendar-table">
+      <thead>
+        <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+        </tr>
+      </thead>
+      <tbody id="calendar-body">
+        <!-- Calendar days will be dynamically inserted here -->
+      </tbody>
+      </table>
+    </div>
+  </section>
 </main>
 <footer>
   <div class="footer-content">
-    <div class="footer-section">
-      <h4>About NeuralGlow</h4>
-      <p>Exploring the intersection of calm technology, mindful AI, and human curiosity through quiet observations.</p>
-      <div class="footer-social">
-        <a href="https://x.com/NeuralGlowAI"><i class="fab fa-twitter"></i></a>
-        <a href="https://github.com/neuralglow-consulting"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
-    <div class="footer-section">
-      <h4>Explore</h4>
-      <ul class="footer-links">
-        <li><a href="/about.html">Our Story</a></li>
-        <li><a href="/research.html">Research Projects</a></li>
-        <li><a href="/blog.html">Blog Archive</a></li>
-        <li><a href="/notes/">All Notes</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h4>Connect</h4>
-      <ul class="footer-links">
-        <li><a href="/contact.html">Contact Us</a></li>
-        <li><a href="/newsletter.html">Join Newsletter</a></li>
-        <li><a href="/events.html">Upcoming Events</a></li>
-        <li><a href="/contribute.html">Contribute</a></li>
-      </ul>
-    </div>
-    <div class="footer-section">
-      <h4>Legal</h4>
-      <ul class="footer-links">
-        <li><a href="/privacy.html">Privacy Policy</a></li>
-        <li><a href="/terms.html">Terms of Use</a></li>
-        <li><a href="/cookies.html">Cookie Policy</a></li>
-      </ul>
+  <div class="footer-section">
+    <h4>About NeuralGlow</h4>
+    <p>Exploring the intersection of calm technology, mindful AI, and human curiosity through quiet observations.</p>
+    <div class="footer-social">
+    <a href="https://x.com/NeuralGlowAI"><i class="fab fa-twitter"></i></a>
+    <a href="https://github.com/neuralglow-consulting"><i class="fab fa-github"></i></a>
     </div>
   </div>
+  <div class="footer-section">
+    <h4>Explore</h4>
+    <ul class="footer-links">
+    <li><a href="/about.html">Our Story</a></li>
+    <li><a href="/research.html">Research Projects</a></li>
+    <li><a href="/blog.html">Blog Archive</a></li>
+    <li><a href="/notes/">All Notes</a></li>
+    </ul>
+  </div>
+  <div class="footer-section">
+    <h4>Connect</h4>
+    <ul class="footer-links">
+    <li><a href="/contact.html">Contact Us</a></li>
+    <li><a href="/newsletter.html">Join Newsletter</a></li>
+    <li><a href="/events.html">Upcoming Events</a></li>
+    <li><a href="/contribute.html">Contribute</a></li>
+    </ul>
+  </div>
+  <div class="footer-section">
+    <h4>Legal</h4>
+    <ul class="footer-links">
+    <li><a href="/privacy.html">Privacy Policy</a></li>
+    <li><a href="/terms.html">Terms of Use</a></li>
+    <li><a href="/cookies.html">Cookie Policy</a></li>
+    </ul>
+  </div>
+  </div>
   <div class="footer-bottom">
-    &copy; 2025 NeuralGlow.ai — Calm. Curious. Quiet.<br />
-    <a href="https://uptimerobot.com/" target="_blank" style="color: rgba(255, 255, 255, 0.5); text-decoration: none;">
-      <i class="fas fa-leaf"></i> Monitored quietly by UptimeRobot
-    </a>
+  &copy; 2026 NeuralGlow.ai — Calm. Curious. Quiet.<br />
+  <a href="https://uptimerobot.com/" target="_blank" style="color: rgba(255, 255, 255, 0.5); text-decoration: none;">
+    <i class="fas fa-leaf"></i> Monitored quietly by UptimeRobot
+  </a>
   </div>
 </footer>
 
 <script>
-  // JavaScript to generate a dynamic calendar and mark the current date
+  // Theme toggle functionality
   document.addEventListener('DOMContentLoaded', () => {
-    const calendarContainer = document.getElementById('calendar-container');
-    const calendarMonthYear = document.getElementById('calendar-month-year');
-    const calendarBody = document.getElementById('calendar-body');
-    const prevMonthBtn = document.getElementById('prev-month');
-    const nextMonthBtn = document.getElementById('next-month');
-    let currentDate = new Date();
-    const today = new Date(); // Store today's date for marking
-
-    // Dates with notes for September 2025 only (adjust as needed for days with notes)
-    const datesWithNotes = [
-      new Date(2025, 8, 1),
-      new Date(2025, 8, 2),
-      new Date(2025, 8, 3),
-      new Date(2025, 8, 4),
-      new Date(2025, 8, 5),
-      new Date(2025, 8, 6),
-      new Date(2025, 8, 7),
-      new Date(2025, 8, 8),
-      new Date(2025, 8, 9),
-      new Date(2025, 8, 10),
-      new Date(2025, 8, 11),
-      new Date(2025, 8, 12),
-      new Date(2025, 8, 13),
-      new Date(2025, 8, 14),
-      new Date(2025, 8, 15),
-      new Date(2025, 8, 16),
-      new Date(2025, 8, 17),
-      new Date(2025, 8, 18),
-      new Date(2025, 8, 19),
-      new Date(2025, 8, 20),
-      new Date(2025, 8, 21),
-      new Date(2025, 8, 22),
-      new Date(2025, 8, 23)
-    ];
-    const hasNotes = function(year, month, day) {
-      return datesWithNotes.some(date =>
-        date.getFullYear() === year &&
-        date.getMonth() === month &&
-        date.getDate() === day
-      );
+  const themeToggle = document.getElementById('theme-toggle');
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  
+  if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggle.checked = true;
+  }
+  
+  themeToggle.addEventListener('change', function() {
+    if (this.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
     }
-    function renderCalendar(date) {
-      const year = date.getFullYear();
-      const month = date.getMonth();
-      const firstDay = new Date(year, month, 1).getDay();
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-      calendarMonthYear.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
-      calendarBody.innerHTML = '';
-      let row = document.createElement('tr');
-      for (let i = 0; i < firstDay; i++) {
-        row.appendChild(document.createElement('td'));
-      }
-      for (let day = 1; day <= daysInMonth; day++) {
-        const cell = document.createElement('td');
-        cell.textContent = day;
-        if (
-          year === today.getFullYear() &&
-          month === today.getMonth() &&
-          day === today.getDate()
-        ) {
-          cell.style.backgroundColor = '#8BC34A';
-          cell.style.color = '#fff';
-          cell.style.fontWeight = 'bold';
-        }
-        if (hasNotes(year, month, day)) {
-          const indicator = document.createElement('div');
-          indicator.style.width = '6px';
-          indicator.style.height = '6px';
-          indicator.style.borderRadius = '50%';
-          indicator.style.backgroundColor = '#FFC107';
-          indicator.style.position = 'absolute';
-          indicator.style.bottom = '5px';
-          indicator.style.left = '50%';
-          indicator.style.transform = 'translateX(-50%)';
-          cell.appendChild(indicator);
-          cell.style.position = 'relative';
-          cell.style.cursor = 'pointer';
-          cell.addEventListener('click', () => {
-            const dateStr = `${date.toLocaleString('default', { month: 'long' })} ${day}, ${year}`;
-            const notes = document.querySelectorAll('.note');
-            notes.forEach(note => {
-              if (note.querySelector('.note-date').textContent.includes(dateStr)) {
-                note.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                note.style.animation = 'fadeIn 1s';
-              }
-            });
-          });
-        }
-        row.appendChild(cell);
-        if ((firstDay + day) % 7 === 0 || day === daysInMonth) {
-          calendarBody.appendChild(row);
-          row = document.createElement('tr');
-        }
-      }
-    }
-    prevMonthBtn.addEventListener('click', () => {
-      currentDate.setMonth(currentDate.getMonth() - 1);
-      renderCalendar(currentDate);
-    });
-    nextMonthBtn.addEventListener('click', () => {
-      currentDate.setMonth(currentDate.getMonth() + 1);
-      renderCalendar(currentDate);
-    });
-    renderCalendar(currentDate);
-
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        // Add filtering logic here if implemented in the future
-      });
-    });
+  });
   });
 
-  // JavaScript to display notes with your September quotes
+  // JavaScript to generate a dynamic calendar and mark the current date
   document.addEventListener('DOMContentLoaded', () => {
-    const notes = [
-      { date: "October 4, 2025", content: "“When you are reluctant to change, think of the beauty of autumn.”", categories: ["Reflection", "Change"], author: "V V Brown", authorImg: "https://tse3.mm.bing.net/th/id/OIP.qfgopcRSfMLJDAmZRsPH-QHaEs?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { date: "October 5, 2025", content: "“Happily we bask in this warm September sun, which illuminates all creatures.”", categories: ["Gratitude", "Inspiration"], author: "Henry David Thoreau", authorImg: "https://poemanalysis.com/wp-content/uploads/2023/10/Henry-David-Thoreau-Portrait.jpg" },
-      { date: "October 6, 2025", content: "“Autumn carries more gold in its pocket than all the other seasons.”", categories: ["Inspiration", "Nature"], author: "Jim Bishop", authorImg: "https://bloximages.newyork1.vip.townnews.com/denvergazette.com/content/tncms/assets/v3/editorial/c/bf/cbfe2a87-0085-59c8-b031-8e7047e04b0d/673fcace0121c.image.jpg?crop=996%2C523%2C121%2C714" },
-      { date: "October 7, 2025", content: "“Autumn is a second spring when every leaf is a flower.”", categories: ["Reflection", "Nature"], author: "Albert Camus", authorImg: "https://hips.hearstapps.com/hmg-prod/images/gettyimages-154571070sq.jpg?resize=1200:*" },
-      { date: "October 8, 2025", content: "“September: it was the most beautiful of words, he’d always felt, evoking orange-flowers, swallows, and regret.”", categories: ["Poetry", "Nostalgia"], author: "Alexander Theroux", authorImg: "https://tse1.mm.bing.net/th/id/OIP.VYc8c1Vc4M81ScNnbExhKwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { date: "October 9, 2025", content: "“Live in each season as it passes: breathe the air, drink the drink, taste the fruit.”", categories: ["Mindfulness", "Gratitude"], author: "Henry David Thoreau", authorImg: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Henry_David_Thoreau.jpg" },
-      { date: "October 10, 2025", content: "“All the months are crude experiments, out of which the perfect September is made.”", categories: ["Reflection"], author: "Virginia Woolf", authorImg: "https://upload.wikimedia.org/wikipedia/commons/0/0b/George_Charles_Beresford_-_Virginia_Woolf_in_1902_-_Restoration.jpg" },
-      { date: "October 11, 2025", content: "“Life starts all over again when it gets crisp in the fall.”", categories: ["New Beginnings", "Change"], author: "F. Scott Fitzgerald", authorImg: "https://upload.wikimedia.org/wikipedia/commons/5/5c/F_Scott_Fitzgerald_1921.jpg" },
-      { date: "October 12, 2025", content: "“And then the sun took a step back, the leaves lulled themselves to sleep, and autumn awakened.”", categories: ["Nature", "Reflection"], author: "Raquel Franco", authorImg: "https://images.squarespace-cdn.com/content/v1/661f15ed11d9a46ef93a2972/b42fc081-24e5-4c36-8a0b-93b725529b8f/RaquelFrancoAuthorHeadshot.jpg" },
-      { date: "October 13, 2025", content: "“Fallen leaves on the ground are the golden song of immortal creativity.”", categories: ["Inspiration", "Nature"], author: "Amit Ray", authorImg: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Amit_Ray.jpg" },
-      { date: "October 14, 2025", content: "“Anyone who thinks fallen leaves are dead has never watched them dancing on a windy day.”", categories: ["Nature", "Joy"], author: "Shira Tamir", authorImg: "https://tse3.mm.bing.net/th/id/OIP.GGTj5nwL97AY0zcSZwFG9wAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { date: "October 15, 2025", content: "“The leaves are all falling, and they’re falling like they’re falling in love with the ground.”", categories: ["Poetry", "Nature"], author: "Andrea Gibson", authorImg: "https://tse1.mm.bing.net/th/id/OIP.mduGoL9xPeZ0_PzWgy8dVAHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { date: "October 16, 2025", content: "“Every leaf speaks bliss to me, fluttering from the autumn tree.”", categories: ["Poetry", "Nature"], author: "Emily Brontë", authorImg: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Emilybronte_retouche.jpg" },
-      { date: "October 17, 2025", content: "“There is something incredibly nostalgic and significant about the annual cascade of autumn leaves.”", categories: ["Nostalgia", "Nature"], author: "Joe. L. Wheeler", authorImg: "https://images.gr-assets.com/authors/1318804930p8/25620.jpg" },
-      { date: "October 18, 2025", content: "“Is this not a true autumn day? Just the still melancholy that I love – that makes life and nature harmonize.”", categories: ["Reflection", "Nature"], author: "George Eliot", authorImg: "https://upload.wikimedia.org/wikipedia/commons/4/48/George_Eliot%2C_por_Fran%C3%A7ois_D%27Albert_Durade.jpg" },
-      { date: "October 19, 2025", content: "“If a year was tucked inside of a clock, then autumn would be the magic hour.”", categories: ["Poetry", "Reflection"], author: "Victoria Erickson", authorImg: "https://th.bing.com/th/id/R.c694517e6d3ed6059feb5db62c5ca6a6?rik=JZGVrJYk44je6Q&riu=http%3a%2f%2fspicyopera.com%2fwp-content%2fuploads%2f2015%2f06%2fVictoriaErickson-200x300.png&ehk=W4vH60kO26ywEUrBnvnkhPnK7HgpnaG%2b0yyRyodmaPY%3d&risl=&pid=ImgRaw&r=0" },
-      { date: "October 20, 2025", content: "“Winter is an etching, spring a watercolor, summer an oil painting, and autumn a mosaic of them all.”", categories: ["Reflection", "Nature"], author: "Stanley Horowitz", authorImg: "https://www.pacw.org/wp-content/uploads/2023/05/News-04_Figure-01.jpg" },
-      { date: "October 21, 2025", content: "“It looked like the world was covered in a cobbler crust of brown sugar and cinnamon.”", categories: ["Sensory", "Autumn"], author: "Sarah Addison Allen", authorImg: "https://tse4.mm.bing.net/th/id/OIP.4z4P_2dIiq7gPqui5v8hYgHaGy?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { date: "October 22, 2025", content: "“Notice that autumn is more the season of the soul than of nature.”", categories: ["Philosophy", "Reflection"], author: "Friedrich Nietzsche", authorImg: "https://upload.wikimedia.org/wikipedia/commons/2/23/Nietzsche1882.jpg" },
-      { date: "October 23, 2025", content: "“And suddenly, you just know it’s time to start something new and trust the magic of beginnings.”", categories: ["Motivation", "Change"], author: "Meister Eckhart", authorImg: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Meister_Eckhart_base_copie.jpg" },
-      { date: "October 24, 2025", content: "“I am most radiant and full of energy when the leaves are falling and there is a ghost of change in the air.”", categories: ["Energy", "Change"], author: "Anna Madsen", authorImg: "https://th.bing.com/th/id/R.6786ac90fed162360613f2f546dfdd3f?rik=2M58WJvKrWrLlA&riu=http%3a%2f%2fwww.musicaldiscoveries.com%2fimages%2fannamadsen%2fam2016c.jpg&ehk=NkGw6l9vxUGNq1qOz0izJzR9O6Udeu1AJ%2bTrrobvLuc%3d&risl=&pid=ImgRaw&r=0" },
-      { date: "October 25, 2025", content: "“Let’s strive to be better in September!”", categories: ["Motivation", "Ambition"], author: "Charmaine J. Forde", authorImg: "https://tse2.mm.bing.net/th/id/OIP.O47Z30RsXy6Q83BUD_HTcAHaK8?rs=1&pid=ImgDetMain&o=7&rm=3" },
-      { date: "October 26, 2025", content: "“Come September, children return to school, grownups to work, and the brain to the head.”", categories: ["Reflection", "September"], author: "Roger Rosenblatt", authorImg: "https://th.bing.com/th/id/R.90186b1b85a3ddc16352fa6d154b20b1?rik=jUbBAhvy3AWX7g&pid=ImgRaw&r=0" }
-    ];
-    const noteContainer = document.getElementById('note-container');
-    noteContainer.innerHTML = ''; // clear existing notes
-    notes.forEach(note => {
-      const noteDiv = document.createElement('div');
-      noteDiv.classList.add('note');
-      let categoriesHTML = '';
-      note.categories.forEach(category => {
-        categoriesHTML += `<span class="note-category">${category}</span>`;
+  const calendarContainer = document.getElementById('calendar-container');
+  const calendarMonthYear = document.getElementById('calendar-month-year');
+  const calendarBody = document.getElementById('calendar-body');
+  const prevMonthBtn = document.getElementById('prev-month');
+  const nextMonthBtn = document.getElementById('next-month');
+  let currentDate = new Date();
+  const today = new Date();
+
+  // Dates with notes for January 2026
+  const datesWithNotes = [
+    new Date(2026, 0, 5),
+    new Date(2026, 0, 7),
+    new Date(2026, 0, 9),
+    new Date(2026, 0, 11),
+    new Date(2026, 0, 13),
+    new Date(2026, 0, 15),
+    new Date(2026, 0, 17),
+    new Date(2026, 0, 19),
+    new Date(2026, 0, 21),
+    new Date(2026, 0, 23),
+    new Date(2026, 0, 25),
+    new Date(2026, 0, 27),
+    new Date(2026, 0, 29),
+    new Date(2026, 0, 31),
+    new Date(2026, 1, 2),
+    new Date(2026, 1, 4),
+    new Date(2026, 1, 6),
+    new Date(2026, 1, 8),
+    new Date(2026, 1, 10),
+    new Date(2026, 1, 12)
+  ];
+  
+  const hasNotes = function(year, month, day) {
+    return datesWithNotes.some(date =>
+    date.getFullYear() === year &&
+    date.getMonth() === month &&
+    date.getDate() === day
+    );
+  }
+  
+  function renderCalendar(date) {
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    calendarMonthYear.textContent = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
+    calendarBody.innerHTML = '';
+    let row = document.createElement('tr');
+    for (let i = 0; i < firstDay; i++) {
+    row.appendChild(document.createElement('td'));
+    }
+    for (let day = 1; day <= daysInMonth; day++) {
+    const cell = document.createElement('td');
+    cell.textContent = day;
+    if (
+      year === today.getFullYear() &&
+      month === today.getMonth() &&
+      day === today.getDate()
+    ) {
+      cell.style.backgroundColor = 'var(--accent)';
+      cell.style.color = '#fff';
+      cell.style.fontWeight = 'bold';
+    }
+    if (hasNotes(year, month, day)) {
+      const indicator = document.createElement('div');
+      indicator.style.width = '6px';
+      indicator.style.height = '6px';
+      indicator.style.borderRadius = '50%';
+      indicator.style.backgroundColor = 'var(--accent)';
+      indicator.style.position = 'absolute';
+      indicator.style.bottom = '5px';
+      indicator.style.left = '50%';
+      indicator.style.transform = 'translateX(-50%)';
+      cell.appendChild(indicator);
+      cell.style.position = 'relative';
+      cell.style.cursor = 'pointer';
+      cell.addEventListener('click', () => {
+      const dateStr = `${date.toLocaleString('default', { month: 'long' })} ${day}, ${year}`;
+      const notes = document.querySelectorAll('.note');
+      notes.forEach(note => {
+        if (note.querySelector('.note-date').textContent.includes(dateStr)) {
+        note.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        note.style.animation = 'fadeIn 1s';
+        }
       });
-      noteDiv.innerHTML = `
-      <div class="note-header">
-        <div class="note-date"><i class="far fa-calendar-alt"></i> ${note.date}</div>
-        <div class="note-categories">${categoriesHTML}</div>
-      </div>
-      <div class="note-content">${note.content}</div>
-      <div class="note-footer">
-        <div class="note-author">
-          <img src="${note.authorImg}" alt="${note.author}">
-          <span>${note.author}</span>
-        </div>
-        <div class="social-share">
-          <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-      `;
-      noteContainer.appendChild(noteDiv);
+      });
+    }
+    row.appendChild(cell);
+    if ((firstDay + day) % 7 === 0 || day === daysInMonth) {
+      calendarBody.appendChild(row);
+      row = document.createElement('tr');
+    }
+    }
+  }
+  prevMonthBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    renderCalendar(currentDate);
+  });
+  nextMonthBtn.addEventListener('click', () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    renderCalendar(currentDate);
+  });
+  renderCalendar(currentDate);
+
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
     });
+  });
+  });
+
+  // JavaScript to display notes
+  document.addEventListener('DOMContentLoaded', () => {
+  const notes = [
+    { date: "January 5, 2026", content: "The first step towards growth is acknowledging where you are.", categories: ["Growth", "Mindfulness"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 7, 2026", content: "Creativity thrives in the space between structure and chaos.", categories: ["Creativity", "Wisdom"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 9, 2026", content: "Every moment of stillness is an opportunity for clarity.", categories: ["Mindfulness", "Purpose"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 11, 2026", content: "Change is not the enemy of progress; it is the pathway.", categories: ["Change", "Growth"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 13, 2026", content: "The connections we nurture become the foundations of our world.", categories: ["Connection", "Purpose"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 15, 2026", content: "Wisdom is knowing what to hold onto and what to let go.", categories: ["Wisdom", "Growth"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 17, 2026", content: "Purpose is not found; it is cultivated through intention.", categories: ["Purpose", "Mindfulness"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 19, 2026", content: "Joy is the small light that guides us through uncertainty.", categories: ["Joy", "Resilience"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 21, 2026", content: "Resilience is not about bouncing back, but growing forward.", categories: ["Resilience", "Growth"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 23, 2026", content: "The future belongs to those who plant seeds today.", categories: ["Purpose", "Growth"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 25, 2026", content: "Silence speaks volumes when we take the time to listen.", categories: ["Mindfulness", "Wisdom"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 27, 2026", content: "Innovation begins where comfort ends.", categories: ["Creativity", "Change"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 29, 2026", content: "We are the stories we choose to tell ourselves.", categories: ["Purpose", "Wisdom"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "January 31, 2026", content: "Gratitude transforms what we have into enough.", categories: ["Joy", "Mindfulness"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "February 2, 2026", content: "The journey of a thousand miles begins with a single thought.", categories: ["Growth", "Purpose"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "February 4, 2026", content: "Collaboration amplifies what solitude creates.", categories: ["Connection", "Creativity"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "February 6, 2026", content: "Every ending is an invitation to a new beginning.", categories: ["Change", "Resilience"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "February 8, 2026", content: "The art of living is learning to dance with uncertainty.", categories: ["Wisdom", "Joy"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "February 10, 2026", content: "Compassion is the bridge between understanding and action.", categories: ["Connection", "Purpose"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" },
+    { date: "February 12, 2026", content: "True strength lies in vulnerability and authentic expression.", categories: ["Resilience", "Growth"], author: "Anonymous", authorImg: "https://via.placeholder.com/25" }
+  ];
+  
+  const noteContainer = document.getElementById('note-container');
+  noteContainer.innerHTML = '';
+  notes.forEach(note => {
+    const noteDiv = document.createElement('div');
+    noteDiv.classList.add('note');
+    let categoriesHTML = '';
+    note.categories.forEach(category => {
+    categoriesHTML += `<span class="note-category">${category}</span>`;
+    });
+    noteDiv.innerHTML = `
+    <div class="note-header">
+    <div class="note-date"><i class="far fa-calendar-alt"></i> ${note.date}</div>
+    <div class="note-categories">${categoriesHTML}</div>
+    </div>
+    <div class="note-content">${note.content}</div>
+    <div class="note-footer">
+    <div class="note-author">
+      <img src="${note.authorImg}" alt="${note.author}">
+      <span>${note.author}</span>
+    </div>
+    <div class="social-share">
+      <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    </div>
+    `;
+    noteContainer.appendChild(noteDiv);
+  });
   });
 </script>
 </body>
